@@ -69,15 +69,6 @@ I am a master-degree student majoring in Machine Intelligence at Peking Universi
 	- [Userpage (in English)](https://en.wikipedia.org/wiki/User:Snowkylin)
 
 ## Contact
-Emails: 
+Emails:
 - xihanli AT pku dot edu dot cn (replace AT by @, dot by .)
 - xihanli316 AT gmail dot com (replace AT by @, dot by .)
-
-
-
-
-
-
-
-
-

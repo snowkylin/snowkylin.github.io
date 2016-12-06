@@ -39,6 +39,7 @@ display_title: Xihan Li
 I am a master-degree student majoring in Machine Intelligence at Peking University, China. I am interested in the foreland fields of computer science including machine learning, deep learning, big data and complex network analysis. I am also interested in biology (expecially zoology and ecology related), psychology and math (maching learning needs a lot of math knowledge!).
 
 ## Awards
+
 - Outstanding Winner, 2015 Interdisciplinary Contest In Modeling (2015.4)
 - First Prize of Undergraduate Group, 2014 Contemporary Undergraduate Mathematical Contest in Modeling (2014.12)
 - Gold Medal & Best Experimental Measurement Approach, Asia, 2013 International Genetically Engineered Machine competition (2013.10)
@@ -48,6 +49,7 @@ I am a master-degree student majoring in Machine Intelligence at Peking Universi
 - Wang, Jiasheng, et al. "[Detection of thrombin with an aptamer-based macromolecule biosensor using bacterial ghost system.](http://pubs.acs.org/doi/abs/10.1021/sb500018f)" *ACS synthetic biology* 3.12 (2014): 963-965. [[PDF]]({{site.url}}/assets/publications/Detection_of_Thrombin_with_an_Aptamer-Ba.pdf)
 
 ## Free time activities
+
 ### Software Development
 - Course Management System of Student Association of Zhejiang University
      - An online system that provides functions about course & students management, course info inquery, course choosing and so on.

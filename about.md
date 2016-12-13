@@ -40,17 +40,26 @@ I am a master-degree student majoring in Machine Intelligence at Peking Universi
 
 ## Skills
 
-- Expertise
-	- Machine Learning & Deep Learning
-	- Mathematical Modeling
-	- Network Analysis
-	- Algorithm Design
-- Programming language
-	- Python
-	- Matlab
-	- Traditional language: C/C++/Java/Pascal
-	- Web related: PHP/CSS/JS/HTML/SQL
-- Tools: Linux, Git, $\LaTeX$, Theano (with Keras)
+### Expertise
+
+- Machine Learning & Deep Learning
+- Mathematical Modeling
+- Network Analysis
+- Algorithm Design
+
+### Programming language
+
+- Python
+- Matlab
+- Traditional programming language: C/C++/Java/Pascal
+- Web related: PHP/CSS/JS/HTML/SQL
+
+### Tools
+
+- Linux (with bash)
+- Git
+- $\LaTeX$ (prefer TeX live with TeXstudio)
+- Theano (with Keras)
 - to be continued...
 
 ## Awards
@@ -65,25 +74,21 @@ I am a master-degree student majoring in Machine Intelligence at Peking Universi
 
 ## Free time activities
 
-### Software Development
-- Course Management System of Student Association of Zhejiang University
-     - An online system that provides functions about course & students management, course info inquery, course choosing and so on.
-     - Independent work, currently running [Here](http://www.itper.org/course_zjuapa_com/).
-- Wilddream Platform (beta)
-     - An easy-to-use online multi-user art gallery system with multi-language support (including Chinese!), developed by PHP (with ThinkPHP framework), MySQL, HTML, CSS (with Bootstrap), Javascript (with JQuery), etc.
-     - Independent work, currently running on [WildDream Art](http://www.wilddream.net).
-     - More info [here](http://en.wikifur.com/wiki/WildDream_Art) and [here](http://www.wilddream.net/journal/view/4).
-
-### Animal Related
-- President of [Animal Protector Association of Zhejiang University](http://www.zjuapa.com) (2013.9-2016.3)
-- Intern at [Wildlife Conservation Society China Program](http://wcs.org.cn/) (2015.7-2015.9)
-- Love animal drawing, artworks at [DeviantArt](http://snowkylin.deviantart.com) and [WildDream Art](http://www.wilddream.net/user/snowkylin)
-
-### Others
-- Amateur radio station operator (HAM), Radio Callsign: [BH5HDS](https://www.qrz.com/db/BH5HDS) (with level B operation license by CRAC).
-- Patroller & executive editor of Chinese Wikipedia, interested in creating & editing animal related articles.
-	- [Userpage (in Chinese)](https://zh.wikipedia.org/wiki/User:Snowkylin)
-	- [Userpage (in English)](https://en.wikipedia.org/wiki/User:Snowkylin)
+- Software Development
+    - Course Management System of Student Association of Zhejiang University
+         - An online system that provides functions about course & students management, course info inquery, course choosing and so on.
+         - Independent work, currently running [Here](http://www.itper.org/course_zjuapa_com/).
+    - Wilddream Platform (beta)
+         - An easy-to-use online multi-user art gallery system with multi-language support (including Chinese!), developed by PHP (with ThinkPHP framework), MySQL, HTML, CSS (with Bootstrap), Javascript (with JQuery), etc.
+         - Independent work, currently running on [WildDream Art](http://www.wilddream.net).
+         - More info [here](http://en.wikifur.com/wiki/WildDream_Art) and [here](http://www.wilddream.net/journal/view/4).
+- Animal Related
+    - President of [Animal Protector Association of Zhejiang University](http://www.zjuapa.com) (2013.9-2016.3)
+    - Intern at [Wildlife Conservation Society China Program](http://wcs.org.cn/) (2015.7-2015.9)
+    - Love animal drawing, artworks at [DeviantArt](http://snowkylin.deviantart.com) and [WildDream Art](http://www.wilddream.net/user/snowkylin)
+- Others
+    - Amateur radio station operator (HAM), Radio Callsign: [BH5HDS](https://www.qrz.com/db/BH5HDS) (with level B operation license by CRAC).
+    - Patroller & executive editor of Chinese Wikipedia, interested in creating & editing animal related articles. [Userpage (in Chinese)](https://zh.wikipedia.org/wiki/User:Snowkylin), [Userpage (in English)](https://en.wikipedia.org/wiki/User:Snowkylin).
 
 ## Contact
 Emails:

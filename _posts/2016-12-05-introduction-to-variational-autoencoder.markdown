@@ -61,13 +61,13 @@ $$ \log P(X) - D[Q(z \vert X) \Vert P(z \vert X)] = E_{z \sim Q}[\log P(X \vert 
 
 VAE的框架如下：
 
-![VAE框架-1]({{site.url}}/assets/vae/vae-1.png)
+![VAE框架-1]({{site.url}}/assets/vae/VAE-1.png)
 
 对于给定的$ X $，要最大化$ E_{z \sim Q}[\log P(X \vert z)] $，考虑$ P(X \vert z;\theta)=N(X \vert f(z;\theta),\sigma^2*I) $，即最小化$  \Vert X-f(z;\theta) \Vert ^2 $
 
 问题：注意红色部分的取样过程无法计算梯度，如何解决？
 
-![VAE框架-2]({{site.url}}/assets/vae/vae-2.png)
+![VAE框架-2]({{site.url}}/assets/vae/VAE-2.png)
 
 先取样$ \epsilon \sim N(0, I) $，然后$ z=\mu(X) + \Sigma^{1/2}(X) * \epsilon $（“Reparameterization trick”）
 

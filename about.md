@@ -29,7 +29,7 @@ display_title: Xihan Li
 </tr>
 </table>
 
-**[Zhihu](https://www.zhihu.com/people/snowkylin/activities) \| [Weibo](http://weibo.com/snowkylin) \| [Wikipedia](https://zh.wikipedia.org/wiki/User:Snowkylin) \| [DeviantArt](http://snowkylin.deviantart.com) \| [Github](https://github.com/snowkylin) \| [Blog](http://snowkylin.github.io)**
+**[Wikipedia](https://zh.wikipedia.org/wiki/User:Snowkylin) \| [Zhihu](https://www.zhihu.com/people/snowkylin/activities)     \| [Github](https://github.com/snowkylin) \| [Blog](http://snowkylin.github.io)**
 
 * TOC
 {:toc}

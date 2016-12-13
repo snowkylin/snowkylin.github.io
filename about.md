@@ -19,7 +19,7 @@ display_title: Xihan Li
 <tr>
 <td width="70%">
 <i>Undergraduate Student, Computer Science and Technology <small>(Minor in Biological Science)</small><br/>
-<a href="http://ckc.zju.edu.cn">Chu Kochen Honors College, Mixed Class</a><br/>
+<a href="http://ckc.zju.edu.cn">Chu Kochen Honors College (Mixed Class)</a><br/>
 <a target="_blank" href="http://www.zju.edu.cn">Zhejiang University</a><br/>
 2012-2016</i>
 </td>

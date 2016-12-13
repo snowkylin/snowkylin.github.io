@@ -5,17 +5,21 @@ date:   December 5, 2016 10:37 PM
 author: Snowkylin
 categories: autoencoder
 ---
-首先，我们记数据点（图像）为$X\in\chi$。$P(X)$：如果$X$像真实图像则概率高，像随机噪声则概率低。
+关于自编码器的概念和变分自编码器的实现，可以参考[这里](http://keras-cn.readthedocs.io/en/latest/blog/autoencoder/)。关于变分自编码器的一篇更详细的介绍见[这里](http://www.dengfanxin.cn/?p=334)。
+
+我们记数据点（图像）为$X\in\chi$。$P(X)$：如果$X$像真实图像则概率高，像随机噪声则概率低。
 
 我们考虑数据是由一系列**隐变量**(记为$z$)生成的。（例如，我们要生成手写数字，我们可以先决定生成的数字$z_1\in\lbrace0,...,9\rbrace$，然后决定笔划的宽度$z_2\in[1.0, 5.0]$，再由$z_1$和$z_2$生成数字$X$，此时$(z_1, z_2)$就是隐变量）
 
 考虑函数$f(z;\theta)$将隐变量$z$映射到$X$（类似于一个“解码器”），我们希望优化函数$f$的参数$\theta$，使得当我们随机取样$z$时，$f(z;\theta)$能尽可能地接近数据集中已有的$X$。（例如，$z=(z_1, z_2)=(5, 1.0)$时，我们希望优化$\theta$使$f(z;\theta)$尽量接近一个手写的细体5）
 
-取$P(X \vert z;\theta)$是一个以$f(z;\theta)$为均值的高斯分布（即$ P(X \vert z;\theta)=N(X \vert f(z;\theta),\sigma^2*I) $）。那么，我们就可以用$P(X \vert z;\theta)$对$z$积分计算$P(X)$，可以得到：
+为了计算数据$ X $存在的概率，我们就可以用$P(X \vert z;\theta)$对$z$积分计算$P(X)$，可以得到：
 
 $$P(X)=\int_{z}P(X \vert z;\theta)P(z)dz$$
 
-根据最大似然的思想，接下来我们需要优化参数$\theta$使我们的模型$f(z;\theta)$生成实际数据集$X$的概率$P(X)$最大。这里$f(z;\theta)$往往使用多层神经网络实现。（这里$P(z)$的分布是不重要的，为了方便我们可以直接取$P(z)=N(z \vert 0,I)$。因为只要$f(z;\theta)$足够强，$N(z \vert 0,I)$可以被扭转成任何分布）
+这里，我们可以假定$P(X \vert z;\theta)$是一个以$f(z;\theta)$为均值的高斯分布（即$ P(X \vert z;\theta)=N(X \vert f(z;\theta),\sigma^2*I) $，原因与平均场理论有关，也许以后有机会可以深入探讨）。
+
+根据最大似然的思想，接下来我们需要优化参数$\theta$使我们的模型$f(z;\theta)$生成实际数据$X$的概率$P(X)$最大。这里$f(z;\theta)$往往使用多层神经网络实现。（这里$P(z)$的分布是不重要的，为了方便我们可以直接取$P(z)=N(z \vert 0,I)$。因为只要$f(z;\theta)$足够强，$N(z \vert 0,I)$可以被扭转成任何分布）
 
 在机器学习中，我们将$P(X)$对$ \theta $求导+梯度法来优化。然而，如何计算$ P(X) $？
 
@@ -49,7 +53,7 @@ $$ \log P(X) - D[Q(z \vert X) \Vert P(z \vert X)] = E_{z \sim Q}[\log P(X \vert 
 由此，对于给定的$ X $，我们将两个难以计算的目标函数$ P(x \vert Z) $和$ D[Q(z) \Vert P(z \vert X)] $变为易于计算的表达形式：
 
 - $ E_{z \sim Q}[\log P(X \vert z)] $：在分布$ Q(z \vert X) $上取样一个$ z $即可作为$ E_{z \sim Q}[\log P(X \vert z)] $的近似。
-- $ D[Q(z \vert X) \Vert P(z)] $：取$ Q(z \vert X)=N(z \vert \mu(X; \vartheta), \Sigma(X; \vartheta)) $，回顾$ P(z)=N(0, I) $，即可直接计算$ D[Q(z \vert X) \Vert P(z)] $（两个高斯分布的KL距离，有解析解）。
+- $ D[Q(z \vert X) \Vert P(z)] $：取$ Q(z \vert X)=N(z \vert \mu(X; \vartheta), \Sigma(X; \vartheta)) $，回顾$ P(z)=N(0, I) $，即可直接计算$ D[Q(z \vert X) \Vert P(z)] $（两个高斯分布的KL距离，有解析解，具体推导见参考文献）。
 
 注意，这里$ \mu(X; \vartheta) $和$ \Sigma(X; \vartheta) $往往使用多层神经网络实现。
 

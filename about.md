@@ -45,6 +45,7 @@ I am a master-degree student majoring in Machine Intelligence at Peking Universi
 - Machine Learning & Deep Learning
 - Mathematical Modeling
 - Network Analysis
+- Biological Science (minor subject at college)
 - Algorithm Design
 
 ### Programming language

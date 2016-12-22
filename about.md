@@ -78,11 +78,12 @@ I am a master-degree student majoring in Machine Intelligence at Peking Universi
 
 - Software Development
     - Course Management System of Student Association of Zhejiang University
-         - An online system that provides functions about course & students management, course info inquery, course choosing and so on.
-         - Independent work, currently running [Here](http://www.itper.org/course_zjuapa_com/).
+         - An online multi-user course management system that provides functions including course & students management, course info inquery, course choosing and so on.
+         - Designed  for students in Zhejiang University to choose courses (with "second-classroom credit") offered by clubs and student associations in ZJU.
+         - Independent work commissioned by [ZJUSAC](http://www.cde.zju.edu.cn/), currently running **[Here](http://www.itper.org/course_zjuapa_com/)**.
     - Wilddream Platform (beta)
          - An easy-to-use online multi-user art gallery system with multi-language support (including Chinese!), developed by PHP (with ThinkPHP framework), MySQL, HTML, CSS (with Bootstrap), Javascript (with JQuery), etc.
-         - Independent work, currently running on [WildDream Art](http://www.wilddream.net).
+         - Independent work, currently running on **[WildDream Art](http://www.wilddream.net)**.
          - More info [here](http://en.wikifur.com/wiki/WildDream_Art) and [here](http://www.wilddream.net/journal/view/4).
 - Animal Related
     - President of [Animal Protector Association of Zhejiang University](http://www.zjuapa.com) (2013.9-2016.3)

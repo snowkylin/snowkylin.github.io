@@ -45,7 +45,7 @@ I am a master-degree student majoring in Machine Intelligence at Peking Universi
 - Machine Learning & Deep Learning
 - Mathematical Modeling
 - Network Analysis
-- Biological Science (minor subject at college)
+- Biological Science (my minor subject at Zhejiang University)
 - Algorithm Design
 
 ### Programming language
@@ -60,6 +60,7 @@ I am a master-degree student majoring in Machine Intelligence at Peking Universi
 - Linux (with bash)
 - Git
 - $\LaTeX$ (prefer TeX live with TeXstudio)
+- TensorFlow
 - Theano (with Keras)
 - to be continued...
 

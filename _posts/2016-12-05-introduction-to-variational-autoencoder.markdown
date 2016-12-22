@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "变分自编码器（Variational Autoencoder, VAE）（施工中）"
+title:  "变分自编码器（Variational Autoencoder, VAE）"
 date:   December 5, 2016 10:37 PM
 author: Snowkylin
 categories: autoencoder

@@ -17,7 +17,8 @@ title: 雪麒的百草园 - Snowkylin's Blog
 author: Snowkylin Lazarus (Xihan Li)
 email: xihanli316 AT gmail dot com (replace AT by @, dot by .)
 description: > # this means to ignore newlines until "baseurl:"
-  Seeking the Truth and Pioneering New Trails
+  Seeking the Truth and Pioneering New Trails.<br />  
+  All articles are my <b>original works</b> unless otherwise stated or referenced.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: snowkylin

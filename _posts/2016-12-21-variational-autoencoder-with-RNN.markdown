@@ -3,7 +3,7 @@ layout: post
 title:  "基于RNN的变分自编码器（施工中）"
 date:   December 21, 2016 8:30 PM
 author: Snowkylin
-categories: autoencoder, RNN
+categories: autoencoder RNN
 ---
 （在这篇文章之前，你需要了解一些关于RNN的内容，推荐[这篇](http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/)）
 

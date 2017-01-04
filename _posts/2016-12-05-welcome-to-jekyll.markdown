@@ -4,7 +4,8 @@ title:  "第一篇测试文章"
 date:   2016-12-05 16:41:13 +0800
 categories: jekyll
 ---
-# 这是一篇测试文章
+Hello, Github pages & jekyll!
+
 $$ f(x, y) = \sqrt{x^2+y^2} $$
 
 # 默认欢迎信息

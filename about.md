@@ -7,7 +7,7 @@ display_title: Xihan Li
 <table width="100%">
 <tr>
 <td width="70%">
-<i>MA Student, Computer Science and Technology (Machine Intelligence)<br/>
+<i>M.S. Candidate in Computer Science and Technology (Machine Intelligence)<br/>
 <a href="http://eecs.pku.edu.cn">School of Electronics Engineering and Computer Science</a><br/>
 <a target="_blank" href="http://www.pku.edu.cn">Peking University</a><br/>
 2016-2019 (expected)</i>
@@ -18,7 +18,7 @@ display_title: Xihan Li
 </tr>
 <tr>
 <td width="70%">
-<i>Undergraduate Student, Computer Science and Technology <small>(Minor in Biological Science)</small><br/>
+<i>B.Eng. in Computer Science and Technology <small>(Minor in Biological Science)</small><br/>
 <a href="http://ckc.zju.edu.cn">Chu Kochen Honors College (Mixed Class)</a><br/>
 <a target="_blank" href="http://www.zju.edu.cn">Zhejiang University</a><br/>
 2012-2016</i>
@@ -29,7 +29,7 @@ display_title: Xihan Li
 </tr>
 </table>
 
-**[Wikipedia](https://zh.wikipedia.org/wiki/User:Snowkylin) \| [Zhihu](https://www.zhihu.com/people/snowkylin/activities)     \| [Github](https://github.com/snowkylin) \| [Blog](http://snowkylin.github.io)**
+**[Github](https://github.com/snowkylin) \| [Wikipedia](https://zh.wikipedia.org/wiki/User:Snowkylin) \| [Zhihu](https://www.zhihu.com/people/snowkylin/activities)     \| [Blog](http://snowkylin.github.io)**
 
 * TOC
 {:toc}

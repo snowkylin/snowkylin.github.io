@@ -89,7 +89,8 @@ Jiawei Han](http://hanj.cs.illinois.edu/) 的 [UIUC CS512: Data Mining: Principl
         - 每个meta-path的权值：$w_1, \cdots, w_M$
         - 根据用户指导的聚类结果
 - PathSelClus：一个用户指导的基于Meta-Path的聚类概率模型
-    - 
+    - Sun, Yizhou, et al. "Pathselclus: Integrating meta-path selection with user-guided object clustering in heterogeneous information networks." ACM Transactions on Knowledge Discovery from Data (TKDD) 7.3 (2013): 11.
+
 
 # Part 2：异构网络上的分类和预测
 

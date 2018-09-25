@@ -72,7 +72,7 @@ VAE的框架如下：
 总结VAE流程如下：
 
 - $ \mu = \mu(X), \Sigma = \Sigma(X) $(通过神经网络进行编码)
-- 取样$ \epsilon \sim N(0, I) $，$ z=\mu + \Sigma^{1/2} * \epsilon $
+- 取样$ \epsilon \sim N(0, 1) $，$ z=\mu + \Sigma^{1/2} * \epsilon $
 - $ f=f(z) $(通过神经网络进行解码)
 - 计算损失函数$  \Vert X-f \Vert ^2 - D[N(\mu,\Sigma \Vert N(0, I)] $
 - 反向传播

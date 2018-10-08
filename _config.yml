@@ -13,17 +13,18 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: 雪麒的百草园 - Snowkylin's Blog
-author: Snowkylin Lazarus (Xihan Li)
+title: Xihan Li
+author: Xihan Li (snowkylin)
 email: xihanli316 AT gmail dot com (replace AT by @, dot by .)
 description: > # this means to ignore newlines until "baseurl:"
   Seeking the Truth and Pioneering New Trails.<br />  
-  All articles are my <b>original works</b> unless otherwise stated or referenced.
+  All articles are my original works unless otherwise stated or referenced.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: snowkylin
 github_username:  snowkylin
-duoshuo: true
+excerpt_separator: <!--more-->
+# duoshuo: true
 google_analytics: UA-40509304-10
 
 # Build settings

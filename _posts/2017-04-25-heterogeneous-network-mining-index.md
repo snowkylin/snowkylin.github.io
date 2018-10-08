@@ -1,13 +1,17 @@
 ---
 layout: post
-title:  "异构网络挖掘 - 目录"
+title:  "Note of Heterogeneous Network Mining"
 date:   April 25, 2017 11::08 AM
 author: Snowkylin
 categories: network-mining heterogeneous-network
 ---
 
+# 异构网络挖掘 - 目录
+
 本文内容基于 [Prof. 	
 Jiawei Han](http://hanj.cs.illinois.edu/) 的 [UIUC CS512: Data Mining: Principles and Algorithms (Spring 2017)](https://wiki.illinois.edu//wiki/display/cs512/Lectures) 课程的Chapter 2。主要基于幻灯片内容做概要性介绍，以后有机会将对其中的若干特定算法另撰文章详细介绍。
+
+<!--more-->
 
 * TOC
 {:toc}

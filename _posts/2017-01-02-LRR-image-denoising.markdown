@@ -1,11 +1,16 @@
 ---
 layout: post
-title:  "使用低秩表示（LRR）进行图像去噪"
+title:  "Image Denoising with LRR"
 date:   January 2, 2017 12:57 PM
 author: Snowkylin
 categories: LRR image_denoising
 ---
+
+# 使用低秩表示（LRR）进行图像去噪
+
 [上一篇文章](https://snowkylin.github.io/pca/ssc/lrr/2017/01/02/Robust-PCA-SSC-LRR.html)介绍了LRR及相关方法的基本原理。现在，我们使用Extended Yale Face Database B数据集对LRR进行图像去噪能力的测试。参考(Liu, 2010)的方法，从数据集中去掉了光线条件较为极端的图片。同时出于计算效率的考虑，我们选用了100张图片，并将图片大小调整至宽42像素，高48像素。
+
+<!--more-->
 
 对于所有的100张图片，我们分别随机添加椒盐噪声。具体而言，遍历每幅图片的每个像素，并以2%的概率将其变为全黑，以2%的概率将其变为全白。
 

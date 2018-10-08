@@ -1,14 +1,18 @@
 ---
 layout: post
-title:  "生成对抗网络（GANs）与深度卷积生成对抗网络（DCGANs）"
+title:  "GANs and DCGANs"
 date:   January 4, 2017 6:03 PM
 author: Snowkylin
 categories: GAN
 ---
 
+# 生成对抗网络（GANs）与深度卷积生成对抗网络（DCGANs）
+
 生成对抗网络（Generative Adversarial Networks, GANs）是无监督学习的一个比较新的分支，由Ian Goodfellow等于2014年提出，其优秀的性能很快获得了学界的普遍关注。
 
 该模型包含两个神经网络，一个是生成式模型，一个是判别式模型。生成式模型类似于一个“仿制者”，需要生成能尽量不被判别式模型识破的假样本；判别式模型则类似于“警察”，需要将假的样本探测出来。这两者之间的博弈和竞争使得两个模型的能力都同时增强，直到生成式模型生成的假样本无法和真实样本区分为止。
+
+<!--more-->
 
 # 生成对抗网络（GANs）
 

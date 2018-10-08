@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="home">
+  <h1>Blogs</h1>
+
+  {{ content }}
+
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+  <p><a href="{{ "/categories" | relative_url }}">Categories</a></p>
+
+</div>

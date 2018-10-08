@@ -4,31 +4,10 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
-  
-  {{ content }}
+  <h1 class="page-heading">Xihan Li</h1>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <p>Key Laboratory of Machine Perception (Ministry of Education)</p>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-		{% if post.categories %}
-		<p class="post-meta">
-			Categories: 
-			{% for category in post.categories %}
-				<a href="{{ site.url }}/categories#{{ category | escape }}">{{ category | escape }}</a>
-			{% endfor %}
-		</p>
-		{% endif %}
-		<p>{{ post.excerpt }}</p>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  <p>Peking University</p>
 
 </div>

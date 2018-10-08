@@ -1,13 +1,18 @@
 ---
 layout: post
-title:  "增强学习（Reinforcement Learning）简介"
+title:  "Introduction of Reinforcement Learning"
 date:   January 4, 2017 6:34 PM
 author: Snowkylin
 categories: RL
 ---
+
+# 增强学习（Reinforcement Learning）简介
+
 增强学习（Reinforcement Learning）是介于有监督学习和无监督学习之间的一种方式。在有监督学习中对于每个训练样本都有对应的标签，无监督学习完全没有标签，而增强学习则有稀疏且时延的标签（即奖励）。智能体基于奖励在环境中进行动作。
 
 本部分介绍主要参考[^1]（部分为翻译，强烈建议阅读原文，以及这里有一个[深度增强学习的资料整理](https://zhuanlan.zhihu.com/p/20885568)）。
+
+<!--more-->
 
 为了形式化增强学习这一过程，首先介绍马尔科夫决策过程（Markov Decision Process）。假设你是一个智能体（Agent），在一个环境的特定状态（State）中，你可以做出特定动作（Action），而这些动作有时会带来奖励（Reward）。每当智能体做出一个动作，就会进入一个新的状态。如何选择进行什么动作则叫做策略（Policy）。状态和动作的集合以及从一个状态到另一个状态的转移规则构成了一个马尔科夫决策过程。这个过程的一个片段由一个定长的状态-动作-奖励序列所构成，如：
 

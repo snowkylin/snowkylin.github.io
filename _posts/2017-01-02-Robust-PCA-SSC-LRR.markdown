@@ -1,12 +1,16 @@
 ---
 layout: post
-title:  "Robust PCA，稀疏子空间聚类（SSC）与低秩表示（LRR）"
+title:  "Robust PCA, SSC and LRR"
 date:   January 2, 2017 1:31 AM
 author: Snowkylin
 categories: PCA SSC LRR
 ---
 
+# Robust PCA，稀疏子空间聚类（SSC）与低秩表示（LRR）
+
 低秩表示（Low-Rank Representation, LRR）方法由Liu等于2010年提出，是用于解决子空间分割等问题的一种有效方法，通过在Robust PCA的基础上引入子空间聚类的思想，加入字典项使Robust PCA中的单一低秩子空间变为多个子空间的集合，从而达到更好的效果。
+
+<!--more-->
 
 * TOC
 {:toc}

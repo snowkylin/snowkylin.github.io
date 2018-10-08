@@ -1,15 +1,20 @@
 ---
 layout: post
-title:  "变分自编码器（Variational Autoencoder, VAE）"
+title:  "Variational Autoencoder (VAE)"
 date:   December 5, 2016 10:37 PM
 author: Snowkylin
 categories: autoencoder
 ---
+
+# 变分自编码器（Variational Autoencoder, VAE）
+
 关于自编码器的概念和变分自编码器的实现，可以参考[这里](http://keras-cn.readthedocs.io/en/latest/blog/autoencoder/)。关于变分自编码器的一篇更详细的介绍见[这里](http://www.dengfanxin.cn/?p=334)。
 
 我们记数据点（图像）为$X\in\chi$。$P(X)$：如果$X$像真实图像则概率高，像随机噪声则概率低。
 
 我们考虑数据是由一系列**隐变量**(记为$z$)生成的。（例如，我们要生成手写数字，我们可以先决定生成的数字$z_1\in\lbrace0,...,9\rbrace$，然后决定笔划的宽度$z_2\in[1.0, 5.0]$，再由$z_1$和$z_2$生成数字$X$，此时$(z_1, z_2)$就是隐变量）
+
+<!--more-->
 
 考虑函数$f(z;\theta)$将隐变量$z$映射到$X$（类似于一个“解码器”），我们希望优化函数$f$的参数$\theta$，使得当我们随机取样$z$时，$f(z;\theta)$能尽可能地接近数据集中已有的$X$。（例如，$z=(z_1, z_2)=(5, 1.0)$时，我们希望优化$\theta$使$f(z;\theta)$尽量接近一个手写的细体5）
 

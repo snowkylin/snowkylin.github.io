@@ -1,11 +1,16 @@
 ---
 layout: post
-title:  "HopField网络与受限玻尔兹曼机（RBM）"
+title:  "HopField Network and Restricted Boltzmann Machine (RBM)"
 date:   January 2, 2017 3:10 PM
 author: Snowkylin
 categories: RBM HopField
 ---
+
+# HopField网络与受限玻尔兹曼机（RBM）
+
 本文简要介绍HopField网络和受限玻尔兹曼机（Restricted Boltzmann Machine, RBM）的原理。
+
+<!--more-->
 
 * TOC
 {:toc}

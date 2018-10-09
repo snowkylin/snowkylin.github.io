@@ -20,10 +20,10 @@ I am a third year M.S. student in [Key Laboratory of Machine Perception](http://
 
 # What's New
 
-- **Sep. 2018** - One paper in Microsoft Research Asia was submitted to *AAAI 2019*.
-- **Sep. 2018** - I was invited to attend [Google Developer Experts Summit 2018](https://www.tensorflow.org/dev-summit/) on November 10-11 in the Bay Area, with full travel support from Google.
+- **Sep. 2018** - One paper in Microsoft Research Asia as first author was submitted to *AAAI 2019*.
+- **Sep. 2018** - I was invited to attend [Google Developers Experts Summit 2018](https://events.withgoogle.com/experts-summit-2018/) on November 10-11 in the Bay Area, with full travel support from Google.
 - **Sep. 2018** - Thanks to [Jeff Dean](https://twitter.com/JeffDean)'s retweet, recommendation from [TensorFlow offical twitter account](https://twitter.com/TensorFlow/status/1039546360738009088) and [engineering lead](https://twitter.com/rajatmonga/status/1038890497702420480), as well as strong support from Google China Developer Relations team, an extended version of [my online technical handbook of TensorFlow](/resources/#a-concise-handbook-of-tensorflow) will be formally published aligning with TensorFlow 2.0 (around early 2019), collaborated with *Posts & Telecom Press*.
-- **May, 2018** - Together with Meng Zou, the work [MEMD: A Diversity-Promoting Learning Framework for Short-Text Conversation](http://www.aclweb.org/anthology/C18-1109) has been accepted into *COLING 2018*.
+- **May. 2018** - Together with Meng Zou, the work [MEMD: A Diversity-Promoting Learning Framework for Short-Text Conversation](http://www.aclweb.org/anthology/C18-1109) has been accepted into *COLING 2018*.
 - **Mar. 2018** - I was invited to attend [TensorFlow Dev Summit 2018](https://www.tensorflow.org/dev-summit/) in Mountain View, CA, with full travel support from Google.
 - **Jan. 2018** - I started to intern in Machine Learning Group of [Microsoft Research Asia](https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/).
 - **Dec. 2017** - I am honored to be selected as a [Google Developer Expert](https://developers.google.com/experts/about) in Machine Learning.  [(profile page)](https://developers.google.com/experts/people/xihan-li)

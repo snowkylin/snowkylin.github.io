@@ -14,5 +14,43 @@ for Wikipedia*
 - *Outstanding Student Leader Award*, Zhejiang University • Dec. 2014
 - *First Prize*, 2014 Mathematical Contest in Modeling, Zhejiang University • Jun. 2014
 - *Gold Medal & Best Experimental Measurement Approach, Asia*, [2013 International Genetically Engineered Machine competition](http://igem.org/Results?year=2013) • Oct. 2013
-    - Research achievement published on *ACS synthetic biology*.
+    - Research achievement published on *ACS synthetic biology*. [[introduction]]({{site.url}}/projects/#aptamer)
 - *First Prize*, 2011 National Olympiad in Informatics in Provinces • Dec. 2011
+
+<center>
+<table style="border: 0px; width: 75%">
+    <tr>        
+        <td colspan="2">
+            <center>
+                <a href="{{site.url}}/assets/awards/ICM.jpg">
+                    <img src="{{site.url}}/assets/awards/ICM.jpg" width="100%"/>
+                </a>
+                <i>Outstanding Winner</i><br />2015 Interdisciplinary Contest In Modeling (ICM 2015)
+            </center>
+        </td>
+    </tr>
+    <tr>
+        <td width="50%">
+            <center>
+                <a href="{{site.url}}/assets/awards/iGEM_Measurement.jpg">
+                    <img src="{{site.url}}/assets/awards/iGEM_Measurement.jpg" width="100%"/>
+                </a>
+            </center>
+        </td>
+        <td width="50%">
+            <center>
+                <a href="{{site.url}}/assets/awards/iGEM_World.jpg">
+                    <img src="{{site.url}}/assets/awards/iGEM_World.jpg" width="100%"/>                    
+                </a>
+            </center>
+        </td>
+    </tr>
+    <tr>        
+        <td colspan="2">
+            <center>
+                <i>Gold Medal & Best Experimental Measurement Approach, Asia</i><br />2013 International Genetically Engineered Machine competition
+            </center>
+        </td>
+    </tr>
+</table>
+</center>

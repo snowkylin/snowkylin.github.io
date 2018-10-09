@@ -5,29 +5,16 @@ permalink: /hobbies/
 display_title: Hobbies
 ---
 
-Beyond the research work in my own field, I also have some hobbies such as drawing, software development and animal protection, which enriched my spare time.
+Beyond the research work in my own field, I also have some hobbies such as drawing, radio and animal protection, which enriched my spare time.
 
 # Drawing
 
 I love animal drawing due to the fantastic coexistance of wildness and cuteness. You can find some of my artworks at [DeviantArt](http://snowkylin.deviantart.com) or [WildDream Art](http://www.wilddream.net/user/snowkylin).
 
 <center>
-    <p><a href="https://www.wilddream.net/Art/view/10271"><img src="https://www.wilddream.net/Public/uploads/artwork/1/preview/10271.jpg" style="width: 50%"/></a></p>
+    <p><a href="https://www.wilddream.net/Art/view/10271"><img src="{{site.url}}/assets/hobbies/lpt.jpg" style="width: 50%"/></a></p>
     <p>One of my favorite drawings, hope you like it~</p>
 </center>
-
-# Software Development
-
-Building a whole complex software system alone from beginning to end might be the dream of every programmer. I am not the exception even if I do research work most of the time.
-
-- **Course Management System of Student Association of Zhejiang University**
-    - An online multi-user course management system that provides functions including course & students management, course info inquery, course choosing and so on.
-    - Designed  for students in Zhejiang University to choose courses (with "second-classroom credit") offered by clubs and student associations in ZJU.
-    - Independent work commissioned by [ZJUSAC](http://www.cde.zju.edu.cn/), currently running [Here](http://www.zjustjpkc.com/).
-- **Wilddream Platform (beta)**
-    - An easy-to-use online multi-user art gallery system with multi-language support (including Chinese!), developed by PHP (with ThinkPHP framework), MySQL, HTML, CSS (with Bootstrap), Javascript (with JQuery), etc.
-    - Independent work, currently running on [WildDream Art](http://www.wilddream.net).
-    - With Computer Software Copyright Registration Certificate (Registration No: 2017SR111204) issued by National Copyright Administration of the PRC.
 
 # Animal Protection
 
@@ -46,7 +33,7 @@ The regular activity of our association contains:
     <p>Guess who am I?</p>
 </center>
 
-I also interned at [Wildlife Conservation Society China Program](http://wcs.org.cn/) (Jul. 2015 - Sep. 2015)
+I also interned at [Wildlife Conservation Society China Program](http://wcs.org.cn/) (Jul. 2015 - Sep. 2015). I am the website developer and maintainer of <a href="http://www.zjsapa.org">Zhejiang Small Animal Protection Association</a> (Mar. 2013 - present).
 
 # Others
 

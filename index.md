@@ -2,9 +2,12 @@
 # You don't need to edit this file, it's empty on purpose.
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: page
-display_title: Xihan Li
+layout: home
 ---
+
+<img style="float: right; width: 30%" src="{{site.url}}/assets/about/me.jpg">
+
+<h1 class="post-title">Xihan Li</h1>
 
 [Key Laboratory of Machine Perception (Ministry of Education)](http://www.klmp.pku.edu.cn)
 
@@ -25,5 +28,6 @@ I am a third year M.S. student in [Key Laboratory of Machine Perception](http://
 - **Sep. 2018** - Thanks to [Jeff Dean](https://twitter.com/JeffDean)'s retweet, recommendation from [TensorFlow offical twitter account](https://twitter.com/TensorFlow/status/1039546360738009088) and [engineering lead](https://twitter.com/rajatmonga/status/1038890497702420480), as well as strong support from Google China Developer Relations team, an extended version of [my online technical handbook of TensorFlow](/resources/#a-concise-handbook-of-tensorflow) will be formally published aligning with TensorFlow 2.0 (around early 2019), collaborated with *Posts & Telecom Press*.
 - **May. 2018** - Together with Meng Zou, the work [MEMD: A Diversity-Promoting Learning Framework for Short-Text Conversation](http://www.aclweb.org/anthology/C18-1109) has been accepted into *COLING 2018*.
 - **Mar. 2018** - I was invited to attend [TensorFlow Dev Summit 2018](https://www.tensorflow.org/dev-summit/) in Mountain View, CA, with full travel support from Google.
-- **Jan. 2018** - I started to intern in Machine Learning Group of [Microsoft Research Asia](https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/).
+- **Jan. 2018** - I started to be a research intern in Machine Learning Group of [Microsoft Research Asia](https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/).
 - **Dec. 2017** - I am honored to be selected as a [Google Developer Expert](https://developers.google.com/experts/about) in Machine Learning.  [(profile page)](https://developers.google.com/experts/people/xihan-li)
+- **Aug. 2017** - I started to be a research intern in [Yizhou Sun's Lab](http://web.cs.ucla.edu/~yzsun/index.html) in [UCLA](http://www.ucla.edu/) (to Sep. 2017).

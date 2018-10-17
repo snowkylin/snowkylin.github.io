@@ -18,14 +18,14 @@ I love animal drawing due to the fantastic coexistance of wildness and cuteness.
 
 # Animal Protection
 
-I strongly concern about ecological and environmental issues, especially animal protection. In fact, I am the 9<sup>th</sup>, 10<sup>th</sup> and 11<sup>th</sup> president of [Animal Protection Association of Zhejiang University](http://www.zjuapa.com) when I am in my undergraduade study (Sep. 2013 - Mar. 2016). I revived the association from 5 remaining people to one of the most influential association in Zhejiang University with 5 departments, more than 40 staffs and more than 150 members, which was awarded Outstanding Student Association of ZJU in 2014.
+I strongly concern about ecological and environmental issues, especially animal protection. In fact, I am the 9<sup>th</sup>, 10<sup>th</sup> and 11<sup>th</sup> president of [Animal Protection Association of Zhejiang University](http://www.zjuapa.com) when I am in my undergraduade study minoring in Biological Science (Sep. 2013 - Mar. 2016). I revived the association from 5 remaining people to one of the most influential association in Zhejiang University with 5 departments, more than 40 staffs and more than 150 members, which was awarded Outstanding Student Association of ZJU in 2014.
 
 The regular activity of our association contains:
 
 - Helping homeless animals in campus of Zhejiang University, including looking for adoption (with regular revisit), curing injured animals and [TNR (Trap-Neuter-Return)](https://en.wikipedia.org/wiki/Trap%E2%80%93neuter%E2%80%93return) cooperated with Hangzhou government.
 - Regular volunteer activity to animal rescue station, helping to clean the yard & house, wash animals, etc.
 - Course "[Introduction to Animal Protection: Theory and Practice](http://data.zjuapa.com/activity.php?id=7)" available for all students in ZJU.
-- Regular lecture in Zhejiang Natural Museum to convey the concept of wildlife conservation to public, especially for children.
+- Regular lectures in Zhejiang Natural Museum to convey the concept of wildlife conservation to public, especially for children.
 - Field practice for wildlife survey.
 
 <center>
@@ -37,6 +37,7 @@ I also interned at [Wildlife Conservation Society China Program](http://wcs.org.
 
 # Others
 
-- Amateur radio station operator (HAM), Radio Callsign: [BH5HDS](https://www.qrz.com/db/BH5HDS) (with level B operation license by CRAC).
-- Patroller & executive editor of Chinese Wikipedia, interested in creating & editing animal related articles. [Userpage (in Chinese)](https://zh.wikipedia.org/wiki/User:Snowkylin), [Userpage (in English)](https://en.wikipedia.org/wiki/User:Snowkylin).
+- Amateur radio station operator (HAM). Radio Callsign: [BH5HDS](https://www.qrz.com/db/BH5HDS) (with level B operation license by CRAC).
+- Patroller & executive editor of Chinese Wikipedia, interested in creating & editing animal related articles. [Userpage (in Chinese)](https://zh.wikipedia.org/wiki/User:Snowkylin), [Userpage (in English)](https://en.wikipedia.org/wiki/User:Snowkylin).\
+- Interested in psychology with professional training in BJFU. Trainee counselor in Student Psychological Consultation Center of Peking University (with level Ⅲ (Senior Skill Level) Occupational Qualification Certificate of Psychological Consultant by MOHRSS of the PRC).
 

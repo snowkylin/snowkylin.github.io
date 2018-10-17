@@ -41,6 +41,47 @@ display_title: Projects
 
 # Open-Source Projects
 
+Some of [my open-source projects](https://github.com/snowkylin) with star > 50 on GitHub. Hope they can be helpful for you and welcome to contribute! 
+
+<table width="100%" style="border: 0px; ">
+    <tr>
+        <td>
+            <center><img src="{{site.url}}/assets/publications/tfhandbook.png" width="60%"/></center>
+        </td>
+        <td width="70%">
+            <a href="https://github.com/snowkylin/TensorFlow-cn" target="_blank"><b>snowkylin / TensorFlow-cn</b></a><br />
+            A concise online handbook of TensorFlow based on Eager Execution mode. <a href="https://tf.wiki/" target="_blank">[read online]</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <center><img src="{{site.url}}/assets/projects/ntm.png" width="60%"/></center>
+        </td>
+        <td width="70%">
+            <a href="https://github.com/snowkylin/ntm" target="_blank"><b>snowkylin / ntm</b></a><br />
+            TensorFlow implementation of Neural Turing Machines (NTM), with its application on one-shot learning (MANN) <a href="https://docs.google.com/presentation/d/1FqU7q-vWN9uV7sMRt9It9F_el9nIdqzBfMPm91hJ4B0/edit?usp=sharing" target="_blank">[slide]</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <center><img src="{{site.url}}/assets/projects/line.png" width="60%"/></center>
+        </td>
+        <td width="70%">
+            <a href="https://github.com/snowkylin/line" target="_blank"><b>snowkylin / line</b></a> <br />
+            TensorFlow implementation of LINE, an efficient network embedding algorithm. <a href="https://github.com/snowkylin/line/blob/master/Network_Embedding_with_TensorFlow.pdf" target="_blank">[slide]</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <center><img src="{{site.url}}/assets/projects/handwriting.png" width="100%"/></center>
+        </td>
+        <td width="70%">
+            <a href="https://github.com/snowkylin/rnn-handwriting-generation" target="_blank"><b>snowkylin / rnn-handwriting-generation</b></a> <br />
+            Generating handwriting with LSTM, Mixture Gaussian & Bernoulli distribution and TensorFlow.
+        </td>
+    </tr>
+</table>
+
 # Independent Pet Projects
 
 Building a whole complex software system alone from beginning to end might be the dream of every programmer. I am not the exception even if I do research work most of the time.

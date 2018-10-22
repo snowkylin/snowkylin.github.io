@@ -2,7 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
-display_title: Projects
+display_title: Selected Projects
 ---
 
 # Research Projects

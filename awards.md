@@ -47,7 +47,8 @@ display_title: Selected Awards
     <tr>        
         <td colspan="2">
             <center>
-                <i>Gold Medal & Best Experimental Measurement Approach, Asia</i><br />2013 International Genetically Engineered Machine competition
+                <i>Gold Medal & Best Experimental Measurement Approach, Asia</i><br />2013 International Genetically Engineered Machine competition<br />
+                (iGEM 2013)
             </center>
         </td>
     </tr>

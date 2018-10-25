@@ -37,7 +37,7 @@ I also interned at [Wildlife Conservation Society China Program](http://wcs.org.
 
 # Others
 
-- Amateur radio station operator (HAM). Radio Callsign: [BH5HDS](https://www.qrz.com/db/BH5HDS) (with level B operation license by CRAC).
-- Patroller & executive editor of Chinese Wikipedia, interested in creating & editing animal related articles. [Userpage (in Chinese)](https://zh.wikipedia.org/wiki/User:Snowkylin), [Userpage (in English)](https://en.wikipedia.org/wiki/User:Snowkylin).\
-- Interested in psychology with professional training in BJFU. Trainee counselor in Student Psychological Consultation Center of Peking University (with level Ⅲ (Senior Skill Level) Occupational Qualification Certificate of Psychological Consultant by MOHRSS of the PRC).
+- Amateur radio station operator (HAM). Radio Callsign: [BH5HDS](https://www.qrz.com/db/BH5HDS) (with level B operation license issued by CRAC).
+- Patroller & executive editor of Chinese Wikipedia, interested in creating & editing animal related articles. [Userpage (in Chinese)](https://zh.wikipedia.org/wiki/User:Snowkylin), [Userpage (in English)](https://en.wikipedia.org/wiki/User:Snowkylin).
+- Interested in psychology with professional training in BJFU. Trainee counselor in Student Psychological Consultation Center of Peking University (with Third Level / Senior Skill Level Occupational Qualification Certificate of Psychological Consultant issued by MOHRSS of the PRC).
 

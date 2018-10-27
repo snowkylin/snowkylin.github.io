@@ -9,8 +9,8 @@ Here are some of my talks with slide & code resources, mostly as a [Google Devel
 
 # Technical Talks and Codelabs
 
-- **Sep. 2018** - TensorFlow Day 2018 Hefei, *Reinforcement Learning with TensorFlow & TensorFlow 2.0 Highlight* [slide]
-- **Sep. 2018** - TensorFlow Day 2018 Beijing Codelab [slide1] (By Zida Jin) [slide2] [[handbook]]({{site.url}}/tensorflow/2018/08/29/a-concise-handbook-of-tensorflow.html) [[photos]](https://www.meetup.com/GDG-Beijing/photos/29265171/)
+- **Sept. 2018** - TensorFlow Day 2018 Hefei, *Reinforcement Learning with TensorFlow & TensorFlow 2.0 Highlight* [slide]
+- **Sept. 2018** - TensorFlow Day 2018 Beijing Codelab [slide1] (By Zida Jin) [slide2] [[handbook]]({{site.url}}/tensorflow/2018/08/29/a-concise-handbook-of-tensorflow.html) [[photos]](https://www.meetup.com/GDG-Beijing/photos/29265171/)
 - **Apr. 2018** - TensorFlow DevSummit 2018 Beijing Recap [[slide]](https://docs.google.com/presentation/d/1c2_tBjRaHZjQ7svZplIjDfN9mqdHdaVYtgCoEdXU8uM/edit?usp=sharing)
 - **Dec. 2017** - Talk in [LUG@USTC](https://lug.ustc.edu.cn/wiki/), *Neural Machine Translation with TensorFlow* [slide]
 - **Nov. 2017** - Google Developer Group DevFest Beijing and talk in [CECA@PKU](http://ceca.pku.edu.cn/), *Network Embedding with TensorFlow* [[slide]](https://github.com/snowkylin/line/blob/master/Network_Embedding_with_TensorFlow.pdf) [[github repo]](https://github.com/snowkylin/line)

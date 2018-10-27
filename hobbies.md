@@ -18,7 +18,7 @@ I love animal drawing due to the fantastic coexistance of wildness and cuteness.
 
 # Animal Protection
 
-I strongly concern about ecological and environmental issues, especially animal protection. In fact, I am the 9<sup>th</sup>, 10<sup>th</sup> and 11<sup>th</sup> president of [Animal Protection Association of Zhejiang University](http://www.zjuapa.com) when I am in my undergraduade study minoring in Biological Science (Sep. 2013 - Mar. 2016). I revived the association from 5 remaining people to one of the most influential association in Zhejiang University with 5 departments, more than 40 staffs and more than 150 members, which was awarded Outstanding Student Association of ZJU in 2014.
+I strongly concern about ecological and environmental issues, especially animal protection. In fact, I am the 9<sup>th</sup>, 10<sup>th</sup> and 11<sup>th</sup> president of [Animal Protection Association of Zhejiang University](http://www.zjuapa.com) when I am in my undergraduade study minoring in Biological Science (Sept. 2013 - Mar. 2016). I revived the association from 5 remaining people to one of the most influential association in Zhejiang University with 5 departments, more than 40 staffs and more than 150 members, which was awarded Outstanding Student Association of ZJU in 2014.
 
 The regular activity of our association contains:
 
@@ -33,7 +33,7 @@ The regular activity of our association contains:
     <p>Guess who am I?</p>
 </center>
 
-I also interned at [Wildlife Conservation Society China Program](http://wcs.org.cn/) (Jul. 2015 - Sep. 2015). I am the website developer and maintainer of <a href="http://www.zjsapa.org">Zhejiang Small Animal Protection Association</a> (Mar. 2013 - present).
+I also interned at [Wildlife Conservation Society China Program](http://wcs.org.cn/) (Jul. 2015 - Sept. 2015). I am the website developer and maintainer of <a href="http://www.zjsapa.org">Zhejiang Small Animal Protection Association</a> (Mar. 2013 - present).
 
 # Others
 

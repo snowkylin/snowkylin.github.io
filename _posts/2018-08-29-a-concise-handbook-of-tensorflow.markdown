@@ -18,6 +18,6 @@ This handbook is a concise introduction to TensorFlow based on Eager Execution m
 
 **Update:**
 
-- **Sep. 2018** - Thanks to Jeff Dean's retweet, recommendation from TensorFlow offical twitter account and engineering lead, as well as support from Google China Developer Relations team, I will write an extended version of this online handbook for publication with three awesome GDEs (Zhuohuan Li, Jingtian Peng and Jinpeng Zhu).
-- **Sep. 2018** - Start using new domain `tf.wiki` donated by my friend Luke Cheng.
+- **Sept. 2018** - Thanks to Jeff Dean's retweet, recommendation from TensorFlow offical twitter account and engineering lead, as well as support from Google China Developer Relations team, I will write an extended version of this online handbook for publication with three awesome GDEs (Zhuohuan Li, Jingtian Peng and Jinpeng Zhu).
+- **Sept. 2018** - Start using new domain `tf.wiki` donated by my friend Luke Cheng.
 - **Aug. 2018** - Thanks to three of my friends Zida Jin, Ming and Ji-An Li, the English version of this handbook is ready for release. 

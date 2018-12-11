@@ -5,7 +5,9 @@ permalink: /talks/
 display_title: "Talks"
 ---
 
-Here are some of my talks with slide & code resources, mostly as a [Google Developer Expert](https://developers.google.com/experts/people/xihan-li) in Machine Learning. Please feel free to download, use and adapt these resources with appropriate credit and a link to this site. For commercial usage, please contact me first before using them.
+<a href="https://developers.google.com/experts/about" target="_blank"><img src="/assets/talks/2018-GDE-Machine-Learning-Badge.png" style="width: 20%; float: right;"/></a>
+
+Here are some of my talks with slide & code resources, mostly as a [Google Developers Expert](https://developers.google.com/experts/people/xihan-li) in Machine Learning. Please feel free to download, use and adapt these resources with appropriate credit and a link to this site. For commercial usage, please contact me first before using them.
 
 # Technical Talks and Codelabs
 

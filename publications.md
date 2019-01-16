@@ -7,7 +7,7 @@ display_title: Publications
 
 # Manuscripts
 
-- **Xihan Li**, Zhuohuan Li and Jinpeng Zhu. *A Concise Handbook of TensorFlow 2.0: Model, Deployment and Architecture*. Posts & Telecom Press, scheduled to be published aligning with the release of TensorFlow 2.0 (around early 2019). [[introduction]]({{site.url}}/tensorflow/2018/08/29/a-concise-handbook-of-tensorflow.html)
+- **Xihan Li**, Zhuohuan Li and Jinpeng Zhu. *A Concise Handbook of TensorFlow 2.0: Model, Deployment and Application*. Posts & Telecom Press, scheduled to be published aligning with the release of TensorFlow 2.0 (around spring 2019). [[introduction]]({{site.url}}/tensorflow/2018/08/29/a-concise-handbook-of-tensorflow.html)
 - **Xihan Li**, Jia Zhang, Jiang Bian, Yunhai Tong and Tie-Yan Liu. Paper submitted to *AAMAS 2019*.
 
 <!-- <table width="100%" style="border: 0px; ">

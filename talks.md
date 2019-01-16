@@ -18,7 +18,7 @@ Here are some of my talks with slide & code resources, mostly as a [Google Devel
 - **Apr. 2018** - TensorFlow DevSummit 2018 Beijing Recap [[slide]](https://docs.google.com/presentation/d/1c2_tBjRaHZjQ7svZplIjDfN9mqdHdaVYtgCoEdXU8uM/edit?usp=sharing)
 - **Dec. 2017** - Talk in [LUG@USTC](https://lug.ustc.edu.cn/wiki/), *Neural Machine Translation with TensorFlow* [[slide]](https://drive.google.com/file/d/1gCJDXeeR_x-uSuwVvtpWL5v3vLhoEC0h/view?usp=sharing)
 - **Nov. 2017** - Google Developer Group DevFest Beijing and talk in [CECA@PKU](http://ceca.pku.edu.cn/), *Network Embedding with TensorFlow* [[slide]](https://github.com/snowkylin/line/blob/master/Network_Embedding_with_TensorFlow.pdf) [[github repo]](https://github.com/snowkylin/line)
-- **Jul. 2017** - [Machine Learning Camp Jeju 2017](http://jeju.dlcamp.org/2017/about/), *One-shot Learning with Neural Turing Machine* [[slide]](https://docs.google.com/presentation/d/1FqU7q-vWN9uV7sMRt9It9F_el9nIdqzBfMPm91hJ4B0/edit?usp=sharing) [[github repo]](https://github.com/snowkylin/ntm) [[video]](https://www.youtube.com/watch?v=cc1G2F6VsjA)
+- **Jul. 2017** - [Machine Learning Camp Jeju 2017](http://jeju.dlcamp.org/2017/about/), *One-shot Learning with Neural Turing Machines* [[slide]](https://docs.google.com/presentation/d/1FqU7q-vWN9uV7sMRt9It9F_el9nIdqzBfMPm91hJ4B0/edit?usp=sharing) [[github repo]](https://github.com/snowkylin/ntm) [[video]](https://www.youtube.com/watch?v=cc1G2F6VsjA)
 - **May. 2017** - Google I/O Extended Beijing, *Introduction of Neural Turing Machines* [[slide]](https://drive.google.com/file/d/0B1fL75_aZSmMd3A2dzJ4QkRhbm8/view?usp=sharing)
 
 

@@ -14,7 +14,8 @@ display_title: Selected Projects
         </td>
         <td width="70%">
             <b>Resource Balancing in Complex Logistics Network with Multi-Agent Reinforcement Learning</b><br />
-            We proposed a novel sophisticated multi-agents reinforcement learning approach to tackle the imbalance between the resource's supply and demand in logistic networks, which is one of the most important problems in real logistics domain. In particular, inspired by the externalities especially the interactions between resource agents, we introduce an innovative cooperative mechanism for state and reward design that resulting more effective and efficient transportation.
+            We proposed a novel sophisticated multi-agents reinforcement learning approach to tackle the imbalance between the resource's supply and demand in logistic networks, which is one of the most important problems in real logistics domain. In particular, inspired by the externalities especially the interactions between resource agents, we introduce an innovative cooperative mechanism for state and reward design that resulting more effective and efficient transportation.<br />
+            Accepted by <i>AAMAS 2019</i>
         </td>
     </tr>
     <tr>

@@ -7,8 +7,7 @@ display_title: Publications
 
 # Manuscripts
 
-- **Xihan Li**, Zhuohuan Li and Jinpeng Zhu. *A Concise Handbook of TensorFlow 2.0: Model, Deployment and Application*. Posts & Telecom Press, scheduled to be published aligning with the release of TensorFlow 2.0 (around spring 2019). [[introduction]]({{site.url}}/tensorflow/2018/08/29/a-concise-handbook-of-tensorflow.html)
-- **Xihan Li**, Jia Zhang, Jiang Bian, Yunhai Tong and Tie-Yan Liu. Paper submitted to *AAMAS 2019*.
+- **Xihan Li**, Zhuohuan Li and Jinpeng Zhu. *A Concise Handbook of TensorFlow 2.0: Model, Deployment and Application*. Posts & Telecom Press, scheduled to be published aligning with the release of TensorFlow 2.0 in spring 2019. [[introduction]]({{site.url}}/tensorflow/2018/08/29/a-concise-handbook-of-tensorflow.html)
 
 <!-- <table width="100%" style="border: 0px; ">
     <tr>
@@ -33,7 +32,8 @@ display_title: Publications
     </tr>
 </table> -->
 
-# Published
+# Accepted
 
-- Zou, Meng, **Xihan Li**, Haokun Liu, and Zhihong Deng. “[MEMD: A Diversity-Promoting Learning Framework for Short-Text Conversation.](http://www.aclweb.org/anthology/C18-1109)” In *Proceedings of the 27th International Conference on Computational Linguistics*, 1281–1291. Santa Fe, New Mexico, USA: Association for Computational Linguistics, 2018. [[introduction]]({{site.url}}/projects/#memd)
+- **Xihan Li**, Jia Zhang, Jiang Bian, Yunhai Tong and Tie-Yan Liu. "A Cooperative Multi-Agent Reinforcement Learning Framework for Resource Balancing in Complex Logistics Network", in *Proceedings of the 18th International Conference on Autonomous Agents and Multiagent Systems* (AAMAS 2019).
+- Zou, Meng, **Xihan Li**, Haokun Liu, and Zhihong Deng. "[MEMD: A Diversity-Promoting Learning Framework for Short-Text Conversation.](http://www.aclweb.org/anthology/C18-1109)" In *Proceedings of the 27th International Conference on Computational Linguistics* (COLING 2018), 1281–1291. Santa Fe, New Mexico, USA: Association for Computational Linguistics, 2018. [[introduction]]({{site.url}}/projects/#memd)
 - Wang, Jiasheng, et al. "[Detection of thrombin with an aptamer-based macromolecule biosensor using bacterial ghost system.](http://pubs.acs.org/doi/abs/10.1021/sb500018f)" *ACS synthetic biology* 3.12 (2014): 963-965. [[introduction]]({{site.url}}/projects/#aptamer)

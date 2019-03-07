@@ -23,7 +23,9 @@ I am a third year M.S. student in [Key Laboratory of Machine Perception](http://
 
 # What's New
 
-- **Jan. 2019** - My work "[A Cooperative Multi-Agent Reinforcement Learning Framework for Resource Balancing in Complex Logistics Network](/publications)" in MSRA has been accepted into *AAMAS 2019* as a full paper for oral presentation.
+- **Feb. 2019** - I was invited to attend [TensorFlow Dev Summit 2019](https://www.tensorflow.org/dev-summit/) in Sunnyvale, CA and [Google Cloud
+Next ’19](https://cloud.withgoogle.com/next/sf) in San Francisco, CA, with full travel support from Google.
+- **Jan. 2019** - My work "[A Cooperative Multi-Agent Reinforcement Learning Framework for Resource Balancing in Complex Logistics Network](https://arxiv.org/abs/1903.00714)" in MSRA has been accepted into *AAMAS 2019* as a full paper for oral presentation.
 - **Sept. 2018** - I was invited to attend [Google Developers Experts Summit 2018](https://events.withgoogle.com/experts-summit-2018/) as a top active GDE on November 10-11 in the Bay Area, with full travel support from Google.
 - **Sept. 2018** - Thanks to [Jeff Dean](https://twitter.com/JeffDean)'s retweet, recommendation from [TensorFlow offical twitter account](https://twitter.com/TensorFlow/status/1039546360738009088) and [engineering lead](https://twitter.com/rajatmonga/status/1038890497702420480), as well as strong support from Google China Developer Relations team, an extended version of [my online technical handbook of TensorFlow](/tensorflow/2018/08/29/a-concise-handbook-of-tensorflow.html) will be formally published aligning with TensorFlow 2.0 (around spring 2019), collaborated with *Posts & Telecom Press*.
 - **May. 2018** - Together with Meng Zou, the work [MEMD: A Diversity-Promoting Learning Framework for Short-Text Conversation](http://www.aclweb.org/anthology/C18-1109) has been accepted into *COLING 2018*.

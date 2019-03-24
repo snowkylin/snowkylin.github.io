@@ -11,6 +11,7 @@ Here are some of my talks with slide & code resources, mostly as a [Google Devel
 
 # Technical Talks and Codelabs
 
+- **Mar. 2019** - TensorFlow Dev Summit 2019 Recap [[slide]](https://docs.google.com/presentation/d/1fyElWHljPrTc1R7kNttR_bDyxlt09Vx5FFWpOEvIHKA/edit?usp=sharing)
 - **Nov. 2018** - Google Developer Group DevFest Shanghai, *A Concise Codelab of TensorFlow* [[slide]](https://drive.google.com/file/d/1nzDUJUYr4HDoOBqA_NfbCfTa3MQrrS8H/view?usp=sharing)
 - **Nov. 2018** - Google Developer Group DevFest Beijing, *Application of TensorFlow in Logistics and TensorFlow 2.0 Highlight (new)* [[slide]](https://drive.google.com/file/d/1dYbOjLbHG7t1UNG9fzsUJTSAn8OQqC80/view?usp=sharing)
 - **Sept. 2018** - TensorFlow Day 2018 Hefei, *Reinforcement Learning with TensorFlow & TensorFlow 2.0 Highlight* [slide]

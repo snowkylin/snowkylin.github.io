@@ -12,7 +12,7 @@ Here are some of my talks with slide & code resources, mostly as a [Google Devel
 # Talks and Codelabs
 
 - **Apr. 2019** - BigAI Deep Learning Practice: *A Cooperative Multi-Agent Reinforcement Learning Framework for Resource Balancing in Complex Logistics Network* [[slide]](https://docs.google.com/presentation/d/1Rg0YaKllBaH3WqkYwHb6ySdYgxnkMpL7GbIMIpnJgn4/edit?usp=sharing) 
-- **Apr. 2019** - Google Womens Techmakers 2019 Beijing, *A Concise Codelab of TensorFlow* [[slide]](https://drive.google.com/file/d/1nzDUJUYr4HDoOBqA_NfbCfTa3MQrrS8H/view?usp=sharing)
+- **Apr. 2019** - Google Women Techmakers 2019 Beijing, *A Concise Codelab of TensorFlow* [[slide]](https://drive.google.com/file/d/1nzDUJUYr4HDoOBqA_NfbCfTa3MQrrS8H/view?usp=sharing)
 - **Mar. 2019** - TensorFlow Dev Summit 2019 Recap Beijing [[slide]](https://drive.google.com/file/d/1072G9UwsLXvXGHFrcrB3fedhoG3nwul3/view?usp=sharing)
 - **Nov. 2018** - Google Developer Group DevFest Shanghai, *A Concise Codelab of TensorFlow* [[slide]](https://drive.google.com/file/d/1nzDUJUYr4HDoOBqA_NfbCfTa3MQrrS8H/view?usp=sharing)
 - **Nov. 2018** - Google Developer Group DevFest Beijing, *Application of TensorFlow in Logistics and TensorFlow 2.0 Highlight (new)* [[slide]](https://drive.google.com/file/d/1dYbOjLbHG7t1UNG9fzsUJTSAn8OQqC80/view?usp=sharing)

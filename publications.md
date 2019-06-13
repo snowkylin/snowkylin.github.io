@@ -7,7 +7,7 @@ display_title: Publications
 
 # Manuscripts
 
-- Zou Meng, Shuohuan Wang*, **Xihan Li***, Jiaxiang Liu, Zhipeng Deng, and Yu Sun. Paper submitted to EMNLP 2019.
+- Zou Meng, Shuohuan Wang\*, **Xihan Li**\*, Jiaxiang Liu, Zhipeng Deng, and Yu Sun. Paper submitted to EMNLP 2019.
 - **Xihan Li**, Zhuohuan Li and Jinpeng Zhu. *A Concise Handbook of TensorFlow 2.0: Model, Deployment and Application*. Posts & Telecom Press, scheduled to be published aligning with the release of TensorFlow 2.0 in spring 2019. [[introduction]]({{site.url}}/tensorflow/2018/08/29/a-concise-handbook-of-tensorflow.html) [[Online Version]](https://tf.wiki)
 
 <!-- <table width="100%" style="border: 0px; ">

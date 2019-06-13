@@ -23,6 +23,9 @@ I am a third year M.S. student in [Key Laboratory of Machine Perception](http://
 
 # What's New
 
+- **May. 2019** - I successfully passed the graduation defense with my master degree thesis "Resource Balancing in Complex Logistics Networks with Multi-Agent Reinforcement Learning and Graph Attention".
+- **May. 2019** - Together with Zou Meng, our work about unsupervised neural machine translation was submitted to EMNLP 2019.
+- **May. 2019** - I was accepted in [Google Summer of Code 2019](https://summerofcode.withgoogle.com/), TensorFlow Team (20 out of 1500+ applications) with the project "An Extended Version of 'A Concise Handbook of TensorFlow' and a Library of Extended Keras Layers for TensorFlow 2.0"
 - **Feb. 2019** - I was invited to attend [TensorFlow Dev Summit 2019](https://www.tensorflow.org/dev-summit/) in Sunnyvale, CA and [Google Cloud
 Next ’19](https://cloud.withgoogle.com/next/sf) in San Francisco, CA, with full travel support from Google.
 - **Jan. 2019** - My work "[A Cooperative Multi-Agent Reinforcement Learning Framework for Resource Balancing in Complex Logistics Network](https://arxiv.org/abs/1903.00714)" in MSRA has been accepted into *AAMAS 2019* as a full paper for oral presentation.

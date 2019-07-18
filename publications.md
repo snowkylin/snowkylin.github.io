@@ -5,6 +5,8 @@ permalink: /publications/
 display_title: Publications
 ---
 
+[[Google Scholar profile]](https://scholar.google.com/citations?user=2Y-QNGEAAAAJ)
+
 # Manuscripts
 
 - Zou Meng, Shuohuan Wang\*, **Xihan Li**\*, Jiaxiang Liu, Zhipeng Deng, and Yu Sun. Paper submitted to EMNLP 2019.
@@ -40,3 +42,7 @@ display_title: Publications
 - Jiasheng Wang, Ke Ding, Yujie Chen, Lifeng Zhang, Zukai Liu, Angli Xue, Wenjia Gu, Xiaoyue Yang, **Xihan Li**, Jin Huang, Congcong Xing, Yunlong Cao, and Ming Chen. "[Detection of thrombin with an aptamer-based macromolecule biosensor using bacterial ghost system.](http://pubs.acs.org/doi/abs/10.1021/sb500018f)" *ACS synthetic biology* 3.12 (2014): 963-965. [[pdf]]({{site.url}}/assets/publications/Detection_of_Thrombin_with_an_Aptamer-Ba.pdf)
 
 *: Equal contribution
+
+# Service
+
+- Journal reviewer, IEEE Transactions on Automation Science and Engineering

@@ -15,7 +15,7 @@ bundle config mirror.https://rubygems.org https://gems.ruby-china.com
 # cd to blog directory
 cd /mnt/c/Users/xihan/OneDrive/snowkylin.github.io
 # install dependencies in Gemfile
-bundler install
+bundle install
 # run jekyll
 bundle exec jekyll serve
 ```

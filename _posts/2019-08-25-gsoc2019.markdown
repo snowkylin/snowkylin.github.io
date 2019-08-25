@@ -70,6 +70,7 @@ GitHub: <https://github.com/snowkylin/tensorflow-handbook>
   - TensorFlow on Respberry Pi
   - Edge TPU <https://cloud.google.com/edge-tpu/>
   - TensorFlow on Microcontrollers <https://www.tensorflow.org/lite/microcontrollers/overview>
+- Code compatibility check at the time of TensorFlow 2.0's official release
 
 ## A Library of Extended Keras Layers for TensorFlow 2.0
 

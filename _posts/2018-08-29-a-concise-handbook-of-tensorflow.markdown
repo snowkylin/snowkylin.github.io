@@ -7,9 +7,11 @@ categories: tensorflow
 
 <img style="float: right; width: 30%" src="{{site.url}}/assets/publications/tfhandbook.png">
 
+**A new version of this handbook for TensorFlow 2.0 is available as a GSoC 2019 project. See [this blog](/blogs/gsoc2019.html) for details.**
+
 This handbook is a concise introduction to TensorFlow based on Eager Execution mode, trying to help researchers and developers get started with TensorFlow quickly with some basic machine learning and Python knowledge. Supported by Google China Developer Relations team and TensorFlow engineering team. Both Chinese and English version are available online for free.
 
-- **Read Online: <https://tf.wiki>**
+- **Read Online: <https://v1.tf.wiki>**
 - PDF Download: 
     - English: <https://github.com/snowkylin/TensorFlow-cn/releases>
     - Chinese: <https://www.tensorflowers.cn/t/6230>

@@ -25,6 +25,7 @@ github_username:  snowkylin
 excerpt_separator: <!--more-->
 # duoshuo: true
 google_analytics: UA-40509304-10
+permalink: /blogs/:title:output_ext
 
 # Build settings
 markdown: kramdown

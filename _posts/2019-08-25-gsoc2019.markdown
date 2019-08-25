@@ -1,0 +1,102 @@
+---
+layout: post
+title:  "GSoC 2019 Summary"
+author: Snowkylin
+categories: tensorflow google
+---
+
+* TOC
+{:toc}
+
+## An Extended Version of "A Concise Handbook of TensorFlow"
+
+In August 2018, I released a TensorFlow handbook ["A Concise Handbook of TensorFlow"](/blogs/a-concise-handbook-of-tensorflow.html), which attracted wide attention including Jeff Dean's retweet. In GSoC 2019, I made significant update and extension of this book for the upcoming release of TensorFlow 2.0.
+
+Read online: <https://tf.wiki> (previous version: <https://v1.tf.wiki> for comparison)
+
+GitHub: <https://github.com/snowkylin/tensorflow-handbook>
+
+### New Content
+
+- TensorFlow Installation
+  - Hardware requirement and update guide
+- TensorFlow Models
+  - New introduction to basic ML concepts including fully connected layer, softmax, cross entropy, Multilayer Perceptron, CNN and RNN.
+  - Keras pipeline with sequential/functional API, `compile`, `fit` and `evaluate` to build a model
+  - Custom loss function and metrics
+- TensorFlow Modules
+  - `tf.data`: building a dataset, preprocessing and fetching data
+  - `@tf.function` and AutoGraph
+  - `tf.config` for GPU usage
+- Deployment
+  - Export TensorFlow models to SavedModel files
+  - TensorFlow Serving: installation, deployment and Restful API (with Python and Node.js client)
+  - TensorFlow Lite (by Jinpeng Zhu)
+  - TensorFlow.js (by Huan Li)
+- Large-scale Training and Acceleration
+  - Distributed TensorFlow (`MirroredStrategy` and `MultiWorkerMirroredStrategy`)
+  - TPU for Training (by Huan Li, in progress)
+- TensorFlow Extensions
+  - TensorFlow Hub (by Jinpeng Zhu)
+  - TensorFlow Datasets
+  - TensorFlow in Swift (by Huan Li, in progress)
+  - TensorFlow in Julia (by Ziyang Wang)
+- Appendix
+  - TensorFlow Docker installation guide for newbies
+  - TensorFlow on Cloud (with Colab, Google Cloud Platform and Aliyun)
+  - JupyterLab installation guide
+  - References
+
+(Some sections are written by invited domain experts, whose names are attached after the section title. All sections without a name are written by me)
+
+### Updated Content
+
+- All code samples are updated in compatible with TensorFlow 2.0 beta1.
+- Updated installation and GPU environment configuation guide
+- Updated basis and model guide with more detailed instructions.
+- Additional textboxes for tips and warnings in all the book.
+
+### Highlights
+
+- This handbook is serializing on [TensorFlow official WeChat account](https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU1OTMyNDcxMQ==&scene=124#wechat_redirect) and received favorable comments from readers. Two articles have been published below:
+  - [TensorFlow 2.0 Installation Guide](https://mp.weixin.qq.com/s/7rNXFEC5HYe91RJ0-9CKdQ) (Aug 16, 2019)
+  - [TensorFlow 2.0 basis: Tensor, AutoDiff and Optimizer](https://mp.weixin.qq.com/s/6DmpLZ3Nklo17WY84hJYGA) (Aug 24, 2019)
+- This handbook will be shown on ["TensorFlow China Roadmap" Activities](https://mp.weixin.qq.com/s/4tb36q01SRYAp_gIamU7TA) in Beijing, Shanghai and Shenzhen.
+
+### Future Works
+
+- Translation to English (in progress)
+- New Topics, including
+  - TensorFlow on Respberry Pi
+  - Edge TPU <https://cloud.google.com/edge-tpu/>
+  - TensorFlow on Microcontrollers <https://www.tensorflow.org/lite/microcontrollers/overview>
+
+## A Library of Extended Keras Layers for TensorFlow 2.0
+
+In GSoC 2019, I implemented and updated several well-known neural network models, wrapped as layers in `tf.keras`. All of them are compatible with TensorFlow 2.0 beta1 and open-sourced on GitHub.
+
+Currently, I am testing these implemented layers with my mentor to make sure that all of them have satisfactory performance. Once they passed the test, we will pull a request to [tensorflow/addons](https://github.com/tensorflow/addons) on GitHub.
+
+### New Content
+
+- Graph Neural Networks <https://github.com/snowkylin/gnn>
+  - Graph Convolutional Network (GCN): `gnn.GCNLayer`
+  - Graph Attention Network (GAT): `gnn.GATLayer` and `gnn.MultiHeadGATLayer`
+
+### Updated Content
+
+- Neural Turing Machines <https://github.com/snowkylin/ntm>
+  - Neural Turing Machines (NTM): `ntm.ntm_cell_v2.NTMCell`
+  - Memory-Augmented Neural Network (MANN): `ntm.mann_cell_v2.MANNCell`
+
+### Highlights
+
+- Clear implementation focusing on readibility and useability. Easy for researchers to understand and modify.
+
+### Future Works
+
+- More tests for stability and performance
+- Pull request to [tensorflow/addons](https://github.com/tensorflow/addons)
+
+
+

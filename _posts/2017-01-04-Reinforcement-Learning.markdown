@@ -22,15 +22,19 @@ $$ s_0, a_0, r_1, s_1, a_1, r_2, s_2, ..., s_{n-1}, a_{n-1}, r_n, s_n $$
 
 为了能够在长期也表现良好，我们不能只考虑即时的奖励，还要考虑我们未来能获得的奖励。对于马尔科夫决策过程，我们可以将某个时间$ t $的总未来奖励（total future reward）定义为：
 
-\begin{equation}
+$$
+\begin{equation*}
     R_t = r_t + r_{t+1} + r_{t+2} + ... + r_n
-\end{equation}
+\end{equation*}
+$$
 
 但是环境是随机性的，我们不能确定我们下次做相同动作时会不会得到相同的回报，越远的将来随机性越大。所以我们引入有折扣的未来奖励（discounted future reward）为：
 
-\begin{equation}\label{key}
+$$
+\begin{equation*}\label{key}
     R_t = r_t + \gamma r_{t+1} + \gamma^2 r_{t+2} + ... + \gamma^{n-t} r_n
-\end{equation}
+\end{equation*}
+$$
 
 其中$ \gamma $是0到1之间的折扣因子。如果$ \gamma = 0 $，我们将变得“短视”，只关心即时收益。
 
@@ -38,25 +42,31 @@ $$ s_0, a_0, r_1, s_1, a_1, r_2, s_2, ..., s_{n-1}, a_{n-1}, r_n, s_n $$
 
 于是，我们引入Q-learning的概念，定义函数$ Q(s, a) $表示我们在状态$ s $进行动作$ a $时的最大折扣未来奖励，即：
 
-\begin{equation}
+$$
+\begin{equation*}
     Q(s_t, a_t) = \max R_{t+1}
-\end{equation}
+\end{equation*}
+$$
 
 你可以简单地把$ Q(s, a) $理解为“当在状态s进行状态a时能获得的最佳可能分数”。因为$ Q(s, a) $表示给定状态下进行特定动作的“质量”（Quality），所以我们称之为“Q函数”。
 
 于是，我们之前提到的“好的策略”可以表示为：
 
-\begin{equation}
+$$
+\begin{equation*}
     \pi(s) = argmax_a Q(s, a)
-\end{equation}
+\end{equation*}
+$$
 
 这里$ \pi $表示策略，规定每种状态下我们应当怎样行动。
 
 现在，如何计算Q函数呢？我们来关注一个转移$ \langle s, a, r, s^{'} \rangle $。我们可以将Q在状态s和动作a时的值用下一时刻的状态$ s^{'} $表示如下：
 
-\begin{equation}
+$$
+\begin{equation*}
     Q(s, a) = r + \gamma \max_{a^{'}}Q(s^{'}, a^{'})
-\end{equation}
+\end{equation*}
+$$
 
 这被称为贝尔曼公式。其实很好理解——对于当前状态s和动作a的最大未来奖励等于动作a后的立即奖励加上下一时刻状态s在所有可能动作下能获得的的最大未来奖励。
 
@@ -70,17 +80,17 @@ $$ s_0, a_0, r_1, s_1, a_1, r_2, s_2, ..., s_{n-1}, a_{n-1}, r_n, s_n $$
 
 损失函数如下：
 
-<span markdown="0">
-\begin{equation}
+$$
+\begin{equation*}
     \mathcal{L} = \frac{1}{2}[\underbrace{r + \max_{a^{'}}Q(s^{'}, a^{'})}_{target} - \underbrace{Q(s, a)}_{prediction}]^2
-\end{equation}
-</span>
+\end{equation*}
+$$
 
 给定一个转移$ \langle s, a, r, s^{'} \rangle $，Q表格的更新步骤需要换为以下步骤：
 
 * 将当前状态s输入神经网络，得到对于所有动作的Q-value预测值（prediction）
-* 将下一时刻的状态$ s^{'} $输入神经网络，求其输出的动作的Q-value预测值中最大的动作<span markdown="0">$ a^{'}_{max} = \max_{a^{'}}Q(s^{'}, a^{'}) $</span>
-* <span markdown="0">将动作$ a^{'}_{max} $的target设为$ r + \max_{a^{'}}Q(s^{'}, a^{'}) $（第二步中的值），其余动作的target还是第一步中的值（从而损失为0）</span>
+* 将下一时刻的状态$ s^{'} $输入神经网络，求其输出的动作的Q-value预测值中最大的动作$$$ a^{'}_{max} = \max_{a^{'}}Q(s^{'}, a^{'}) $</span>
+* $$将动作$ a^{'}_{max} $的target设为$ r + \max_{a^{'}}Q(s^{'}, a^{'}) $（第二步中的值），其余动作的target还是第一步中的值（从而损失为0）</span>
 * 反向传播更新权值
 
 # 参考

@@ -19,9 +19,9 @@ categories: LRR image_denoising
 得到$ X $后，我们调用(Liu, 2010)的作者Liu Guangcan在其个人网站上发布的LRR方法的MATLAB实现，使用exact ALM算法求解以下问题：
 
 $$
-\begin{equation}
+\begin{equation*}
     \min_{Z, E} \Vert Z \Vert_* + \lambda \Vert E \Vert_1 \; s.t. X = XZ + E
-\end{equation}
+\end{equation*}
 $$
 
 得到$ Z^* $，并计算$ XZ^* $，将其按列分解为100个2016维向量，再将每个向量还原为$ 42 \times 48 $的图片，从而得到去噪后的图片。

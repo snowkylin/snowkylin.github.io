@@ -27,32 +27,34 @@ categories: GAN
 于是，我们对于判别式模型$ D $的训练目标是：
 
 
-- 对于$ x \sim p_{data} $，$ D(x) $都尽量大。可以表示为<span markdown="0">$ \max_D \mathbb{E}_{x \sim p_{data}} \log D(x) $；</span>
-- <span markdown="0">对于$ x \not\sim p_{data}$（或者说，$ x \sim p_g $），$ D(x) $尽量小。可以表示为$ \min_D \mathbb{E}_{x \sim p_g} \log D(x) \Leftrightarrow \min_D \mathbb{E}_{x \sim p_z} \log D(G(x)) \Leftrightarrow \max_D \mathbb{E}_{x \sim p_g} \log(1 - D(G(x))) $（作为概率值，$ D(x) $的取值范围在0至1）。</span>
+- 对于$x \sim p_{data}$，$D(x)$都尽量大。可以表示为$$\max_D \mathbb{E}_{x \sim p_{data}} \log D(x)$$；
+- 对于$x \not\sim p_{data}$（或者说，$x \sim p_g$），$D(x)$尽量小。可以表示为$$\min_D \mathbb{E}_{x \sim p_g} \log D(x) \Leftrightarrow \min_D \mathbb{E}_{x \sim p_z} \log D(G(x)) \Leftrightarrow \max_D \mathbb{E}_{x \sim p_g} \log(1 - D(G(x)))$$（作为概率值，$D(x)$的取值范围在0至1）。
 
 由此，对于$ D(x) $，我们需要：
 
-<span markdown="0">
-\begin{equation}
+$$
+\begin{equation*}
     \max_D \mathbb{E}_{x \sim p_{data}} \log D(x) + \mathbb{E}_{x \sim p_g} \log(1 - D(G(x))) \label{eq-D}
-\end{equation}
-</span>
+\end{equation*}
+$$
 
-而对于生成式模型$ G(x) $，我们的训练目标是让$ x \sim p_g $时$ D(G(x)) $都尽量大。可以表示为<span markdown="0">$ \max_G \mathbb{E}_{x \sim p_g} \log D(x) \Leftrightarrow \max_G \mathbb{E}_{x \sim p_z} \log D(G(x)) \Leftrightarrow \min_G \mathbb{E}_{x \sim p_g} \log(1 - D(G(x))) $。</span>
+而对于生成式模型$ G(x) $，我们的训练目标是让$ x \sim p_g $时$ D(G(x)) $都尽量大。可以表示为$$ \max_G \mathbb{E}_{x \sim p_g} \log D(x) \Leftrightarrow \max_G \mathbb{E}_{x \sim p_z} \log D(G(x)) \Leftrightarrow \min_G \mathbb{E}_{x \sim p_g} \log(1 - D(G(x))) $$。</span>
 
 由此，对于$ G(x) $，我们需要：
 
-\begin{equation}
+$$
+\begin{equation*}
     \min_G \mathbb{E}_{x \sim p_g} \log(1 - D(G(x)))	\label{eq-G}
-\end{equation}
+\end{equation*}
+$$
 
 结合上面两式，我们可以得到下面统一的表达式：
 
-<span markdown="0">
-\begin{equation}
+$$
+\begin{equation*}
     \min_G \max_D \mathbb{E}_{x \sim p_{data}} \log D(x) + \mathbb{E}_{x \sim p_g} \log(1 - D(G(x))) \label{eq-GAN}
-\end{equation}
-</span>
+\end{equation*}
+$$
 
 具体算法如下：
 

@@ -46,7 +46,7 @@ Dual problem:
 
 $$
 \begin{align*}
-    \max_y & g(y) \\
+    \max_y \; g(y) \\
 \end{align*}
 $$
 
@@ -133,7 +133,9 @@ This problem is just equaivalent to $\eqref{eq:primal_problem}$, since for all f
 
 ### Selection of step size $\alpha$
 
-The next question is the selection of the step size $\alpha$. After getting $$x^* = \arg \min_x L_\rho(x, y^k)$$, we hope to make a better selection of $\alpha$ so that given $y^k$ and $$x^*$$, we can calculate $$y^{k+1} \leftarrow y^k + \alpha^* (Ax^* - b)$$ which makes $$x^* = \arg \min_x L(x, y^{k+1})$$ given $y^{k+1}$. Which means, if we suddenly switch the problem from $\eqref{eq:modified_primal_problem}$ to $\eqref{eq:primal_problem}$ after getting $$x^*$$ and $y^{k+1}$ in step $k$, we do not need to calculate $x$ again since $$x^*$$ in the former step $k$ is already the minimum of $L(x, y^{k+1})$. The tricky part is, by setting $\alpha^* = \rho$, we can achieve this goal. To see this, let's assume $$x^* = \arg \min_x L(x, y^{k+1})$$ when $$\alpha = \alpha^*$$, then
+The next question is the selection of the step size $\alpha$. After getting $$x^* = \arg \min_x L_\rho(x, y^k)$$, we hope to make a better selection of $\alpha$ so that given $y^k$ and $$x^*$$, we can calculate $$y^{k+1} \leftarrow y^k + \alpha^* (Ax^* - b)$$ which makes $$x^* = \arg \min_x L(x, y^{k+1})$$ given $y^{k+1}$. Which means, if we suddenly switch the problem from $\eqref{eq:modified_primal_problem}$ to $\eqref{eq:primal_problem}$ after getting $$x^*$$ and $y^{k+1}$ in step $k$, we do not need to calculate $x$ again since $$x^*$$ in the former step $k$ is already the minimum of $L(x, y^{k+1})$. Or we can say, the dual feasibility[^3] of $\eqref{eq:primal_problem}$ always hold.
+
+The tricky part is, by setting $\alpha^* = \rho$, we can achieve this goal. To see this, let's assume $$x^* = \arg \min_x L(x, y^{k+1})$$ when $$\alpha = \alpha^*$$, then
 
 $$
 \begin{align}
@@ -166,7 +168,47 @@ $$
 \end{align*}
 $$
 
+## Alternating Direction Method of Multipliers (ADMM)
 
+To decompose the original problem $\eqref{eq:primal_problem}$ into two blocks, we consider the following problem
+
+$$
+\begin{align}
+\begin{split}
+    \min &f(x) + g(z) \\
+    s.t. &Ax + Bz = c
+\end{split}\label{eq:admm_primal_problem}
+\end{align}
+$$
+
+and we have the augmented Lagrangian function
+
+$$
+\begin{equation*}
+    L(x, z, y) = f(x) + g(z) + y^T(Ax + By - c) + \frac{\rho}{2}\|Ax + By - c\|_2^2
+\end{equation*}
+$$
+
+If we directly apply the method of multipliers to the above problem $\eqref{eq:admm_primal_problem}$, we get
+
+$$
+\begin{align*}
+    (x^*, z^*) &\leftarrow \arg \min_{x, z} L_\rho(x, z, y^k) \\
+    y^{k+1} &\leftarrow y^k + \rho (Ax^* + Bz^* - c)
+\end{align*}
+$$
+
+Here we jointly minimize $x$ and $z$ in the first step. The trick is, we can consider to minimize $x$ and $z$ sequentially as below
+
+$$
+\begin{align*}
+    x^* &\leftarrow \arg \min_x L_\rho(x, z^k, y^k) \\
+    z^* &\leftarrow \arg \min_z L_\rho(x^*, z, y^k) \\
+    y^{k+1} &\leftarrow y^k + \rho (Ax^* + Bz^* - c)
+\end{align*}
+$$
+
+then we get ADMM.
 
 ## Reference
 
@@ -177,6 +219,7 @@ $$
 
 [^1]: See page 330 of (Nocedal and Wright 2006)
 [^2]: See page 344 of (Nocedal and Wright 2006)
+[^3]: If we regard the primal feasibility of $\eqref{eq:primal_problem}$ as $Ax - b = 0$, then the dual feasibility of $\eqref{eq:primal_problem}$ can be regarded as $\nabla_x L(x, y) = 0$.
 
 
 

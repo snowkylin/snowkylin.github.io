@@ -7,10 +7,11 @@ display_title: "Talks"
 
 <a href="https://developers.google.com/experts/about" target="_blank"><img src="/assets/talks/2018-GDE-Machine-Learning-Badge.png" style="width: 20%; float: right;"/></a>
 
-Here are some of my talks with slide & code resources, mostly as a [Google Developers Expert](https://developers.google.com/experts/people/xihan-li) in Machine Learning. Please feel free to download, use and adapt these resources with appropriate credit and a link to this site. For commercial usage, please contact me first before using them.
+Here are some of my talks with slide & code resources, mostly as a [Google Developers Expert](https://developers.google.com/community/experts/directory/profile/profile-xihan_li) in Machine Learning. Please feel free to download, use and adapt these resources with appropriate credit and a link to this site. For commercial usage, please contact me first before using them.
 
 # Talks and Codelabs
 
+- **Dec. 2019** - Google Developers Group DevFest Shenzhen & Zhuhai, *Getting Started with TensorFlow 2.0* [[slide]](https://docs.google.com/presentation/d/1GykpPLF5NnaoIg9O7Ah0rm5U9rX2vRYBmFXm7zoZ7uU/edit?usp=sharing)
 - **Apr. 2019** - BigAI Deep Learning Practice: *A Cooperative Multi-Agent Reinforcement Learning Framework for Resource Balancing in Complex Logistics Network* [[slide]](https://docs.google.com/presentation/d/1Rg0YaKllBaH3WqkYwHb6ySdYgxnkMpL7GbIMIpnJgn4/edit?usp=sharing) 
 - **Apr. 2019** - Google Women Techmakers 2019 Beijing, *A Concise Codelab of TensorFlow* [[slide]](https://drive.google.com/file/d/1nzDUJUYr4HDoOBqA_NfbCfTa3MQrrS8H/view?usp=sharing)
 - **Mar. 2019** - TensorFlow Dev Summit 2019 Recap Beijing [[slide]](https://drive.google.com/file/d/1072G9UwsLXvXGHFrcrB3fedhoG3nwul3/view?usp=sharing)
@@ -26,8 +27,8 @@ Here are some of my talks with slide & code resources, mostly as a [Google Devel
 
 
 <center>
-    <p><img src="/assets/talks/tf_codelab_beijing_2018.jpg" style="width: 50%"/></p>
-    <p>TensorFlow Day 2018 Beijing Codelab, hosted by Google Developer Group Beijing</p>
+    <p><img src="/assets/talks/devfest_2019_shenzhen.jpeg" style="width: 50%"/></p>
+    <p>Google Developers Group DevFest Shenzhen 2019</p>
 </center>
 
 # Teaching

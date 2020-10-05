@@ -9,22 +9,21 @@ layout: home
 
 <h1 class="post-title">Xihan Li</h1>
 
-[Key Laboratory of Machine Perception (Ministry of Education)](http://www.klmp.pku.edu.cn)
+Ph.D. Student
 
-[School of EECS](http://eecs.pku.edu.cn/en/), [Peking University](http://english.pku.edu.cn/)
+[Department of Computer Science](http://www.cs.ucl.ac.uk/), [University College London](http://www.ucl.ac.uk/)
 
-Email: xihanli at pku dot edu dot cn
+Email: xihan.li.20 at ucl dot ac dot uk
 
 # Short Bio
 
-I am a third year M.S. student in [Key Laboratory of Machine Perception](http://www.klmp.pku.edu.cn), [School of EECS](http://eecs.pku.edu.cn/en/), [Peking University](http://english.pku.edu.cn/), advised by [Prof. Yunhai Tong](http://www.cis.pku.edu.cn/faculty/system/tongyunhai/tongyunhai.htm). Meanwhile, I am a [Google Developers Expert](https://developers.google.com/experts/about) in Machine Learning. I used to be a research intern in Machine Learning Group, [Microsoft Research Asia](https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/). Prior to PKU, I received my B.Eng. degree of Computer Science with minor certificate of Biological Science from [Zhejiang University](http://www.zju.edu.cn/english), working with [Prof. Xiaogang Jin](https://person.zju.edu.cn/0096364). I was a member of [Chu Kochen Honors College (Mixed Class)](http://ckc.zju.edu.cn/english/).
+I am a first-year Ph.D. student in [Department of Computer Science](http://www.cs.ucl.ac.uk/), [University College London](http://www.ucl.ac.uk/), advised by [Prof. Jun Wang](http://www0.cs.ucl.ac.uk/staff/Jun.Wang/). Meanwhile, I am a [Google Developers Expert](https://developers.google.com/experts/about) in Machine Learning. I used to be a research intern in Machine Learning Group, [Microsoft Research Asia](https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/). Prior to UCL, I received my M.S. degree of Computer Science from [Peking University](https://www.pku.edu.cn), advised by [Prof. Yunhai Tong](http://www.cis.pku.edu.cn/faculty/system/tongyunhai/tongyunhai.htm). I received my B.Eng. degree of Computer Science with minor certificate of Biological Science from [Zhejiang University](http://www.zju.edu.cn/english), working with [Prof. Xiaogang Jin](https://person.zju.edu.cn/0096364). I was a member of [Chu Kochen Honors College (Mixed Class)](http://ckc.zju.edu.cn/english/).
 
  My research interests lie on reinforcement learning, multi-agent system, graph and natural language processing, with their application on real-world challanges. Currently, my research focuses on the application of multi-agent reinforcement learning in graph-based realistic scenarios.
 
 # What's New
 
-- **May. 2019** - I successfully passed the graduation defense with my master degree thesis "Resource Balancing in Complex Logistics Networks with Multi-Agent Reinforcement Learning and Graph Attention".
-- **May. 2019** - Together with Zou Meng, our work about unsupervised neural machine translation was submitted to EMNLP 2019.
+- **May. 2019** - I successfully passed the graduation defense with my master degree thesis "[Resource Balancing in Complex Logistics Networks with Multi-Agent Reinforcement Learning and Graph Attention]({{site.url}}/assets/publications/Master_Degree_Thesis.pdf)".
 - **May. 2019** - I was accepted in [Google Summer of Code 2019](https://summerofcode.withgoogle.com/), TensorFlow Team (20 out of 1500+ applications) with the project "An Extended Version of 'A Concise Handbook of TensorFlow' and a Library of Extended Keras Layers for TensorFlow 2.0"
 - **Feb. 2019** - I was invited to attend [TensorFlow Dev Summit 2019](https://www.tensorflow.org/dev-summit/) in Sunnyvale, CA and [Google Cloud
 Next ’19](https://cloud.withgoogle.com/next/sf) in San Francisco, CA, with full travel support from Google.

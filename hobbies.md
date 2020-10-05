@@ -12,8 +12,8 @@ Beyond the research work in my own field, I also have some hobbies such as drawi
 I love animal drawing due to the fantastic coexistance of wildness and cuteness. You can find some of my artworks at [DeviantArt](http://snowkylin.deviantart.com) or [WildDream Art](http://www.wilddream.net/user/snowkylin).
 
 <center>
-    <p><a href="https://www.wilddream.net/Art/view/10271"><img src="{{site.url}}/assets/hobbies/lpt.jpg" style="width: 50%"/></a></p>
-    <p>One of my favorite drawings, hope you like it~</p>
+    <p><a href="https://www.wilddream.net/Art/view/10271"><img src="{{site.url}}/assets/hobbies/snow_leopard.jpg" style="width: 50%"/></a></p>
+    <p>One of my drawings, also used as the cover of my book *A Concise Handbook of TensorFlow 2*</p>
 </center>
 
 # Animal Protection

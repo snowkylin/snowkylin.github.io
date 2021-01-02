@@ -9,7 +9,7 @@ layout: home
 
 <h1 class="post-title">Xihan Li</h1>
 
-Ph.D. Student
+[Ph.D. Student](http://www0.cs.ucl.ac.uk/people/Xihan.Li.html)
 
 [Department of Computer Science](http://www.cs.ucl.ac.uk/), [University College London](http://www.ucl.ac.uk/)
 

@@ -47,7 +47,7 @@ display_title: Publications
 <a href="https://tf.wiki" target="_blank"><img src="/assets/publications/tf_wiki_cover.jpg" style="width: 20%; float: right;"/></a>
 
 - **Xihan Li**, Huan Li and Jinpeng Zhu. *A Concise Handbook of TensorFlow 2*. Posts & Telecom Press, 2020. [[introduction]]({{site.url}}/tensorflow/2018/08/29/a-concise-handbook-of-tensorflow.html) [[Online Version]](https://tf.wiki) 
-  - Chinese version available on [[JD]](https://item.jd.com/12980534.html) [[Dangdang]](http://product.dangdang.com/29132630.html) [[TMall]](https://detail.tmall.com/item.htm?id=628240887768) [[iTuring]](https://www.ituring.com.cn/book/2705)
+  - Printed Chinese version available on [[JD]](https://item.jd.com/12980534.html) [[Dangdang]](http://product.dangdang.com/29132630.html) [[TMall]](https://detail.tmall.com/item.htm?id=628240887768) [[iTuring]](https://www.ituring.com.cn/book/2705)
 
 <style>
 .clearfix::after {

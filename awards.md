@@ -5,7 +5,7 @@ permalink: /awards/
 display_title: Selected Awards
 ---
 
-- *Google Open Source Peer Bonus award* • Sept. 2020
+- [*Google Open Source Peer Bonus award*](https://opensource.googleblog.com/2020/10/announcing-latest-google-open-source.html) • Sept. 2020
 - *Outstanding Undergraduate Thesis*, Zhejiang University • Jun. 2016
 - *Outstanding Winner*, [2015 Interdisciplinary Contest In Modeling (ICM 2015)](https://www.comap.com/undergraduate/contests/mcm/contests/2015/results/) • Apr. 2015
     - The highest award of MCM/ICM, the prestigious world-wide contest in Mathematical Modeling. 9 teams out of 2137 teams in total.

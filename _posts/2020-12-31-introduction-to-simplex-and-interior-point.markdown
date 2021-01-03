@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introduction to Simplex and Interior-Point Methods to Solve Linear Programming"
+title:  "Introduction to Simplex and Interior-Point Methods for Linear Programming"
 author: Snowkylin
 categories: LP Simplex Interior-Point optimization
 ---

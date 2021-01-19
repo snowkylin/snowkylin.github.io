@@ -13,7 +13,7 @@ layout: home
 
 [Department of Computer Science](http://www.cs.ucl.ac.uk/), [University College London](http://www.ucl.ac.uk/)
 
-Email: xihan.li.20 at ucl dot ac dot uk
+Email: xihan.li at cs dot ucl dot ac dot uk
 
 # Short Bio
 

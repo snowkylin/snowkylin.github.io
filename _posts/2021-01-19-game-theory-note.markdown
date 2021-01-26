@@ -34,10 +34,25 @@ e.g., the prisoner's dilemma
   - A game can have no Nash equilibrium or multiple Nash equilibrium
 - **Game**: 
   - A set of *players* $i \in \\{1, \cdots, N\\}$
-  - Each player $i$ have a set of *strategies* $s_i \in S_i$
-  - For each combination of strategies (e.g., pair $(s_1, s_2)$ in two-player game), each player $i$ receives a *payoff* $u_i(s_1, s_2)$ (e.g., for pair $(\text{confess}, \text{not confess})$, player 1 may receive payoff 0, $u_1(\text{confess}, \text{not confess}) = 0$ and player 2 may receive payoff -10, $u_2(\text{confess}, \text{not confess}) = -10$). $u_i$ is called the *utility function* of player $i$.
+  - Each player $i$ have a set of *strategies* $s_i \in S_i$, $s \in S = \Pi_i S_i$ for all players.
+  - **Payoff/utility function**: For each combination of strategies (e.g., pair $(s_1, s_2)$ in two-player game), each player $i$ receives a *payoff* $u_i(s_1, s_2)$ (e.g., for pair $(\text{confess}, \text{not confess})$, player 1 may receive payoff 0, $u_1(\text{confess}, \text{not confess}) = 0$ and player 2 may receive payoff -10, $u_2(\text{confess}, \text{not confess}) = -10$). $u_i$ is called the utility function of player $i$.
   - Can be extended to n-player game
-- **Pure & Mixed Strategy**: a player choose a strategy deterministically or with probability p 
-  - Use *expected value of payoffs* to evalueate other player's strategy (to find the best response of mixed strategy)
+- **Pure & Mixed Strategy**: a player $i$ choose a strategy $s$ deterministically or with probability $\sigma_i(s)$  
+  - $\Sigma_i$ denotes all the possible probability distribution of $S_i$, $\sigma_i \in \Sigma_i$ for player $i$. $\sigma \in \Sigma = \Pi_i \Sigma_i$ for all players ($\sigma$ is called **mixed strategy profile**).
+  - Use *expected value of payoffs* to evaluate other player's strategy (to find the best response of mixed strategy). Extend the payoff function from $u_i(s)$ to $u_i(\sigma) = \Pi_{s \in S} u_i(s)\sigma(s)$
+- **$B_i(\sigma_{-i})$: Best Response of player $i$ to other players' strategy $\sigma_{-i}$**
+  - For player $i$, given other players' strategy $\sigma_{-i}$ fixed, $B_i(\sigma_{-i}) = \arg\max_{\sigma_i} u_i(\sigma_i, \sigma_{-i})$ is a set of mixed strategy $\sigma_i$ for player $i$ that maximize payoff function $u_i(\sigma_i, \sigma_{-i})$.
+- **Nash equilibrium for mixed strategy**
+  - A mixed strategy profile $\sigma^* = (\sigma^\ast_1, \cdots, \sigma^\ast_N)$ is a Nash equilibrium if for all $i \in \\{1, \cdots, N\\}$, $\sigma^\ast_i \in B_i(\sigma^\ast_{-i})$.
+  - We can write it in a more compact way: denote $B(\sigma) = [B_1(\sigma_{-1}) \times \cdots \times B_N(\sigma_{-N})]$, then a mixed strategy profile $\sigma^\ast = (\sigma^\ast_1, \cdots, \sigma^\ast_N)$ is a Nash equilibrium if $\sigma^\ast \in B(\sigma^\ast)$.
   - **Theorem: Every finite game has a mixed strategy Nash equilibrium**
+    - Kakutani's Fixed Point Theorem
+- **Pareto optimality**
+  - A strategy profile is Pareto optimal if no player can gain higher payoff without sacrificing others' payoffs.
+- Social optimality: maximizes the sum of the players‘ payoffs
+- Solution as a result of learning
+  - Assumption: expects that his opponent’s output in the future will be the same as it is now
+  - Asymptotically stable if converges to a particular steady state (a single NE) for all initial state close to it
+    - Global stable if from every starting state
+    - Not always converge – circling effect
 

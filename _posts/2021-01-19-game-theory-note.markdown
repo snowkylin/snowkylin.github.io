@@ -8,6 +8,8 @@ categories: game-theory multi-agent-ai
 * TOC
 {:toc}
 
+# Static Game
+
 Strategy form game matrix
 
 |  | Strategies 1 (col player) | Strategies 2 (col player) |
@@ -55,4 +57,43 @@ e.g., the prisoner's dilemma
   - Asymptotically stable if converges to a particular steady state (a single NE) for all initial state close to it
     - Global stable if from every starting state
     - Not always converge – circling effect
+
+# Extensive Game
+
+Example: 
+- player 1 has choice C and D
+  - player 2 has choice E (2, 1) / F (3, 0) for C 
+  - player 2 has choice G (0, 2) / H (1, 3) for D.
+
+|  | EG | EH | FG | FH |
+| C | 2, 1 | 2, 1 | 3, 0 | 3, 0 |
+| D | 0, 2 | 1, 3 | 0, 2 | 1, 3 |
+
+- EG ← (E or F) and (G or H)
+  - if you choose C, I choose E, if you choose D, I choose G
+  - if player 1 have 3 choices C, D and I, then we need to use three letters to denote a strategy of player 2
+
+- **Subgame Perfect (Nash) Equilibrium**
+  - A strategy profile is a subgame perfect equilibrium if it is an equilibrium for every subgame
+  - subgame perfection will remove noncredible threats
+
+# Potential Game
+
+Use one global function $\Phi(s): S \rightarrow R $ to replace $N$ payoff functions $u_i(s)$ for each player $i$.
+
+$\Phi$ assigns a real value for every $s \in S$
+
+- **ordinal potential function**: $u_i(x, s_{−i}) − u_i(z, s_{−i}) > 0 \Leftrightarrow \Phi(x, s_{−i}) − Φ(z, s_{−i}) > 0, \forall x, z \in S_i$
+- **exact potential function**: $u_i(x, s_{−i}) − u_i(z, s_{−i}) = \Phi(x, s_{−i}) − Φ(z, s_{−i}) > 0, \forall x, z \in S_i$
+- Every finite ordinal potential game has at least one pure strategy Nash equilibrium.
+  - The global maximum of an ordinal potential function is a pure strategy Nash equilibrium
+  - there may also be other pure strategy Nash equilibria corresponding to local maxima
+- Path / improvement path
+- In every finite ordinal potential game, every improvement path is finite.
+- Congestion Games
+- Every congestion game is a potential game
+
+# Learning Nash Equilibria
+
+
 

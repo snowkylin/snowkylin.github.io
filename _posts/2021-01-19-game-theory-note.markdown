@@ -95,5 +95,73 @@ $\Phi$ assigns a real value for every $s \in S$
 
 # Learning Nash Equilibria
 
+2-person **zero-sum** games ($u_1(s_1, s_2) == -u_2(s_1, s_2)$)
 
+| | M (prob: $y_1$) | T (prob: $y_2$) |
+| E (prob: $x_1$) | 3, -3 | -1, 1 |
+| S (prob: $x_2$) | -2, 2 |  1, -1 |
+
+- Minimax Game: minimize other player's best response (max) payoff
+  - For column player, expected payoff $V(M) = -3 x_1 + 2 x_2$, $V(T) = x_1 - x_2$
+  - So if $x_1, x_2$ is given, column player will choose the larger one of $V(M)$ and $V(T)$ as best response, his payoff will be $\max(-3 x_1 + 2 x_2, x_1 - x_2)$
+  - Row player should choose $x_1$ and $x_2$ so that column player's payoff $\max(-3 x_1 + 2 x_2, x_1 - x_2)$ is minimized, that is, $\arg\min_{x_1, x_2} \max(-3 x_1 + 2 x_2, x_1 - x_2)$
+  - Identially, maximize his own payoff $-\max(-3 x_1 + 2 x_2, x_1 - x_2) = \min(3 x_1 - 2 x_2, - x_1 + x_2)$
+  - Min/max operation can be represented by linear programming by using an auxilary variable $z$ and constraint all components larger/smaller than $z$.
+  - So the linear programming problem is (note that $z$ should be unbounded so we need to add auxilary variable $z'$ so that $z - z'$ is unbounded, $x_1 + x_2 = 1$ is equalty constraint so we need to transit it to two inequality constraint $x_1 + x_2 \leq 1$ and $x_1 + x_2 \geq 1$)
+  
+    $$
+    \begin{align*}
+        \max \quad & z \\
+        s.t. \quad 3 x_1 - 2 x_2 &\geq z \\
+          - x_1 + x_2 &\geq z \\
+          x_1 + x_2 &= 1 \\
+          x_1, x_2 &\geq 0 \\
+        \max \quad & (0, 1, 1, -1, 0, 0)(x_1, x_2, z, z', s_1, s_2)^T \\
+        s.t. \quad &\begin{pmatrix}
+          3 & -2 & -1 & 1 & -1 & 0 \\ 
+          -1 & 1 & -1 & 1 & 0 & -1\\ 
+          1 & 1 & 0 & 0 & 0 & 0
+        \end{pmatrix}\begin{pmatrix}x_1\\x_2\\z\\z'\\s_1\\s_2\end{pmatrix} = \begin{pmatrix}0\\0\\1\end{pmatrix}\\
+        & (x_1, x_2, z, z', s_1, s_2) \geq 0 \\
+        \max \quad & (0, 1, 1, -1)(x_1, x_2, z, z')^T \\
+        s.t. \quad &\begin{pmatrix}
+          3 & -2 & -1 & 1 \\ 
+          -1 & 1 & -1 & 1 \\ 
+          1 & 1 & 0 & 0 \\
+          -1 & -1 & 0 & 0 \\
+        \end{pmatrix}\begin{pmatrix}x_1\\x_2\\z\\z'\end{pmatrix} \geq \begin{pmatrix}0\\0\\1\\1\end{pmatrix}\\
+        & (x_1, x_2, z, z') \geq 0
+    \end{align*}
+    $$
+  - Similarly, for the column player, we calculate $\arg\min_{y_1, y_2} \max(3 y_1 - y_2, -2 y_1 + y_2)$
+  
+    $$
+    \begin{align*}
+        \max \quad & w \\
+        s.t. \quad -3 y_1 + y_2 &\geq w \\
+          2 y_1 - y_2 &\geq w \\
+          y_1 + y_2 &= 1 \\
+          y_1, y_2 &\geq 0 \\
+        \max \quad & (0, 0, 1) (y_1, y_2, w)^T \\
+        s.t. \quad & \begin{pmatrix}
+          3 & -1 & 1 \\
+          -2 & 1 & 1 \\
+          -1 & -1 & 0 \\
+          1 & 1 & 0 \\
+          -1 & 0 & 0 \\
+          - & -1 & 0
+        \end{pmatrix} \begin{pmatrix}y_1\\y_2\\w\end{pmatrix} \leq 0\\
+        \max \quad & (0, 0, 1, -1) (y_1, y_2, w, w')^T \\
+        s.t. \quad & \begin{pmatrix}
+          3 & -1 & 1 & -1 \\
+          -2 & 1 & 1 & -1 \\
+          -1 & -1 & 0 & 0\\
+          1 & 1 & 0 & 0\\
+        \end{pmatrix} \begin{pmatrix}y_1\\y_2\\w\\w'\end{pmatrix} \leq 0\\
+        & (y_1, y_2, w, w') \geq 0
+    \end{align*}
+    $$
+  - Duality
+- General-sum game: linear complementarity problem
+  - Algorithm to solve LCP: the Lemke–Howson algorithm
 

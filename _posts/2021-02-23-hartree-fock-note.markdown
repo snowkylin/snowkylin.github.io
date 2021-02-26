@@ -77,7 +77,7 @@ $$
 \end{aligned}
 $$
 
-Since both the basis functions (atomic orbitals) $\phi$ and $h(i)$ are explicitly given, the integral $\int \phi_u(r_i)h(i)\phi_v(r_i)dr_i$ and $\int \phi_u(r_i)\phi_v(r_i)dr_i$ can be calculated as constants (later we will show how to calculate these integrals). We denote constant $H_{uv} = \int \phi_u(r_i)h(i)\phi_v(r_i)dr_i$ and $S_{uv} = \int \phi_u(r_i)\phi_v(r_i)dr_i$ (overlap integral), then we have
+Since both the basis functions (atomic orbitals) $\phi$ and $h(i)$ are explicitly given, the integral $\int \phi_u(r_i)h(i)\phi_v(r_i)dr_i$ and $\int \phi_u(r_i)\phi_v(r_i)dr_i$ can be calculated as constants (later we will show the explicit expression of these integrals). We denote constant $H_{uv} = \int \phi_u(r_i)h(i)\phi_v(r_i)dr_i$ and $S_{uv} = \int \phi_u(r_i)\phi_v(r_i)dr_i$ (overlap integral), then we have
 
 $$
 \sum_{v=1}^K H_{uv} C_{vi} = \epsilon_i \sum_{v=1}^K S_{uv} C_{vi}, \quad \forall u = 1, \cdots, K
@@ -119,7 +119,20 @@ However, the basis functions are usually not orthonormal ($S \neq I$). In this c
 
 The following are the steps to find the transformation $X$. We first do matrix diagonalization (矩阵对角化) to $S$, that is, find $K$ eigenvectors $U = [U_1, \cdots, U_K]$ and eigenvalues $s = [s_1, \cdots, s_K]$ so that $SU = U\text{diag}(s) \Rightarrow U^{-1}SU = \text{diag}(s)$. Then let $X = U\text{diag}(s^{-1/2})$ in which $s^{-1/2} = [s_1^{-1/2}, \cdots, s_K^{-1/2}]$, we have $X^{-1}SX = \text{diag}(s^{-1/2})U^{-1}SU\text{diag}(s^{-1/2}) = \text{diag}(s^{-1/2})\text{diag}(s)\text{diag}(s^{-1/2}) = I$ (remind that $(AB)^{-1} = B^{-1}A^{-1}$). (see 3.4.5 of [1] for details)
 
-The final step towards actual computation is to calculate $H_{uv} = \int \phi_u(r_i)h(i)\phi_v(r_i)dr_i$ and $S_{uv} = \int \phi_u(r_i)\phi_v(r_i)dr_i$ for Gaussian atomic orbitals $\phi_u(r-R_u) = (2\alpha/\pi)^{3/4}e^{-\alpha\|r-R_u\|^2}$ and $h(i) = -\frac{1}{2}\nabla_i^2 - \sum_{A}\frac{Z_A}{r_{Ai}}$. While the integrals can be calculated analytically, the process is quite complicated. 
+The final step towards actual computation is to calculate $H_{uv} = \int \phi_u(r_i)h(i)\phi_v(r_i)dr_i$ and $S_{uv} = \int \phi_u(r_i)\phi_v(r_i)dr_i$ for Gaussian atomic orbitals $\phi_u(r-R_u) = (2\alpha/\pi)^{3/4}e^{-\alpha\|r-R_u\|^2}$ and $h(i) = -\frac{1}{2}\nabla_i^2 - \sum_{A}\frac{Z_A}{r_{Ai}}$. While the integrals can be calculated analytically, the process is quite complicated. Here we list the results of the integrals directly from appendix A of [1], more details can be found in the [appendix](#integral-evaluation).
+
+$$
+\begin{aligned}
+S_{uv} &= \int \phi_u(r_i)\phi_v(r_i)dr_i = (\frac{\pi}{p})^{3/2} \frac{\alpha\beta}{\alpha + \beta}|R_u - R_v|^2 \quad (A.9) \\
+H_{uv} &= T_{uv} + \sum_A V_{uv}^A \quad \text{in which}\\
+T_{uv} &= \int \phi_u(r_i)-\frac{1}{2}\nabla_i^2\phi_v(r_i)dr_i = \frac{\alpha\beta}{\alpha + \beta}[3 - 2\frac{\alpha\beta}{\alpha + \beta}|R_u - R_v|^2] S_{uv} \quad (A.11) \\
+V_{uv}^A &= \int \phi_u(r_i)-\frac{Z_A}{r_{Ai}}\phi_v(r_i)dr_i = \frac{2\pi}{\alpha + \beta} Z_A e^{-\frac{\alpha\beta}{\alpha + \beta}|R_u - R_v|^2}F_0[(\alpha + \beta)|R_p - R_v|^2] \quad (A.33) \\
+F_0(t) &= \frac{1}{2}\sqrt{\frac{\pi}{t}}erf(\sqrt{t})\\
+R_p &= \frac{\alpha R_{u} + \beta R_{v}}{\alpha + \beta}
+\end{aligned}
+$$
+
+in which $erf(t)$ is the [Gauss error function](https://en.wikipedia.org/wiki/Error_function).
 
 ## Hartree approximation
 
@@ -142,13 +155,13 @@ $$
 = & e^{-[(\alpha + \beta)r_x^2 - 2(\alpha R_{u,x} + \beta R_{v,x}) + \alpha R_{u,x}^2 + \beta R_{u,y}^2 + \cdots]} \\
 = & e^{-[(\alpha + \beta)(r_x - \frac{\alpha R_{u,x} + \beta R_{v,x}}{\alpha + \beta})^2 + \alpha R_{u,x}^2 + \beta R_{u,y}^2 - \frac{(\alpha R_{u,x} + \beta R_{v,x})^2}{\alpha + \beta} + \cdots]} \\
 = & e^{-[(\alpha + \beta)(r_x - \frac{\alpha R_{u,x} + \beta R_{v,x}}{\alpha + \beta})^2 + \cdots]} e^{(\alpha + \beta)(\alpha R_{u,x} + \beta R_{v,x}) - (\alpha R_{u,x} + \beta R_{v,x})^2] / (\alpha + \beta) + \cdots} \\
-= & e^{-[(\alpha + \beta)(r_x - \frac{\alpha R_{u,x} + \beta R_{v,x}}{\alpha + \beta})^2 + \cdots]} e^{\frac{\alpha\beta}{\alpha + \beta}(R_{u,x}-R_{v,x})^2 + \cdots} \\
+= & e^{-[(\alpha + \beta)(r_x - \frac{\alpha R_{u,x} + \beta R_{v,x}}{\alpha + \beta})^2 + \cdots]} e^{-\frac{\alpha\beta}{\alpha + \beta}(R_{u,x}-R_{v,x})^2 + \cdots} \\
 = & e^{-p|r - R_p|^2} \tilde{K} \\
 = & \tilde{K} \phi_p(r - R_p)
 \end{aligned}
 $$
 
-in which $p = \alpha + \beta$ and $\tilde{K} = \frac{\alpha\beta}{\alpha + \beta}\|R_u - R_v\|^2$ is the center of the new Gaussian.
+in which $p = \alpha + \beta$, $R_p = \frac{\alpha R_{u} + \beta R_{v}}{\alpha + \beta}$ is the center of the new Gaussian, and $\tilde{K} = e^{-\frac{\alpha\beta}{\alpha + \beta}\|R_u - R_v\|^2}$.
 
 Then
 

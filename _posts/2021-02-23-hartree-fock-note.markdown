@@ -68,7 +68,7 @@ $$
 h(i)\sum_{v=1}^K C_{vi} \phi_v(r_i) = \epsilon_i \sum_{v=1}^K C_{vi} \phi_v(r_i)
 $$
 
-Since we have $K$ unknown variables $C_{1i}, \cdots, C_{Ki}$, if we can construct $K$ normal equations then we can solve the $K$ variables out. The important trick here is to multiple $\phi_u(r_i)$ on the left for $u = 1, \cdots, K$ and integrate. Then we have $K$ equations
+Since we have $K$ unknown variables $C_{1i}, \cdots, C_{Ki}$, if we can construct $K$ normal equations then we can solve the $K$ variables out. The important trick here is to multiple $\phi_u(r_i)$ on the left for $u = 1, \cdots, K$ and integrate (see page 29 of [1] for more details). Then we have $K$ equations
 
 $$
 \begin{aligned}
@@ -110,31 +110,106 @@ $$
 or
 
 $$
-HC_i = \epsilon_i SC_i
+\begin{equation}
+HC_i = \epsilon_i SC_i \label{eq3}
+\end{equation}
 $$
 
 where $C_i = (C_{1i}, \cdots, C_{Ki})^T$. If our basis functions are orthonormal (正交, that is, $S_{uv} = \int \phi_u(r)\phi_v(r)dr = \delta_{uv} = \begin{cases}1 & u = v \\\\ 0 & u \neq v\end{cases}$, see 1.2 of [1]), then $S = I$ is an identity matrix. In this case we solve $HC_i = \epsilon_i C_i$, which equals to finding $K$ eigenvector $C_1, \cdots, C_K$ and eigenvalue $\epsilon_1, \cdots, \epsilon_K$ of matrix $H$. Then we get $K$ molecular spatial orbitals $\psi_1(r_1) = \sum_{u=1}^K C_{u1} \phi_u(r_1), \cdots, \psi_K(r_K) = \sum_{u=1}^K C_{uK} \phi_u(r_K)$ in which both coefficients $C$ and basis functions $\phi$ are known.
 
-However, the basis functions are usually not orthonormal ($S \neq I$). In this case we want to find a linear transformation $X$ so that $X^{-1}SX = I$. If we can find such a transformation $X$, let $C_i' = X^{-1}C_i'$ ($C_i = XC_i'$) so we have $HXC_i' = \epsilon_i SXC_i'$. Multiply $X^{-1}$ on the left and we have $\underbrace{X^{-1}HX}\_{=H'}C_i' = \epsilon_i \underbrace{X^{-1}SX}_{=I}C_i'$. Let $H' = X^{-1}HX$ and we have $H'C_i' = \epsilon_i C_i'$. Then we solve $C_i'$ as usual and do linear transformation $C_i = XC_i'$ to get solution $C_i$ of the original equation $HC_i = \epsilon_i SC_i$.
+However, the basis functions are usually not orthonormal ($S \neq I$). In this case we want to find a linear transformation $X$ so that $X^TSX = I$. If we can find such a transformation $X$, let $C_i' = X^{-1}C_i'$ ($C_i = XC_i'$) so we have $HXC_i' = \epsilon_i SXC_i'$. Multiply $X^T$ on the left and we have $\underbrace{X^THX}\_{=H'}C_i' = \epsilon_i \underbrace{X^TSX}_{=I}C_i'$. Let $H' = X^THX$ and we have $H'C_i' = \epsilon_i C_i'$. Then we solve $C_i'$ as usual and do linear transformation $C_i = XC_i'$ to get solution $C_i$ of the original equation $HC_i = \epsilon_i SC_i$.
 
-The following are the steps to find the transformation $X$. We first do matrix diagonalization (矩阵对角化) to $S$, that is, find $K$ eigenvectors $U = [U_1, \cdots, U_K]$ and eigenvalues $s = [s_1, \cdots, s_K]$ so that $SU = U\text{diag}(s) \Rightarrow U^{-1}SU = \text{diag}(s)$. Then let $X = U\text{diag}(s^{-1/2})$ in which $s^{-1/2} = [s_1^{-1/2}, \cdots, s_K^{-1/2}]$, we have $X^{-1}SX = \text{diag}(s^{-1/2})U^{-1}SU\text{diag}(s^{-1/2}) = \text{diag}(s^{-1/2})\text{diag}(s)\text{diag}(s^{-1/2}) = I$ (remind that $(AB)^{-1} = B^{-1}A^{-1}$). (see 3.4.5 of [1] for details)
+The following are the steps to find the transformation $X$. We first do matrix diagonalization (矩阵对角化) to $S$, that is, find $K$ eigenvectors $U = [U_1, \cdots, U_K]$ and eigenvalues $s = [s_1, \cdots, s_K]$ so that $SU = U\text{diag}(s) \Rightarrow U^TSU = \text{diag}(s)$ ($U$ is orthonormal and normalized so $U^T = U^{-1}$). Then let $X = U\text{diag}(s^{-1/2})$ in which $s^{-1/2} = [s_1^{-1/2}, \cdots, s_K^{-1/2}]$, we have $X^TSX = \text{diag}(s^{-1/2})U^TSU\text{diag}(s^{-1/2}) = \text{diag}(s^{-1/2})\text{diag}(s)\text{diag}(s^{-1/2}) = I$ (remind that $(AB)^T = B^TA^T$). (see 3.4.5 of [1] for details)
 
 The final step towards actual computation is to calculate $H_{uv} = \int \phi_u(r_i)h(i)\phi_v(r_i)dr_i$ and $S_{uv} = \int \phi_u(r_i)\phi_v(r_i)dr_i$ for Gaussian atomic orbitals $\phi_u(r-R_u) = (2\alpha/\pi)^{3/4}e^{-\alpha\|r-R_u\|^2}$ and $h(i) = -\frac{1}{2}\nabla_i^2 - \sum_{A}\frac{Z_A}{r_{Ai}}$. While the integrals can be calculated analytically, the process is quite complicated. Here we list the results of the integrals directly from appendix A of [1], more details can be found in the [appendix](#integral-evaluation).
 
 $$
 \begin{aligned}
-S_{uv} &= \int \phi_u(r_i)\phi_v(r_i)dr_i = (\frac{\pi}{p})^{3/2} \frac{\alpha\beta}{\alpha + \beta}|R_u - R_v|^2 \quad (A.9) \\
+S_{uv} &= \int \phi_u(r_i)\phi_v(r_i)dr_i = (\frac{\pi}{p})^{3/2} e^{-\frac{\alpha\beta}{\alpha + \beta}|R_u - R_v|^2} \quad (A.9) \\
 H_{uv} &= T_{uv} + \sum_A V_{uv}^A \quad \text{in which}\\
 T_{uv} &= \int \phi_u(r_i)-\frac{1}{2}\nabla_i^2\phi_v(r_i)dr_i = \frac{\alpha\beta}{\alpha + \beta}[3 - 2\frac{\alpha\beta}{\alpha + \beta}|R_u - R_v|^2] S_{uv} \quad (A.11) \\
-V_{uv}^A &= \int \phi_u(r_i)-\frac{Z_A}{r_{Ai}}\phi_v(r_i)dr_i = \frac{2\pi}{\alpha + \beta} Z_A e^{-\frac{\alpha\beta}{\alpha + \beta}|R_u - R_v|^2}F_0[(\alpha + \beta)|R_p - R_v|^2] \quad (A.33) \\
+V_{uv}^A &= \int \phi_u(r_i)-\frac{Z_A}{r_{Ai}}\phi_v(r_i)dr_i = -\frac{2\pi}{\alpha + \beta} Z_A e^{-\frac{\alpha\beta}{\alpha + \beta}|R_u - R_v|^2}F_0[(\alpha + \beta)|R_p - R_v|^2] \quad (A.33) \\
 F_0(t) &= \frac{1}{2}\sqrt{\frac{\pi}{t}}erf(\sqrt{t})\\
+p &= \alpha + \beta\\
 R_p &= \frac{\alpha R_{u} + \beta R_{v}}{\alpha + \beta}
 \end{aligned}
 $$
 
 in which $erf(t)$ is the [Gauss error function](https://en.wikipedia.org/wiki/Error_function).
 
-## Hartree approximation
+## Hartree approximation ($V_{ee}$ considered, antisymmetry principle ignored)
+
+Before considering $V_{ee}$, let's derive $HC_i = \epsilon_i SC_i$ $\eqref{eq3}$ directly from the Schrodinger equation $\eqref{eq1}$ via variation principle with apprximated hartree product wave function $\Psi(r_1, \cdots, r_N) = \prod_i \psi_i(r_i)$. 
+
+The variation principle is as follows: for eigenvalue problem $H\Psi = E \Psi$ in which $H = \sum_{i=1}^N h(i)$ is a Hermitian operator and $\Psi$ is a wave function, there exists an infinate set of exact solutions $H\Psi_\alpha = E_\alpha \Psi_\alpha$ where $E_0 \leq E_1 \leq \cdots \leq E_\alpha \leq \cdots$. Then, given an arbitrary normalized wave function $\tilde{\Psi}, \int \|\tilde{\Psi}\|^2 = 1$, the expectation of the Hamiltionian is an upper bound to the exact ground state enengy $E_0$, that is, $\int \tilde{\Psi} H \tilde{\Psi} \geq E_0$. The equality holds only when $\tilde{\Psi} = \Psi_0$. (see section 1.3 of [1] for details)
+
+Therefore, we can transform the solving of $\Psi_0$ into a constrainted optimization problem: $\min \int \Psi H \Psi \text{ s.t. } \int \|\Psi\|^2 = 1$. With $\Psi(r_1, \cdots, r_N) = \prod_i \psi_i(r_i)$, $\int \|\Psi\|^2 = 1$ is transformed to $N$ constraints $\int \|\psi_i\|^2 = 1, i = 1, \cdots, N$. The standard method to solve constrainted optimization problem is to construct a Lagrangian function $\mathcal{L}(\Psi, E) = \int \Psi H \Psi - \sum_i E_i(\int \|\psi_i\|^2 - 1)$ and let $\frac{\partial \mathcal{L}}{\partial \Psi} = 0$.
+
+we first calculate
+
+$$
+\begin{aligned}
+& \int \Psi(r_1, \cdots, r_N) H \Psi(r_1, \cdots, r_N) dr_1\cdots dr_N \\
+=& \sum_{i=1}^N \int_{r_N}\cdots\int_{r_1} \psi(r_1)\cdots\psi(r_N) h(i) \psi(r_1)\cdots\psi(r_N) dr_1\cdots dr_N \\
+& \text{Note that $\int \psi_i(r)\psi_i(r) dr = 1$, so} \\
+=& \sum_{i=1}^N \int_{r_i} \psi_i(r_i)h(i)\psi_i(r_i) dr_i \\
+& \text{with the basis expansion $\psi_i(r_i) = \sum_{u=1}^K C_{ui} \phi_u(r_i)$} \\
+=& \sum_{i=1}^N \int \sum_{u, v}C_{ui}C_{vi}\phi_u(r_i)h(i)\phi_v(r_i) dr_i \\
+=& \sum_{i=1}^N \sum_{u, v}C_{ui}C_{vi} \underbrace{\int \phi_u(r_i)h(i)\phi_v(r_i) dr_i}_{H_{uv}} = \sum_{i=1}^N \sum_{u, v}C_{ui}C_{vi}H_{uv}\\
+\end{aligned}
+$$
+
+and 
+
+$$
+\begin{aligned}
+& \sum_{i=1}^N E_i(\int \psi_i(r_i)\psi_i(r_i) dr_i - 1) \\
+=& \sum_{i=1}^N E_i(\sum_{u, v} C_{ui}C_{vi}\underbrace{\int \phi_i(r_i)\phi_i(r_i) dr_i}_{S_{uv}} - 1) \\
+=& \sum_{i=1}^N E_i(\sum_{u, v} C_{ui}C_{vi}S_{uv} - 1)
+\end{aligned}
+$$
+
+Thus
+
+$$
+\begin{aligned}
+\mathcal{L}(C, E) &= \sum_{i=1}^N [\sum_{u, v}C_{ui}C_{vi}H_{uv} - E_i(\sum_{u, v} C_{ui}C_{vi}S_{uv} - 1)] \\
+&= \sum_{i=1}^N [\sum_{u, v}C_{ui}C_{vi}(H_{uv} - E_i S_{uv}) + E_i] \\
+\frac{\partial L}{\partial C_{ui}} &= \sum_{v \neq u} 2 C_{ui}(H_{uv} - E_i S_{uv}) + 2 C_{ui}(H_{uv} - E_i S_{uv}) = 0 \\
+& \sum_v C_{vi}(H_{uv} - E_i S_{uv}) = 0 \\
+& \sum_v H_{uv}C_{vi} = E_i \sum_v S_{uv}C_{vi}, \forall i = 1, \cdots, N, v = 1, \cdots, K
+\end{aligned}
+$$ 
+
+whose matrix form is identical to $HC_i = \epsilon_i SC_i$ $\eqref{eq3}$. (more details can be found in section 1.3.2 of [1] who assume the basis functions are orthogonal so $S = I$)
+
+Now let's take $V_{ee} = \sum_{i < j}\frac{1}{r_{ij}}$ into account, so we are going to solve
+
+$$
+[\sum_i h(i) + \sum_{i < j}\frac{1}{r_{ij}}]\Psi(r_1, \cdots, r_N) = E\Psi(r_1, \cdots, r_N)
+$$
+
+in this case $H = \sum_i h(i) + \sum_{i < j}\frac{1}{r_{ij}} = \sum_i h(i) + \frac{1}{2}\sum_{i \neq j}\frac{1}{r_{ij}}$, so we have a new term $\int \Psi (\frac{1}{2}\sum_{i \neq j}\frac{1}{r_{ij}}) \Psi$. That is,
+
+$$
+\begin{aligned}
+& \int \Psi(r_1, \cdots, r_N) (\frac{1}{2}\sum_{i \neq j} \frac{1}{r_{ij}}) \Psi(r_1, \cdots, r_N) dr_1\cdots dr_N \\
+=& \frac{1}{2}\sum_{i \neq j} \int_{r_N}\cdots\int_{r_1} \psi(r_1)\cdots\psi(r_N) \frac{1}{r_{ij}} \psi(r_1)\cdots\psi(r_N) dr_1\cdots dr_N \\
+=& \frac{1}{2}\sum_{i \neq j} \int_{r_i, r_j} \psi_i(r_i)\psi_j(r_j)\frac{1}{r_{ij}}\psi_j(r_j)\psi_i(r_i) dr_i dr_j \\
+=& \frac{1}{2}\sum_{i \neq j} \sum_{u, v, p, q}C_{ui}C_{pj}C_{qj}C_{vi} \underbrace{\int \phi_u(r_i)\phi_p(r_j)\frac{1}{r_{ij}}\phi_q(r_j)\phi_v(r_i) dr_i dr_j}_{(uv|pq)}\\
+\frac{\partial}{\partial C_{ui}} =& 2 \times \frac{1}{2} \sum_{j (\neq i)}\sum_{v, p, q}2 C_{vi}C_{pj}C_{qj}(uv|pq) \\
+=& \sum_v C_{vi}[\sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj}(uv|pq)]
+\end{aligned}
+$$
+
+Therefore
+
+$$
+\begin{aligned}
+& \sum_v C_{vi}(H_{uv} + \sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj}(uv|pq) - E_i S_{uv}) = 0 \\
+& \sum_v (H_{uv} + \sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj}(uv|pq))C_{vi} = E_i \sum_v S_{uv}C_{vi}, \forall i = 1, \cdots, N, v = 1, \cdots, K
+\end{aligned}
+$$
 
 ## Hartree-Fock approximation
 
@@ -182,7 +257,7 @@ $$
 To calculate $\int_{r=0}^{+\infty} e^{-pr^2} r^2 dr$, reminds that the Gaussian distribution $\int_{x=-\infty}^{\infty} \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{x^2}{2\sigma^2}} = 1$. Let $\sigma = \sqrt{\frac{1}{2\alpha}}$ then we have a more general form $\int_{x=-\infty}^{\infty} e^{-\alpha x^2} = \sqrt{\frac{\pi}{\alpha}}$. [Different each side by parameter](http://www.umich.edu/~chem461/Gaussian%20Integrals.pdf) $\alpha$ we have $\int_{x=-\infty}^{\infty} -x^2 e^{-\alpha x^2} = \frac{\sqrt{\pi}}{-2\alpha^{3/2}}$, therefore $\int_{x=-\infty}^{\infty} x^2 e^{-\alpha x^2} = \frac{\sqrt{\pi}}{2\alpha^{3/2}}$ and $\int_{x=0}^{\infty} -x^2 e^{-\alpha x^2} = \frac{\sqrt{\pi}}{4\alpha^{3/2}}$ by symmetry. The final result of $S_{uv}$ is
 
 $$
-S_{uv} = 4\pi \tilde{K} \frac{\sqrt{\pi}}{4\alpha^{3/2}} = (\frac{\pi}{p})^{3/2} \frac{\alpha\beta}{\alpha + \beta}|R_u - R_v|^2
+S_{uv} = 4\pi \tilde{K} \frac{\sqrt{\pi}}{4p^{3/2}} = (\frac{\pi}{p})^{3/2} e^{-\frac{\alpha\beta}{\alpha + \beta}|R_u - R_v|^2}
 $$
 
 ## References

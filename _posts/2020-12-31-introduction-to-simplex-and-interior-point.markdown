@@ -134,7 +134,7 @@ We can use Newton's method to solve this equation (details can be found in Chapt
     \end{pmatrix}
 \end{equation}
 
-Often, for notational convenience, we prefer to work with the transpose of the matrix (see (Nocedal and Wright 2006, p. 627), that is, $J(x) = \nabla F(x)^T$, which is called \textit{Jacobian matrix}.
+Often, for notational convenience, we prefer to work with the transpose of the matrix (see (Nocedal and Wright 2006, p. 627), that is, $J(x) = \nabla F(x)^T$, which is called *Jacobian matrix*.
 
 Then the equation $m(p) = 0$ ($\nabla F(z^k)^T p = -F(z^k)$) becomes
 

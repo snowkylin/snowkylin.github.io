@@ -2,7 +2,7 @@
 layout: post
 title:  "Hartree-Fock Theory Note"
 author: Snowkylin
-categories: quantum ab-initio
+categories: physics quantum ab-initio
 ---
 
 * TOC
@@ -41,7 +41,7 @@ There are two challenges to solve this equation:
 
 The Hartree-Fock theory tackles these challenges by the following ways:
 
-1. (Hartree Approximation) For the first challenge, assume $\Psi(r_1, \cdots, r_N) = \prod_i \psi_i(r_i)$ (hartree product, here we use an approximated wave function), then we minimize the total energy of $\eqref{eq1}$ using variational method, and find that: with the assumed wave function, for electron $i$, we can approximate its interaction with other electrons by the average field of other electrons, and we add all the average field to approximate $V_{ee}$. i.e., let $V_{ee} = \sum_i g(i)$. In this case we can let $h'(i) = h(i) + g(i)$ so we can write the equation as $\sum_i h'(i) \Psi(r_1, \cdots, r_N) = E\Psi(r_1, \cdots, r_N)$ and solve it easily as single-electron equations $h'(i)\psi_i(r_i) = \epsilon_i\psi_i(r_i)$ (not so easy though, since $g(i)$ includes the wave function of other electrons, and a self-consistent iteration is needed).
+1. (Hartree Approximation) For the first challenge, assume $\Psi(r_1, \cdots, r_N) = \prod_{i=1}^N \psi_i(r_i)$ (hartree product, note that we may have $K > N$ molecular spatial orbitals $\psi_1, \cdots, \psi_K$ but we select the first $N$ orbitals with the lowest energy. It is valid since $\int \psi_i(r_i) dr_i = 1$ and $\int \prod_{i=1}^N \psi_i(r_i) dr_1\cdots dr_N = 1$. This is an approximated wave function), then we minimize the total energy of $\eqref{eq1}$ using variational method, and find that: with the assumed wave function, for electron $i$, we can approximate its interaction with other electrons by the average field of other electrons, and we add all the average field to approximate $V_{ee}$. i.e., let $V_{ee} = \sum_i g(i)$. In this case we can let $h'(i) = h(i) + g(i)$ so we can write the equation as $\sum_i h'(i) \Psi(r_1, \cdots, r_N) = E\Psi(r_1, \cdots, r_N)$ and solve it easily as single-electron equations $h'(i)\psi_i(r_i) = \epsilon_i\psi_i(r_i)$ (not so easy though, since $g(i)$ includes the wave function of other electrons, and a self-consistent iteration is needed).
 2. (Hartree-Fock Approximation) For the second challenge, assume $\Psi(x_1, \cdots, x_N) = \frac{1}{\sqrt{N!}}\begin{vmatrix}\chi_1(x_1) & \chi_2(x_1) & \cdots & \chi_N(x_1)\\\\ \chi_1(x_2) & \chi_2(x_2) & \cdots & \chi_N(x_2)\\\\ \vdots & \vdots & \ddots & \vdots\\\\ \chi_1(x_N) & \chi_2(x_N) & \cdots & \chi_N(x_N)\end{vmatrix}$ (slater determinant), which is a better approximation of the wave function that satisfy antisymmetry principle. E.g., for the two-electron case, $\Psi(x_1, x_2) = \frac{1}{\sqrt{2}}\begin{vmatrix}\chi_1(x_1) & \chi_2(x_1) \\\\ \chi_1(x_2) & \chi_2(x_2)\end{vmatrix} = \frac{1}{\sqrt{2}}[\chi_1(x_1)\chi_2(x_2) - \chi_2(x_1)\chi_1(x_2)]$. It is easy to check that $\Psi(x_1, x_2) = -\Psi(x_2, x_1)$, and if the two electrons are described by the same spin orbital $\chi = \chi_1 = \chi_2$, then $\Psi(x_1, x_2) = 0$.
 
 ## The simplest case (both $V_{ee}$ and antisymmetry principle ignored)
@@ -198,18 +198,22 @@ $$
 =& \frac{1}{2}\sum_{i \neq j} \int_{r_i, r_j} \psi_i(r_i)\psi_j(r_j)\frac{1}{r_{ij}}\psi_j(r_j)\psi_i(r_i) dr_i dr_j \\
 =& \frac{1}{2}\sum_{i \neq j} \sum_{u, v, p, q}C_{ui}C_{pj}C_{qj}C_{vi} \underbrace{\int \phi_u(r_i)\phi_p(r_j)\frac{1}{r_{ij}}\phi_q(r_j)\phi_v(r_i) dr_i dr_j}_{(uv|pq)}\\
 \frac{\partial}{\partial C_{ui}} =& 2 \times \frac{1}{2} \sum_{j (\neq i)}\sum_{v, p, q}2 C_{vi}C_{pj}C_{qj}(uv|pq) \\
-=& \sum_v C_{vi}[\sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj}(uv|pq)]
+=& \sum_v 2C_{vi}[\sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj}(uv|pq)]
 \end{aligned}
 $$
+
+(Please note that we have a factor of 2 before the derivative, since $\sum_{i, j}(i \neq j)$ has two indices which are both possible to equal to $i$. Imaging a square matrix with $i$th row and $i$th column)
 
 Therefore
 
 $$
 \begin{aligned}
-& \sum_v C_{vi}(H_{uv} + \sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj}(uv|pq) - E_i S_{uv}) = 0 \\
+& \frac{\partial L}{\partial C_{ui}} = \sum_v C_{vi}(H_{uv} + \sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj}(uv|pq) - E_i S_{uv}) = 0 \\
 & \sum_v (H_{uv} + \sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj}(uv|pq))C_{vi} = E_i \sum_v S_{uv}C_{vi}, \forall i = 1, \cdots, N, v = 1, \cdots, K
 \end{aligned}
 $$
+
+Now let's see if we replace $h(i)$ with $h(i) + g(i)$ in which $g(i) = \sum_{j (\neq i)}\int \frac{\|\psi_j(r_j)\|^2}{r_{ij}} dr_j$ (notice that $\|\psi_j(r_j)\|^2$ is the possibility density of electron $j$ that appears at coordinate $r_j$. $g(i)$ is the average field of other electrons), then the matrix form of $[h(i) + g(i)]\psi_i(r_i) = \epsilon_i\psi_i(r_i)$  with basis expansion $\psi_i(r_i) = \sum_{u=1}^K C_{ui} \phi_u(r_i)$ will result in the same result above.
 
 ## Hartree-Fock approximation
 
@@ -264,4 +268,4 @@ $$
 
 1. Szabo, A., & Ostlund, N. S. (1982). Modern quantum chemistry: introduction to advanced electronic structure theory. Dover Publication.
 2. Sherrill, C. D. (2000). [An introduction to Hartree-Fock molecular orbital theory](http://vergil.chemistry.gatech.edu/courses/chem6485/pdf/hf-intro.pdf). School of Chemistry and Biochemistry, Georgia Institute of Technology.
-3. https://gitlab.com/LLindenbauer/Hartree-Fock-Tutorial
+3. <https://gitlab.com/LLindenbauer/Hartree-Fock-Tutorial>

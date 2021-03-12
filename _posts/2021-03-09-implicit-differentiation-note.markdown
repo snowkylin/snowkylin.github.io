@@ -87,6 +87,8 @@ $$
 A\frac{\partial y}{\partial x} = I
 $$
 
+(it can also be obtained by differencing $x$ at both side of $x = Ay$)
+
 and
 
 $$

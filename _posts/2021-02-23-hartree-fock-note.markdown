@@ -213,7 +213,17 @@ $$
 \end{aligned}
 $$
 
-Now let's see if we replace $h(i)$ with $h(i) + g(i)$ in which $g(i) = \sum_{j (\neq i)}\int \frac{\|\psi_j(r_j)\|^2}{r_{ij}} dr_j$ (notice that $\|\psi_j(r_j)\|^2$ is the possibility density of electron $j$ that appears at coordinate $r_j$. $g(i)$ is the average field of other electrons), then the matrix form of $[h(i) + g(i)]\psi_i(r_i) = \epsilon_i\psi_i(r_i)$  with basis expansion $\psi_i(r_i) = \sum_{u=1}^K C_{ui} \phi_u(r_i)$ will result in the same result above.
+Now let's see if we replace $h(i)$ with $h(i) + g(i)$ in which $g(i) = \sum_{j (\neq i)}\int \frac{\|\psi_j(r_j)\|^2}{r_{ij}} dr_j$ (notice that $\|\psi_j(r_j)\|^2$ is the possibility density of electron $j$ that appears at coordinate $r_j$, $\int \frac{\|\psi_j(r_j)\|^2}{r_{ij}} dr_j$ is the repulsion of electron $j$ towards electron $i$, so $g(i)$ is the average field of all other electrons), then the matrix form of $[h(i) + g(i)]\psi_i(r_i) = \epsilon_i\psi_i(r_i)$  with basis expansion $\psi_i(r_i) = \sum_{u=1}^K C_{ui} \phi_u(r_i)$ will result in the same result above. Similar to the simplest case discussed before, we write $g(i)\psi_i(r_i)$ as $g(i)\sum_v C_{vi} \phi_v(r_i) = \sum_v C_{vi} g(i)\phi_v(r_i)$, left multiplied by $\phi_u(r_i)$ and integrate. We have
+
+$$
+\begin{align*}
+&\sum_v C_{vi}\int \phi_u(r_i)g(i)\phi_v(r_i) dr_i \\
+=& \sum_v C_{vi}\int \phi_u(r_i)[\sum_{j (\neq i)}\int \psi_j(r_j)\frac{1}{r_{ij}}\psi_j(r_j) dr_j]\phi_v(r_i) dr_i \\
+=& \sum_v C_{vi}\int \phi_u(r_i)[\sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj}\int \phi_p(r_j)\frac{1}{r_{ij}}\phi_q(r_j) dr_j]\phi_v(r_i) dr_i \\
+=& \sum_v C_{vi}\sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj} \int \phi_u(r_i) \phi_p(r_j)\frac{1}{r_{ij}}\phi_q(r_j) \phi_v(r_i) dr_i dr_j \\
+=& \sum_v C_{vi}\sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj} (uv|pq)
+\end{align*}
+$$
 
 ## Hartree-Fock approximation
 

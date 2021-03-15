@@ -139,6 +139,8 @@ in which $erf(t)$ is the [Gauss error function](https://en.wikipedia.org/wiki/Er
 
 ## Hartree approximation ($V_{ee}$ considered, antisymmetry principle ignored)
 
+### Preliminaries: variation principle
+
 Before considering $V_{ee}$, let's derive $HC_i = \epsilon_i SC_i$ $\eqref{eq3}$ directly from the Schrodinger equation $\eqref{eq1}$ via variation principle with apprximated hartree product wave function $\Psi(r_1, \cdots, r_N) = \prod_i \psi_i(r_i)$. 
 
 The variation principle is as follows: for eigenvalue problem $H\Psi = E \Psi$ in which $H = \sum_{i=1}^N h(i)$ is a Hermitian operator and $\Psi$ is a wave function, there exists an infinate set of exact solutions $H\Psi_\alpha = E_\alpha \Psi_\alpha$ where $E_0 \leq E_1 \leq \cdots \leq E_\alpha \leq \cdots$. Then, given an arbitrary normalized wave function $\tilde{\Psi}, \int \|\tilde{\Psi}\|^2 = 1$, the expectation of the Hamiltionian is an upper bound to the exact ground state enengy $E_0$, that is, $\int \tilde{\Psi} H \tilde{\Psi} \geq E_0$. The equality holds only when $\tilde{\Psi} = \Psi_0$. (see section 1.3 of [1] for details)
@@ -148,15 +150,15 @@ Therefore, we can transform the solving of $\Psi_0$ into a constrainted optimiza
 we first calculate
 
 $$
-\begin{aligned}
-& \int \Psi(r_1, \cdots, r_N) H \Psi(r_1, \cdots, r_N) dr_1\cdots dr_N \\
-=& \sum_{i=1}^N \int_{r_N}\cdots\int_{r_1} \psi(r_1)\cdots\psi(r_N) h(i) \psi(r_1)\cdots\psi(r_N) dr_1\cdots dr_N \\
-& \text{Note that $\int \psi_i(r)\psi_i(r) dr = 1$, so} \\
-=& \sum_{i=1}^N \int_{r_i} \psi_i(r_i)h(i)\psi_i(r_i) dr_i \\
-& \text{with the basis expansion $\psi_i(r_i) = \sum_{u=1}^K C_{ui} \phi_u(r_i)$} \\
-=& \sum_{i=1}^N \int \sum_{u, v}C_{ui}C_{vi}\phi_u(r_i)h(i)\phi_v(r_i) dr_i \\
-=& \sum_{i=1}^N \sum_{u, v}C_{ui}C_{vi} \underbrace{\int \phi_u(r_i)h(i)\phi_v(r_i) dr_i}_{H_{uv}} = \sum_{i=1}^N \sum_{u, v}C_{ui}C_{vi}H_{uv}\\
-\end{aligned}
+\begin{align}
+& \int \Psi(r_1, \cdots, r_N) H \Psi(r_1, \cdots, r_N) dr_1\cdots dr_N \nonumber \\
+=& \sum_{i=1}^N \int_{r_N}\cdots\int_{r_1} \psi(r_1)\cdots\psi(r_N) h(i) \psi(r_1)\cdots\psi(r_N) dr_1\cdots dr_N \nonumber \\
+& \text{Note that $\int \psi_i(r)\psi_i(r) dr = 1$ and $h(i)$ is only related to $r_i$, so} \nonumber \\
+=& \sum_{i=1}^N \int_{r_i} \psi_i(r_i)h(i)\psi_i(r_i) dr_i \label{E_h} \\
+& \text{with the basis expansion $\psi_i(r_i) = \sum_{u=1}^K C_{ui} \phi_u(r_i)$} \nonumber \\
+=& \sum_{i=1}^N \int \sum_{u, v}C_{ui}C_{vi}\phi_u(r_i)h(i)\phi_v(r_i) dr_i \nonumber \\
+=& \sum_{i=1}^N \sum_{u, v}C_{ui}C_{vi} \underbrace{\int \phi_u(r_i)h(i)\phi_v(r_i) dr_i}_{H_{uv}} = \sum_{i=1}^N \sum_{u, v}C_{ui}C_{vi}H_{uv} \nonumber \\
+\end{align}
 $$
 
 and 
@@ -176,12 +178,14 @@ $$
 \mathcal{L}(C, E) &= \sum_{i=1}^N [\sum_{u, v}C_{ui}C_{vi}H_{uv} - E_i(\sum_{u, v} C_{ui}C_{vi}S_{uv} - 1)] \\
 &= \sum_{i=1}^N [\sum_{u, v}C_{ui}C_{vi}(H_{uv} - E_i S_{uv}) + E_i] \\
 \frac{\partial L}{\partial C_{ui}} &= \sum_{v \neq u} 2 C_{ui}(H_{uv} - E_i S_{uv}) + 2 C_{ui}(H_{uv} - E_i S_{uv}) = 0 \\
-& \sum_v C_{vi}(H_{uv} - E_i S_{uv}) = 0 \\
+& 2\sum_v C_{vi}(H_{uv} - E_i S_{uv}) = 0 \\
 & \sum_v H_{uv}C_{vi} = E_i \sum_v S_{uv}C_{vi}, \forall i = 1, \cdots, N, v = 1, \cdots, K
 \end{aligned}
 $$ 
 
 whose matrix form is identical to $HC_i = \epsilon_i SC_i$ $\eqref{eq3}$. (more details can be found in section 1.3.2 of [1] who assume the basis functions are orthogonal so $S = I$)
+
+### Hartree approximation with variation principle
 
 Now let's take $V_{ee} = \sum_{i < j}\frac{1}{r_{ij}}$ into account, so we are going to solve
 
@@ -192,14 +196,14 @@ $$
 in this case $H = \sum_i h(i) + \sum_{i < j}\frac{1}{r_{ij}} = \sum_i h(i) + \frac{1}{2}\sum_{i \neq j}\frac{1}{r_{ij}}$, so we have a new term $\int \Psi (\frac{1}{2}\sum_{i \neq j}\frac{1}{r_{ij}}) \Psi$. That is,
 
 $$
-\begin{aligned}
-& \int \Psi(r_1, \cdots, r_N) (\frac{1}{2}\sum_{i \neq j} \frac{1}{r_{ij}}) \Psi(r_1, \cdots, r_N) dr_1\cdots dr_N \\
-=& \frac{1}{2}\sum_{i \neq j} \int_{r_N}\cdots\int_{r_1} \psi(r_1)\cdots\psi(r_N) \frac{1}{r_{ij}} \psi(r_1)\cdots\psi(r_N) dr_1\cdots dr_N \\
-=& \frac{1}{2}\sum_{i \neq j} \int_{r_i, r_j} \psi_i(r_i)\psi_j(r_j)\frac{1}{r_{ij}}\psi_j(r_j)\psi_i(r_i) dr_i dr_j \\
-=& \frac{1}{2}\sum_{i \neq j} \sum_{u, v, p, q}C_{ui}C_{pj}C_{qj}C_{vi} \underbrace{\int \phi_u(r_i)\phi_p(r_j)\frac{1}{r_{ij}}\phi_q(r_j)\phi_v(r_i) dr_i dr_j}_{(uv|pq)}\\
-\frac{\partial}{\partial C_{ui}} =& 2 \times \frac{1}{2} \sum_{j (\neq i)}\sum_{v, p, q}2 C_{vi}C_{pj}C_{qj}(uv|pq) \\
-=& \sum_v 2C_{vi}[\sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj}(uv|pq)]
-\end{aligned}
+\begin{align}
+& \int \Psi(r_1, \cdots, r_N) (\frac{1}{2}\sum_{i \neq j} \frac{1}{r_{ij}}) \Psi(r_1, \cdots, r_N) dr_1\cdots dr_N \nonumber \\
+=& \frac{1}{2}\sum_{i \neq j} \int_{r_N}\cdots\int_{r_1} \psi(r_1)\cdots\psi(r_N) \frac{1}{r_{ij}} \psi(r_1)\cdots\psi(r_N) dr_1\cdots dr_N \nonumber \\
+=& \frac{1}{2}\sum_{i \neq j} \int_{r_i, r_j} \psi_i(r_i)\psi_j(r_j)\frac{1}{r_{ij}}\psi_j(r_j)\psi_i(r_i) dr_i dr_j \label{E_coulomb} \\
+=& \frac{1}{2}\sum_{i \neq j} \sum_{u, v, \lambda, \sigma}C_{ui}C_{\lambda j}C_{\sigma j}C_{vi} \underbrace{\int \phi_u(r_i)\phi_\lambda(r_j)\frac{1}{r_{ij}}\phi_\sigma(r_j)\phi_v(r_i) dr_i dr_j}_{(uv|\lambda\sigma), \text{see (3.156) of [1]}} \nonumber \\
+\frac{\partial}{\partial C_{ui}} =& 2 \times \frac{1}{2} \sum_{j (\neq i)}\sum_{v, \lambda, \sigma}2 C_{vi}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma) \nonumber \\
+=& \sum_v 2C_{vi}[\sum_{j (\neq i)}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma)] \nonumber 
+\end{align}
 $$
 
 (Please note that we have a factor of 2 before the derivative, since $\sum_{i, j}(i \neq j)$ has two indices which are both possible to equal to $i$. Imaging a square matrix with $i$th row and $i$th column)
@@ -208,24 +212,120 @@ Therefore
 
 $$
 \begin{aligned}
-& \frac{\partial L}{\partial C_{ui}} = \sum_v C_{vi}(H_{uv} + \sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj}(uv|pq) - E_i S_{uv}) = 0 \\
-& \sum_v (H_{uv} + \sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj}(uv|pq))C_{vi} = E_i \sum_v S_{uv}C_{vi}, \forall i = 1, \cdots, N, v = 1, \cdots, K
+& \frac{\partial L}{\partial C_{ui}} = 2\sum_v C_{vi}(H_{uv} + \sum_{j (\neq i)}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma) - E_i S_{uv}) = 0 \\
+& \sum_v (H_{uv} + \sum_{j (\neq i)}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma))C_{vi} = E_i \sum_v S_{uv}C_{vi}, \forall i = 1, \cdots, N, v = 1, \cdots, K
 \end{aligned}
 $$
 
-Now let's see if we replace $h(i)$ with $h(i) + g(i)$ in which $g(i) = \sum_{j (\neq i)}\int \frac{\|\psi_j(r_j)\|^2}{r_{ij}} dr_j$ (notice that $\|\psi_j(r_j)\|^2$ is the possibility density of electron $j$ that appears at coordinate $r_j$, $\int \frac{\|\psi_j(r_j)\|^2}{r_{ij}} dr_j$ is the repulsion of electron $j$ towards electron $i$, so $g(i)$ is the average field of all other electrons), then the matrix form of $[h(i) + g(i)]\psi_i(r_i) = \epsilon_i\psi_i(r_i)$  with basis expansion $\psi_i(r_i) = \sum_{u=1}^K C_{ui} \phi_u(r_i)$ will result in the same result above. Similar to the simplest case discussed before, we write $g(i)\psi_i(r_i)$ as $g(i)\sum_v C_{vi} \phi_v(r_i) = \sum_v C_{vi} g(i)\phi_v(r_i)$, left multiplied by $\phi_u(r_i)$ and integrate. We have
+Now let's see if we replace $h(i)$ with $h(i) + g(i)$ in which 
+
+$$g(i) = \sum_{j (\neq i)}\int \frac{\|\psi_j(r_j)\|^2}{r_{ij}} dr_j$$
+
+(notice that $\|\psi_j(r_j)\|^2$ is the possibility density of electron $j$ that appears at coordinate $r_j$, $\int \frac{\|\psi_j(r_j)\|^2}{r_{ij}} dr_j$ is the repulsion of electron $j$ towards electron $i$, so $g(i)$ is the average field of all other electrons), then the matrix form of $[h(i) + g(i)]\psi_i(r_i) = \epsilon_i\psi_i(r_i)$ with basis expansion $\psi_i(r_i) = \sum_{u=1}^K C_{ui} \phi_u(r_i)$ will result in the same result above. Similar to the simplest case discussed before, we write $g(i)\psi_i(r_i)$ as $g(i)\sum_v C_{vi} \phi_v(r_i) = \sum_v C_{vi} g(i)\phi_v(r_i)$, left multiplied by $\phi_u(r_i)$ and integrate. We have
 
 $$
 \begin{align*}
 &\sum_v C_{vi}\int \phi_u(r_i)g(i)\phi_v(r_i) dr_i \\
 =& \sum_v C_{vi}\int \phi_u(r_i)[\sum_{j (\neq i)}\int \psi_j(r_j)\frac{1}{r_{ij}}\psi_j(r_j) dr_j]\phi_v(r_i) dr_i \\
-=& \sum_v C_{vi}\int \phi_u(r_i)[\sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj}\int \phi_p(r_j)\frac{1}{r_{ij}}\phi_q(r_j) dr_j]\phi_v(r_i) dr_i \\
-=& \sum_v C_{vi}\sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj} \int \phi_u(r_i) \phi_p(r_j)\frac{1}{r_{ij}}\phi_q(r_j) \phi_v(r_i) dr_i dr_j \\
-=& \sum_v C_{vi}\sum_{j (\neq i)}\sum_{p, q}C_{pj}C_{qj} (uv|pq)
+=& \sum_v C_{vi}\int \phi_u(r_i)[\sum_{j (\neq i)}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}\int \phi_\lambda(r_j)\frac{1}{r_{ij}}\phi_\sigma(r_j) dr_j]\phi_v(r_i) dr_i \\
+=& \sum_v C_{vi}\sum_{j (\neq i)}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j} \int \phi_u(r_i) \phi_\lambda(r_j)\frac{1}{r_{ij}}\phi_\sigma(r_j) \phi_v(r_i) dr_i dr_j \\
+=& \sum_v C_{vi}\sum_{j (\neq i)}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j} (uv|\lambda\sigma)
 \end{align*}
 $$
 
 ## Hartree-Fock approximation
+
+Now let's replace the simple hartree product wave function $\Psi(r_1, \cdots, r_N) = \prod_i \psi_i(r_i)$ with the better (single) slater determinant $\Psi(x_1, \cdots, x_N) = \frac{1}{\sqrt{N!}}\begin{vmatrix}\chi_1(x_1) & \chi_2(x_1) & \cdots & \chi_N(x_1)\\\\ \chi_1(x_2) & \chi_2(x_2) & \cdots & \chi_N(x_2)\\\\ \vdots & \vdots & \ddots & \vdots\\\\ \chi_1(x_N) & \chi_2(x_N) & \cdots & \chi_N(x_N)\end{vmatrix}$ ($x_i = (\omega_i, r_i)$ where $\omega_i$ is the spin direction). For example, when $N = 2$, the hartree product wave function is $\Psi(r_1, r_2) = \psi_1(r_1)\psi_2(r_2)$ while the slater determinant wave function will have the form of $\Psi(x_1, x_2) = \frac{1}{2}[\chi_1(x_1)\chi_2(x_2) - \chi_1(x_2)\chi_2(x_1)]$.
+
+Again, we consider the constrainted optimization problem: $\min \int \Psi (\sum_i h(i) + \frac{1}{2}\sum_{i \neq j}\frac{1}{r_{ij}}) \Psi \text{ s.t. } \int \|\Psi\|^2 = 1$. The only difference is that the wave function is replaced with a (single) slater determinant. Assuming that we already calculated the objective (expectation value of energy) 
+
+$$
+\begin{align*}
+E_0 &= \int \Psi (\sum_i h(i) + \frac{1}{2}\sum_{i \neq j}\frac{1}{x_{ij}}) \Psi \\
+&= \underbrace{\sum_{i=1}^N \int \chi_i(x) h(i) \chi_i(x) dx}_{\eqref{E_h}\text{, the simplest case, or $\sum_i[i|h|i]$}} + \underbrace{\frac{1}{2}\sum_{i, j} \int \chi_i(x_1)\chi_i(x_1)\frac{1}{r_{12}}\chi_j(x_2)\chi_j(x_2) dx_1 dx_2}_{\eqref{E_coulomb}\text{, added in Hartree approx., or $\frac{1}{2}\sum_{i, j} [ii|jj]$}} \\
+&- \underbrace{\frac{1}{2}\sum_{i, j} \int \chi_i(x_1)\chi_j(x_1)\frac{1}{r_{12}}\chi_j(x_2)\chi_i(x_2) dx_1 dx_2}_{\text{New "exchange" term, or $\frac{1}{2}\sum_{i, j} [ij|ji]$}}
+\end{align*}
+$$
+
+This result can be found in (2.111) and (3.39) of [1]. Note that we replace spatial orbitals $\psi_i(r)$ with spin orbitals $\chi_i(x)$, and have several minor changes of notation for simplicity:
+
+- $r_i, r_j$ is replaced by $r_1, r_2$
+- We write spin orbitals with $r_1$ before $r_{12}^{-1}$, and spin orbitals with $r_2$ after $r_{12}^{-1}$.
+- $\sum_{i \neq j}$ is replaced by $\sum_{i, j}$, since the $i = j$ terms in the second term (coulomb) and third term (exchange) cancel each other out.
+
+Now we are going to transit the spin orbitals to spatial orbitals. Note that $\chi_i(x) = \alpha(\omega)\psi_i(r) \text{ or } \beta(\omega)\psi_i(r), x = (\omega, r)$ and the two spin wave functions $\alpha(\omega)$ and $\beta(\omega)$ are orthogonal ($\int \alpha(\omega)\alpha(\omega)d\omega = \int \beta(\omega)\beta(\omega)d\omega = 1$, $\int \alpha(\omega)\beta(\omega)d\omega = 0$)
+
+By spliting $x$ to $\omega$ and $r$, since $h(i)$ is only related with $r$ and has no relationship with $\omega$, we can check that
+
+$$
+\begin{align*}
+\int \chi_i(x) h(i) \chi_i(x) dx &= \int_r \int_\omega \alpha(\omega)\psi_i(r)h(i)\alpha(\omega)\psi_i(r) d\omega dr \\
+&= \int_r [\underbrace{\int_\omega \alpha(\omega)\alpha(\omega)d\omega}_{=1}]\psi_i(r)h(i)\psi_i(r) dr \\
+&= \int \psi_i(r)h(i)\psi_i(r) dr
+\end{align*}
+$$
+
+Replacing $\alpha(\omega)$ with $\beta(\omega)$ will not change the result. We can also use a simpler notation $[i\|h\|i] = (i\|h\|i)$ ($[]$ is for spin orbitals and $()$ is for spatial orbitals)
+
+In a similar way, for the second term (coulomb) we have $\int \chi_i(x_1)\chi_i(x_1)\frac{1}{r_{12}}\chi_j(x_2)\chi_j(x_2) dx_1 dx_2 = \int \psi_i(r_1)\psi_i(r_1)\frac{1}{r_{12}}\psi_j(r_2)\psi_j(r_2) dr_1 dr_2$ (or $[ii\|jj] = (ii\|jj)$). However, for the third term (exchange), things become complicated. We cannot compute it unless we know the exact spin direction ($\alpha(\omega)$ or $\beta(\omega)$) for each spin orbital $\chi_i$. 
+
+Assuming we are in a *closed-shell restricted* scenario. That is, we have an even number of electrons, filling the spatial orbitals from bottom to up, each spatial orbitals contain two electrons with opposite spin, such as $\chi_1(x_1) = \alpha(\omega_1)\psi_1(r_1)$, $\chi_2(x_2) = \beta(\omega_1)\psi_1(r_1)$, $\chi_3(x_3) = \alpha(\omega_3)\psi_2(r_3)$, $\chi_4(x_4) = \beta(\omega_4)\psi_2(r_4)$, etc. In this case the first and second term become $2 \sum_{i=1}^{N/2} \int \psi_i(r)h(i)\psi_i(r) dr$ and $2 \sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \int \psi_i(r_1)\psi_i(r_1)\frac{1}{r_{12}}\psi_j(r_2)\psi_j(r_2) dr_1 dr_2$ ($2 = 2 \times 2 \times \frac{1}{2}$) respectively. For the third term (exchange), both electrons $i$ and $j$ can be in spin $\alpha$ or $\beta$, then we discuss it in four cases ($ij\rightarrow\alpha\alpha, ij\rightarrow\beta\alpha, ij\rightarrow\alpha\beta, ij\rightarrow\beta\beta$):
+
+$$
+\begin{align*}
+& \frac{1}{2}\sum_{i=1}^N \sum_{j=1}^N \int \chi_i(x_1)\chi_j(x_1)\frac{1}{r_{12}}\chi_j(x_2)\chi_i(x_2) dx_1 dx_2 \\
+=& \frac{1}{2}\sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \int {\color{red}{\alpha(\omega_1)}}\psi_i(r_1){\color{red}{\alpha(\omega_1)}}\psi_j(r_1)\frac{1}{r_{12}}{\color{red}{\alpha(\omega_2)}}\psi_j(r_2){\color{red}{\alpha(\omega_2)}}\psi_i(r_2) d\omega_1 dr_1 d\omega_2 dr_2 \\
+=& \frac{1}{2}\sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \int {\color{blue}{\beta(\omega_1)}}\psi_i(r_1){\color{red}{\alpha(\omega_1)}}\psi_j(r_1)\frac{1}{r_{12}}{\color{red}{\alpha(\omega_2)}}\psi_j(r_2){\color{blue}{\beta(\omega_2)}}\psi_i(r_2) d\omega_1 dr_1 d\omega_2 dr_2 \\
+=& \frac{1}{2}\sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \int {\color{red}{\alpha(\omega_1)}}\psi_i(r_1){\color{blue}{\beta(\omega_1)}}\psi_j(r_1)\frac{1}{r_{12}}{\color{blue}{\beta(\omega_2)}}\psi_j(r_2){\color{red}{\alpha(\omega_2)}}\psi_i(r_2) d\omega_1 dr_1 d\omega_2 dr_2 \\
+=& \frac{1}{2}\sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \int {\color{blue}{\beta(\omega_1)}}\psi_i(r_1){\color{blue}{\beta(\omega_1)}}\psi_j(r_1)\frac{1}{r_{12}}{\color{blue}{\beta(\omega_2)}}\psi_j(r_2){\color{blue}{\beta(\omega_2)}}\psi_i(r_2) d\omega_1 dr_1 d\omega_2 dr_2
+\end{align*}
+$$
+
+The second and third term will vanish since $\int {\color{red}{\alpha(\omega)}}{\color{blue}{\beta(\omega)}}d\omega = 0$. For the other terms, the spin wave function vanished, and the final result is $\sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \int \psi_i(r_1)\psi_j(r_1)\frac{1}{r_{12}}\psi_j(r_2)\psi_i(r_2) dr_1 dr_2$. This reflect the fact that there is only an exchange interaction between electrons of parallel spin. See details in Chapter 2.3.5 (page 81) and 3.4.1 (page 133) of [1].
+
+Now we expand the exchange term with basis functions and take derivative
+
+$$
+\begin{align*}
+&\sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \int \psi_i(r_1)\psi_j(r_1)\frac{1}{r_{12}}\psi_j(r_2)\psi_i(r_2) dr_1 dr_2 \\
+=& \sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \sum_{u, v, \lambda, \sigma}C_{ui}C_{vi}C_{\lambda j}C_{\sigma j}\underbrace{\int \phi_u(r_1)\phi_\lambda(r_1)\frac{1}{r_{12}}\phi_\sigma(r_2)\phi_v(r_2) dr_1 dr_2}_{(u\lambda|\sigma v)} \\
+\frac{\partial}{\partial C_{ui}} =& 4\sum_{j=1}^{N/2} \sum_{v, \lambda, \sigma} C_{vi}C_{\lambda j}C_{\sigma j} (u\lambda|\sigma v)
+\end{align*}
+$$
+
+Therefore
+
+$$
+\begin{aligned}
+& \frac{\partial L}{\partial C_{ui}} = \sum_v C_{vi}(4 H_{uv} + 8 \sum_{j=1}^{N/2}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma) - 4 \sum_{j=1}^{N/2} \sum_{\lambda, \sigma} C_{\lambda j}C_{\sigma j} (u\lambda|\sigma v) - E_i S_{uv}) = 0 \\
+& \sum_v [H_{uv} + \sum_{j=1}^{N/2} (2 \sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma) - \sum_{\lambda, \sigma} C_{\lambda j}C_{\sigma j}(u\lambda|\sigma v))]C_{vi} = E_i \sum_v S_{uv}C_{vi} \\
+& \forall i = 1, \cdots, N, v = 1, \cdots, K
+\end{aligned}
+$$
+
+Now let's see if it is possible to use an operator $k(i)$ (similar to $g(i)$ in Hartree approximation) to represent the additional exchange term in the above equation, so that the matrix form of $[h(i) + g(i) + k(i)]\psi_i(r_i) = \epsilon_i\psi_i(r_i)$  with basis expansion $\psi_i(r_i) = \sum_{u=1}^K C_{ui} \phi_u(r_i)$ will result in the same result above. Actually it is possible to define $k(i)$ in the following way
+
+$$
+k(i){\color{red}\psi_{\color{red}i}}(r_i) = \sum_{j=1}^{N/2}[\int {\color{blue}\psi_{\color{blue}j}}(r_j) r_{ij}^{-1} {\color{red}\psi_{\color{red}i}}(r_j)] {\color{blue}\psi_{\color{blue}j}}(r_i)
+$$
+
+compared with former $g(i)$
+
+$$
+g(i){\color{red}\psi_{\color{red}i}}(r_i) = 2\sum_{j=1}^{N/2}[\int {\color{blue}\psi_{\color{blue}j}}(r_j) r_{ij}^{-1} {\color{blue}\psi_{\color{blue}j}}(r_j)] {\color{red}\psi_{\color{red}i}}(r_i)
+$$
+
+Similarly, we write $k(i)\psi_i(r_i)$ as $k(i)\sum_v C_{vi} \phi_v(r_i) = \sum_v C_{vi} k(i)\phi_v(r_i)$, left multiplied by $\phi_u(r_i)$ and integrate. We have
+
+$$
+\begin{align*}
+&\sum_v C_{vi}\int \phi_u(r_i)k(i)\phi_v(r_i) dr_i \\
+=& \sum_v C_{vi}\int \phi_u(r_i)[\sum_{j=1}^{N/2}\int \psi_j(r_j)\frac{1}{r_{ij}}\phi_v(r_j) dr_j]\psi_j(r_i) dr_i \\
+=& \sum_v C_{vi}\sum_{\lambda}C_{\lambda j}\int \phi_u(r_i)[\sum_{j=1}^{N/2}\sum_{\sigma}C_{\sigma j}\int \phi_\sigma(r_j)\frac{1}{r_{ij}}\phi_v(r_j) dr_j]\phi_\lambda(r_i) dr_i \\
+=& \sum_v C_{vi}\sum_{j=1}^{N/2}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}\int \phi_u(r_i)\phi_\lambda(r_i)\frac{1}{r_{ij}} \phi_\sigma(r_j) \phi_v(r_j) dr_i dr_j \\
+=& \sum_v C_{vi}\sum_{j=1}^{N/2}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j} (u\lambda|\sigma v)
+\end{align*}
+$$
 
 ## Appendix
 

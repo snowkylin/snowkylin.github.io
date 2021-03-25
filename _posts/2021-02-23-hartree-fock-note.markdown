@@ -18,7 +18,7 @@ $$
 \end{equation}
 $$
 
-in which $\nabla_t^2 = \frac{\partial^2}{\partial r_{i, x}^2} + \frac{\partial^2}{\partial r_{i, y}^2} + \frac{\partial^2}{\partial r_{i, z}^2}$ is the laplace operator for $r_i = (r_{i, x}, r_{i, y}, r_{i, z})$, $N$ is the number of electrons. $r_i, r_j$ and $R_A, R_B$ are the 3d coodinate of electrons $\_i, \_j$ (电子) and nuciels $\_A, \_B$ (原子核) respectively. $r_{iA} = \|r_i - R_A\|$ is the distance between electron $i$ and nuciel $A$, $r_{ij} = \|r_i - r_j\|$ is the distance between electron $i$ and $j$. 
+in which $\nabla_t^2 = \frac{\partial^2}{\partial r_{i, x}^2} + \frac{\partial^2}{\partial r_{i, y}^2} + \frac{\partial^2}{\partial r_{i, z}^2}$ is the laplace operator for $r_i = (r_{i, x}, r_{i, y}, r_{i, z})$, $N$ is the number of electrons. $r_i, r_j$ and $R_A, R_B$ are the 3d coodinate of electrons $\_i, \_j$ (电子) and nuciels $\_A, \_B$ (原子核) respectively. $r_{iA} = \|r_i - R_A\|$ is the distance between electron $i$ and nuciel $A$, $r_{ij} = \|r_i - r_j\|$ is the distance between electron $i$ and $j$. $Z_A$ is the atomic number (原子序数) of nucleus $A$. 
 
 - $T_e(r)$: kinetic energy of electrons
 - $V_{eN}(r, R)$: electrostatic potential (静电势) between electrons ($_e$) and nuciels ($_N$) (or "external potentials")
@@ -26,7 +26,7 @@ in which $\nabla_t^2 = \frac{\partial^2}{\partial r_{i, x}^2} + \frac{\partial^2
 
 The solution of the equation is a "wave function" $\Psi(r_1, \cdots, r_N)$ so that the equation always holds for any $r_1, \cdots, r_N$. Additionally, $\|\Psi(r_1, \cdots, r_N)\|^2$ is the probability that electron 1 appear at coodinate $r_1$ and electron 2 appears at coodinate $r_2$ and so on.
 
-Here we assume that the nuciels are fixed so all $R$ are constants (the Born-Oppenheimer approximation). Therefore we do not consider $T_N(R)$ (kinetic energy of nucleis) and $V_{NN}(R)$ (Coulombic repulsion between nucleis) which are also constants.
+Here we assume that the nuciels are fixed so all $R$ are constants (the Born-Oppenheimer approximation). Therefore we do not consider $T_N(R) = \sum_A \frac{1}{2M_A}\nabla_A^2$ (kinetic energy of nucleis) and $V_{NN}(R) = \sum_{A < B}\frac{Z_A Z_B}{R_{AB}}$ (Coulombic repulsion between nucleis) which are also constants.
 
 Let $h(i) = -\frac{1}{2}\nabla_i^2 - \sum_{A}\frac{Z_A}{r_{Ai}}$, then the equation can be also written as
 
@@ -219,7 +219,7 @@ $$
 
 Now let's see if we replace $h(i)$ with $h(i) + g(i)$ in which 
 
-$$g(i) = \sum_{j (\neq i)}\int \frac{\|\psi_j(r_j)\|^2}{r_{ij}} dr_j$$
+$$g(i) = \sum_{j (\neq i)}\int \frac{|\psi_j(r_j)|^2}{r_{ij}} dr_j$$
 
 (notice that $\|\psi_j(r_j)\|^2$ is the possibility density of electron $j$ that appears at coordinate $r_j$, $\int \frac{\|\psi_j(r_j)\|^2}{r_{ij}} dr_j$ is the repulsion of electron $j$ towards electron $i$, so $g(i)$ is the average field of all other electrons), then the matrix form of $[h(i) + g(i)]\psi_i(r_i) = \epsilon_i\psi_i(r_i)$ with basis expansion $\psi_i(r_i) = \sum_{u=1}^K C_{ui} \phi_u(r_i)$ will result in the same result above. Similar to the simplest case discussed before, we write $g(i)\psi_i(r_i)$ as $g(i)\sum_v C_{vi} \phi_v(r_i) = \sum_v C_{vi} g(i)\phi_v(r_i)$, left multiplied by $\phi_u(r_i)$ and integrate. We have
 

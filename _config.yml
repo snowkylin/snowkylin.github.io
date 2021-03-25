@@ -19,7 +19,7 @@ email: xihan.li at cs dot ucl dot ac dot uk
 description: > # this means to ignore newlines until "baseurl:"
   Seeking the Truth and Pioneering New Trails.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://snowkylin.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: snowkylin
 github_username:  snowkylin
 excerpt_separator: <!--more-->

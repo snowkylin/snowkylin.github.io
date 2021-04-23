@@ -3,7 +3,7 @@ layout: post
 title:  "Introduction of Reinforcement Learning"
 date:   January 4, 2017 6:34 PM
 author: Snowkylin
-categories: RL
+categories: reinforcement-learning
 ---
 
 # 增强学习（Reinforcement Learning）简介

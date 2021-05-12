@@ -44,12 +44,32 @@ display_title: Publications
 
 # Book
 
-<a href="https://tf.wiki/zh_hant/" target="_blank"><img src="/assets/publications/tf_wiki_cover_zh_hant.jpg" style="width: 20%; float: right;"/></a>
-<a href="https://tf.wiki/zh_hans/" target="_blank"><img src="/assets/publications/tf_wiki_cover.jpg" style="width: 20%; float: right;"/></a>
-
 - **Xihan Li**, Huan Li and Jinpeng Zhu. *A Concise Handbook of TensorFlow 2*. Posts & Telecom Press, 2020. [[introduction]]({{site.url}}/tensorflow/2018/08/29/a-concise-handbook-of-tensorflow.html) [[Online Version]](https://tf.wiki) 
   - Printed Simplified Chinese version (ISBN: 9787115546685) available on [[JD]](https://item.jd.com/12980534.html) [[Dangdang]](http://product.dangdang.com/29132630.html) [[TMall]](https://detail.tmall.com/item.htm?id=628240887768) [[iTuring]](https://www.ituring.com.cn/book/2705)
   - Printed Traditional Chinese version (ISBN: 9789865501945) available on [[books.com.tw]](https://www.books.com.tw/products/0010891529) [[eslite]](https://www.eslite.com/product/1001313432682014264005) [[KingStone]](https://www.kingstone.com.tw/basic/2013120586819) [[Tenlong]](https://www.tenlong.com.tw/products/9789865501945) [[deepmind.com.tw]](https://deepmind.com.tw/?product=%e5%be%9e%e4%be%86%e6%b2%92%e6%9c%89%e9%80%99%e9%ba%bc%e6%98%8e%e7%99%bd%e9%81%8e%ef%bc%9atensorflow-%e4%b8%8a%e8%bb%8a%e5%b0%b1%e5%ad%b8%e6%9c%83dm2121)
+
+<center>
+<table style="border: 0px; width: 75%">
+    <tr>
+        <td width="50%">
+            <center>
+                <a href="https://tf.wiki/zh_hans/">
+                    <img src="{{site.url}}/assets/publications/tf_wiki_cover.jpg" width="75%"/> <br />
+                    Simplified Chinese version
+                </a>
+            </center>
+        </td>
+        <td width="50%">
+            <center>
+                <a href="https://tf.wiki/zh_hant/">
+                    <img src="{{site.url}}/assets/publications/tf_wiki_cover_zh_hant.jpg" width="75%"/> <br />
+                    Traditional Chinese version           
+                </a>
+            </center>
+        </td>
+    </tr>
+</table>
+</center>
 
 <style>
 .clearfix::after {

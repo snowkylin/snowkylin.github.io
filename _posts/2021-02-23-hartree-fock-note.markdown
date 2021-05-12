@@ -179,7 +179,7 @@ $$
 &= \sum_{i=1}^N [\sum_{u, v}C_{ui}C_{vi}(H_{uv} - E_i S_{uv}) + E_i] \\
 \frac{\partial L}{\partial C_{ui}} &= \sum_{v \neq u} 2 C_{ui}(H_{uv} - E_i S_{uv}) + 2 C_{ui}(H_{uv} - E_i S_{uv}) = 0 \\
 & 2\sum_v C_{vi}(H_{uv} - E_i S_{uv}) = 0 \\
-& \sum_v H_{uv}C_{vi} = E_i \sum_v S_{uv}C_{vi}, \forall i = 1, \cdots, N, v = 1, \cdots, K
+& \sum_v H_{uv}C_{vi} = E_i \sum_v S_{uv}C_{vi}, \forall i = 1, \cdots, N, u = 1, \cdots, K
 \end{aligned}
 $$ 
 

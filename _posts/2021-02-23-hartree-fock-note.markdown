@@ -56,7 +56,13 @@ $$
 
 The solution of a differential equation is a function. That is, we want to find some functions $\psi_i(r_i)$ (molecular orbicals) so that the above equation holds for all $r_1 \in \mathbb{R}^3$.
 
-However, such equation can be hard to solve in function space. Therefore we want to expand the wave function (molecular orbical) as the linear conbination of some (let's say, $K$) basis functions, $\psi_i(r_i) = \sum_{u=1}^K C_{ui} \phi_u(r_i)$. Then the problem of solving $\psi$ (in function space) transforms to solving $K$ coefficients $C_{1i}, \cdots, C_{Ki}$ (in vector space $\mathbb{R}^K$), which can be easier to solve with linear algebra.
+However, such equation can be hard to solve in function space. Therefore we want to expand the wave function (molecular orbical) as the linear conbination of some (let's say, $K$) basis functions, 
+
+$$
+\psi_i(r_i) = \sum_{u=1}^K C_{ui} \phi_u(r_i)
+$$
+
+Then the problem of solving $\psi$ (in function space) transforms to solving $K$ coefficients $C_{1i}, \cdots, C_{Ki}$ (in vector space $\mathbb{R}^K$), which can be easier to solve with linear algebra.
 
 For the selection of basis function, a common practice is to use known atomic orbital of each atoms (molecular orbitals $\psi_i$ are formed as a linear combination of atomic orbitals $\phi_{ui}$, or [MO-LCAO](https://en.wikipedia.org/wiki/Linear_combination_of_atomic_orbitals), see section 2.2.5 of [1]). Atomic orbital is also a wave function which is usually known and have explicit form centered at each atoms. For example, the exact 1s orbital of a hydrogen atom is $\phi(r-R) = (\zeta^3/\pi)^{1/2}e^{-\zeta\|r-R\|}$ where $R$ is the center coodinate of the atom and $\zeta = 1.0$ (Slater orbital). However, for the sake of simpler integral evaluation (积分计算), we usually use Gaussian orbital which has the form $\phi(r-R) = (2\alpha/\pi)^{3/4}e^{-\alpha\|r-R\|^2}$. 
 
@@ -80,7 +86,9 @@ $$
 Since both the basis functions (atomic orbitals) $\phi$ and $h(i)$ are explicitly given, the integral $\int \phi_u(r_i)h(i)\phi_v(r_i)dr_i$ and $\int \phi_u(r_i)\phi_v(r_i)dr_i$ can be calculated as constants (later we will show the explicit expression of these integrals). We denote constant $H_{uv} = \int \phi_u(r_i)h(i)\phi_v(r_i)dr_i$ and $S_{uv} = \int \phi_u(r_i)\phi_v(r_i)dr_i$ (overlap integral), then we have
 
 $$
-\sum_{v=1}^K H_{uv} C_{vi} = \epsilon_i \sum_{v=1}^K S_{uv} C_{vi}, \quad \forall u = 1, \cdots, K
+\begin{equation}
+\sum_{v=1}^K H_{uv} C_{vi} = \epsilon_i \sum_{v=1}^K S_{uv} C_{vi}, \quad \forall u = 1, \cdots, K \label{simplest_raw} 
+\end{equation}
 $$
 
 We can write the $K$ equations together in matrix form as
@@ -166,7 +174,7 @@ and
 $$
 \begin{aligned}
 & \sum_{i=1}^N E_i(\int \psi_i(r_i)\psi_i(r_i) dr_i - 1) \\
-=& \sum_{i=1}^N E_i(\sum_{u, v} C_{ui}C_{vi}\underbrace{\int \phi_i(r_i)\phi_i(r_i) dr_i}_{S_{uv}} - 1) \\
+=& \sum_{i=1}^N E_i(\sum_{u, v} C_{ui}C_{vi}\underbrace{\int \phi_u(r_i)\phi_v(r_i) dr_i}_{S_{uv}} - 1) \\
 =& \sum_{i=1}^N E_i(\sum_{u, v} C_{ui}C_{vi}S_{uv} - 1)
 \end{aligned}
 $$
@@ -174,16 +182,16 @@ $$
 Thus
 
 $$
-\begin{aligned}
+\begin{align*}
 \mathcal{L}(C, E) &= \sum_{i=1}^N [\sum_{u, v}C_{ui}C_{vi}H_{uv} - E_i(\sum_{u, v} C_{ui}C_{vi}S_{uv} - 1)] \\
-&= \sum_{i=1}^N [\sum_{u, v}C_{ui}C_{vi}(H_{uv} - E_i S_{uv}) + E_i] \\
+&= \sum_{i=1}^N [\sum_{u, v}C_{ui}C_{vi}(H_{uv} - E_i S_{uv}) + E_i]\\
 \frac{\partial L}{\partial C_{ui}} &= \sum_{v \neq u} 2 C_{ui}(H_{uv} - E_i S_{uv}) + 2 C_{ui}(H_{uv} - E_i S_{uv}) = 0 \\
 & 2\sum_v C_{vi}(H_{uv} - E_i S_{uv}) = 0 \\
 & \sum_v H_{uv}C_{vi} = E_i \sum_v S_{uv}C_{vi}, \forall i = 1, \cdots, N, u = 1, \cdots, K
-\end{aligned}
+\end{align*}
 $$ 
 
-whose matrix form is identical to $HC_i = \epsilon_i SC_i$ $\eqref{eq3}$. (more details can be found in section 1.3.2 of [1] who assume the basis functions are orthogonal so $S = I$)
+which is identical to $\eqref{simplest_raw}$ whose matrix form is $HC_i = \epsilon_i SC_i$ $\eqref{eq3}$. (more details can be found in section 1.3.2 of [1] who assume the basis functions are orthogonal so $S = I$)
 
 ### Hartree approximation with variation principle
 
@@ -200,22 +208,24 @@ $$
 & \int \Psi(r_1, \cdots, r_N) (\frac{1}{2}\sum_{i \neq j} \frac{1}{r_{ij}}) \Psi(r_1, \cdots, r_N) dr_1\cdots dr_N \nonumber \\
 =& \frac{1}{2}\sum_{i \neq j} \int_{r_N}\cdots\int_{r_1} \psi(r_1)\cdots\psi(r_N) \frac{1}{r_{ij}} \psi(r_1)\cdots\psi(r_N) dr_1\cdots dr_N \nonumber \\
 =& \frac{1}{2}\sum_{i \neq j} \int_{r_i, r_j} \psi_i(r_i)\psi_j(r_j)\frac{1}{r_{ij}}\psi_j(r_j)\psi_i(r_i) dr_i dr_j \label{E_coulomb} \\
-=& \frac{1}{2}\sum_{i \neq j} \sum_{u, v, \lambda, \sigma}C_{ui}C_{\lambda j}C_{\sigma j}C_{vi} \underbrace{\int \phi_u(r_i)\phi_\lambda(r_j)\frac{1}{r_{ij}}\phi_\sigma(r_j)\phi_v(r_i) dr_i dr_j}_{(uv|\lambda\sigma), \text{see (3.156) of [1]}} \nonumber \\
+=& \frac{1}{2}\sum_{i \neq j} \sum_{u, v, \lambda, \sigma}C_{ui}C_{\lambda j}C_{\sigma j}C_{vi} \underbrace{\int \phi_u(r_i)\phi_\lambda(r_j)\frac{1}{r_{ij}}\phi_\sigma(r_j)\phi_v(r_i) dr_i dr_j}_{(uv|\lambda\sigma), \text{see (3.156) of [1]}}  \label{E_coulomb_C} \\
 \frac{\partial}{\partial C_{ui}} =& 2 \times \frac{1}{2} \sum_{j (\neq i)}\sum_{v, \lambda, \sigma}2 C_{vi}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma) \nonumber \\
 =& \sum_v 2C_{vi}[\sum_{j (\neq i)}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma)] \nonumber 
 \end{align}
 $$
 
-(Please note that we have a factor of 2 before the derivative, since $\sum_{i, j}(i \neq j)$ has two indices which are both possible to equal to $i$. Imaging a square matrix with $i$th row and $i$th column)
+(Here basis index $u, v$ correspond to electron $i$, $\lambda, \sigma$ correspond to electron $j$. Please note that we have a factor of 2 before the derivative, since $\sum_{i, j}(i \neq j)$ has two indices which are both possible to equal to $i$. Imaging a square matrix with $i$th row and $i$th column)
 
 Therefore
 
 $$
-\begin{aligned}
-& \frac{\partial L}{\partial C_{ui}} = 2\sum_v C_{vi}(H_{uv} + \sum_{j (\neq i)}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma) - E_i S_{uv}) = 0 \\
-& \sum_v (H_{uv} + \sum_{j (\neq i)}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma))C_{vi} = E_i \sum_v S_{uv}C_{vi}, \forall i = 1, \cdots, N, v = 1, \cdots, K
-\end{aligned}
+\begin{align}
+& \frac{\partial L}{\partial C_{ui}} = 2\sum_v C_{vi}(H_{uv} + \sum_{j (\neq i)}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma) - E_i S_{uv}) = 0 \nonumber\\
+& \sum_v (H_{uv} + \sum_{j (\neq i)}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma))C_{vi} = E_i \sum_v S_{uv}C_{vi}, \forall i = 1, \cdots, N, u = 1, \cdots, K \label{hartree_raw}
+\end{align}
 $$
+
+$\eqref{hartree_raw}$ is the raw form of Hartree approximation. We will discuss how to transform it to matrix form [in later section](#matrix-form-and-charge-density-matrix).
 
 Now let's see if we replace $h(i)$ with $h(i) + g(i)$ in which 
 
@@ -296,12 +306,16 @@ $$
 Therefore
 
 $$
-\begin{aligned}
-& \frac{\partial L}{\partial C_{ui}} = \sum_v C_{vi}(4 H_{uv} + 8 \sum_{j=1}^{N/2}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma) - 4 \sum_{j=1}^{N/2} \sum_{\lambda, \sigma} C_{\lambda j}C_{\sigma j} (u\lambda|\sigma v) - E_i S_{uv}) = 0 \\
-& \sum_v [H_{uv} + \sum_{j=1}^{N/2} (2 \sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma) - \sum_{\lambda, \sigma} C_{\lambda j}C_{\sigma j}(u\lambda|\sigma v))]C_{vi} = E_i \sum_v S_{uv}C_{vi} \\
-& \forall i = 1, \cdots, N, v = 1, \cdots, K
-\end{aligned}
+\begin{align}
+& \frac{\partial L}{\partial C_{ui}} = \sum_v C_{vi}(4 H_{uv} + 8 \sum_{j=1}^{N/2}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma) - 4 \sum_{j=1}^{N/2} \sum_{\lambda, \sigma} C_{\lambda j}C_{\sigma j} (u\lambda|\sigma v) - E_i S_{uv}) = 0 \nonumber\\
+& \sum_v [H_{uv} + \sum_{j=1}^{N/2} (2 \sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma) - \sum_{\lambda, \sigma} C_{\lambda j}C_{\sigma j}(u\lambda|\sigma v))]C_{vi} = E_i \sum_v S_{uv}C_{vi} \label{hf_raw}\\
+& \forall i = 1, \cdots, N, u = 1, \cdots, K \nonumber
+\end{align}
 $$
+
+$\eqref{hf_raw}$ is the raw form of Hartree-Fock approximation. We will discuss how to transform it to matrix form [in later section](#matrix-form-and-charge-density-matrix).
+
+### Exchange term as an operator
 
 Now let's see if it is possible to use an operator $k(i)$ (similar to $g(i)$ in Hartree approximation) to represent the additional exchange term in the above equation, so that the matrix form of $[h(i) + g(i) + k(i)]\psi_i(r_i) = \epsilon_i\psi_i(r_i)$  with basis expansion $\psi_i(r_i) = \sum_{u=1}^K C_{ui} \phi_u(r_i)$ will result in the same result above. Actually it is possible to define $k(i)$ in the following way
 
@@ -326,6 +340,98 @@ $$
 =& \sum_v C_{vi}\sum_{j=1}^{N/2}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j} (u\lambda|\sigma v)
 \end{align*}
 $$
+
+## Matrix form and charge density matrix
+
+Now we want to write the Hartree equation $\eqref{hartree_raw}$ and Hartree-Fock equation $\eqref{hf_raw}$ in matrix form. We restate them below:
+
+$$
+\begin{align*}
+\sum_v (H_{uv} + \sum_{j (\neq i)}\sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma))C_{vi} &= E_i \sum_v S_{uv}C_{vi} \\
+\sum_v [H_{uv} + \sum_{j=1}^{N/2} (2 \sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma) - \sum_{\lambda, \sigma} C_{\lambda j}C_{\sigma j}(u\lambda|\sigma v))]C_{vi} &= E_i \sum_v S_{uv}C_{vi}\\
+\forall i = 1, \cdots, N, u = 1, \cdots, K
+\end{align*}
+$$
+
+We focus on Hartree-Fock equation below. Recall that in the simplest case we got $HC_i = \epsilon_i SC_i \eqref{eq3}$ from $\sum_{v=1}^K H_{uv} C_{vi} = \epsilon_i \sum_{v=1}^K S_{uv} C_{vi}, \forall u = 1, \cdots, K \eqref{simplest_raw}$, $u$ and $v$ are row and column indices respectively. Also recall that in coulomb term $\eqref{E_coulomb_C}$, basis index $u, v$ correspond to the first electron $i$, $\lambda, \sigma$ correspond to the second electron $j$. Let
+
+$$
+\begin{align*}
+G_{uv} &= \sum_{j=1}^{N/2} (2 \sum_{\lambda, \sigma}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma) - \sum_{\lambda, \sigma} C_{\lambda j}C_{\sigma j}(u\lambda|\sigma v)) \\
+&= \sum_{\lambda, \sigma}\underbrace{(2\sum_{j=1}^{N/2} C_{\lambda j}C_{\sigma j})}_{P_{\lambda\sigma}}(uv|\lambda\sigma) - \frac{1}{2}\sum_{\lambda, \sigma}\underbrace{(2\sum_{j=1}^{N/2} C_{\lambda j}C_{\sigma j})}_{P_{\lambda\sigma}}(u\lambda|\sigma v)
+\end{align*}
+$$
+
+Here we move the sum operator over all other electrons $\sum_{j=1}^{N/2}$ to the inner of the term, and define
+
+$$
+\begin{equation}
+P_{\lambda\sigma} = 2\sum_{j=1}^{N/2} C_{\lambda j}C_{\sigma j} \label{P_def}
+\end{equation}
+$$
+
+(Or in matrix form $P = 2CC^T$ in which $C$ is a $K \times N/2$ matrix. Here $P$ is called *density matrix*. We will discuss the physical meaning of $P$ [in later section](#charge-density-matrix)), thus
+
+$$
+\begin{equation}
+G_{uv} = \sum_{\lambda, \sigma}P_{\lambda\sigma}(uv|\lambda\sigma) - \frac{1}{2}\sum_{\lambda, \sigma}P_{\lambda\sigma}(u\lambda|\sigma v) \label{G_def}
+\end{equation}
+$$
+
+Now we can write Hartree-Fock equation in matrix form, similar to $\eqref{eq3}$, that is,
+
+$$
+(H + G)C_i = \epsilon_i SC_i
+$$
+
+Or more concisely, define *Fock matrix* $F = H + G$ (see (3.154) of [1]), we have 
+
+$$
+\begin{equation}
+FC_i = \epsilon_i SC_i \label{HF}
+\end{equation}
+$$
+
+which is also a (generalized) eigen decomposition in which we solve $K$ eigenvalue $\epsilon_1, \cdots, \epsilon_K$ and $K$ elgenvectors $C_1, \cdots, C_K$ for the Fock matrix $F$.
+
+### Self-Consistent Field (SCF)
+
+However, note that we cannot directly solve $\eqref{HF}$ as stated in the simplest case $\eqref{eq3}$. Different from $H$ in $\eqref{eq3}$ which is a known constant, $F$ is dependent on $G$, $G$ is dependent on $P \eqref{G_def}$, $P$ is dependent on $C_1, \cdots, C_{N/2} \eqref{P_def}$. In a word, $F$ is a function of $C$ ($F = F(C)$), but $C$ is just the result that we want to solve. So this becomes a chicken-egg problem. To solve $\eqref{HF}$ we need $C$ to construct Fock matrix $F$, to obtain $C$ we need to solve $\eqref{HF}$, ..., which is a dead lock.
+
+In reality we can try Self-Consistent Field (SCF) method to solve the equation. Simply speaking, we randomly choose a $C_0$ so that we can construct $F$ and solve $\eqref{HF}$ to obtain a new $C_1$. Iterate the process until the new generated $C_i$ is nearly the same as the previous $C_{i-1}$. In implementation we actually use $P$ to replace $C$ in the aforementioned iteration process. That is:
+
+- Choose an initial $P$
+- iterate until $\|P - P'\| < \text{threshold}$:
+  - Compute Fock matrix $F = H + G(P)$
+  - Solve $FC_i = \epsilon_i SC_i \eqref{HF}$ via the procedure introduced in [previous section](#the-simplest-case-both-v_ee-and-antisymmetry-principle-ignored), obtain $K$ elgenvectors $C_1, \cdots, C_K$ whose eigenvalue is in ascending order.
+  - Store previous density matrix $P' = P$ and compute new $P = 2CC^T$, in which $C = [C_1, \cdots, C_{N/2}]$ is a $K \times N/2$ matrix consisting of the first $N/2$ eigenvectors.
+
+Unfortunately, SCF is not guaranteed to converge. The selection of initial value and the tricks in iteration process (such as DIIS) is critical to its convergence.
+
+### Charge density matrix
+
+Note that $P_{\lambda\sigma}$ in $\eqref{P_def}$ actually has physical meaning. Remind that $\psi_i(r)$ (orbital) is the wave function of a single electron. Therefore $\rho_i(r) = \psi_i^2(r)$ is the probability density that this electron shows at coodinate $r$, $\int_{r} \psi^2_i(r) dr = 1$. Then
+
+$$
+\begin{align*}
+\rho_i(r) = \psi_j^2(r) &= (\sum_{\lambda=1}^K C_{\lambda j} \phi_\lambda(r))(\sum_{\sigma=1}^K C_{\sigma j} \phi_\sigma(r)) \\
+&= \sum_{\lambda\sigma}C_{\lambda j}C_{\sigma j} \phi_\lambda(r)\phi_\sigma(r)
+\end{align*}
+$$
+
+Since $K$ basis function $\phi_1(r), \cdots, \phi_K(r)$ are given, the above expression shows that, if we know $K$ variables $C_{1j}, \cdots, C_{Kj}$ then we can get the probability density function of a single orbital $\psi_j^2(r)$.
+
+So how many variables do we need if we want the total density function of all $N$ electrons. That is $\rho(r) = 2\sum_{j=1}^{N/2}\rho_j(r)$ ($\int_{r} \rho(r) dr = N$)? A simple answer is $(N/2) \times K$ matrix of $C$. However,
+
+$$
+\begin{align*}
+\rho(r) = 2\sum_{j=1}^{N/2}\psi_j^2(r) &= 2\sum_{j=1}^{N/2}\sum_{\lambda\sigma}C_{\lambda j}C_{\sigma j} \phi_\lambda(r)\phi_\sigma(r) \\
+&= \sum_{\lambda\sigma}(2\sum_{j=1}^{N/2}C_{\lambda j}C_{\sigma j}) \phi_\lambda(r)\phi_\sigma(r) \\
+&= \sum_{\lambda\sigma}P_{\lambda\sigma} \phi_\lambda(r)\phi_\sigma(r)
+\end{align*}
+$$
+
+So besides $C$, a $K \times K$ matrix $P$ is also sufficient to describe the total density function $\rho(r)$. For this reason we call $P$ the *(charge) density matrix*.
 
 ## Appendix
 

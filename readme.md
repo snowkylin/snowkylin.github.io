@@ -21,4 +21,6 @@ cd /mnt/c/Users/snowkylin/OneDrive/github/snowkylin.github.io
 bundle install
 # run jekyll
 bundle exec jekyll serve
+# for auto-regeneration, https://github.com/microsoft/WSL/issues/216#issuecomment-756424551
+bundle exec jekyll serve --force_polling
 ```

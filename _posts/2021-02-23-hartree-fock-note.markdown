@@ -398,11 +398,11 @@ which is also a (generalized) eigen decomposition in which we solve $K$ eigenval
 
 However, note that we cannot directly solve $\eqref{HF}$ as stated in the simplest case $\eqref{eq3}$. Different from $H$ in $\eqref{eq3}$ which is a known constant, $F$ is dependent on $G$, $G$ is dependent on $P \eqref{G_def}$, $P$ is dependent on $C_1, \cdots, C_{N/2} \eqref{P_def}$. In a word, $F$ is a function of $C$ ($F = F(C)$), but $C$ is just the result that we want to solve. So this becomes a chicken-egg problem. To solve $\eqref{HF}$ we need $C$ to construct Fock matrix $F$, to obtain $C$ we need to solve $\eqref{HF}$, ..., which is a dead lock.
 
-In reality we can try Self-Consistent Field (SCF) method to solve the equation. Simply speaking, we randomly choose a $C_0$ so that we can construct $F$ and solve $\eqref{HF}$ to obtain a new $C_1$. Iterate the process until the new generated $C_i$ is nearly the same as the previous $C_{i-1}$. In implementation we actually use $P$ to replace $C$ in the aforementioned iteration process. That is:
+In reality we can try Self-Consistent Field (SCF) method to solve the equation. Simply speaking, we randomly choose a $C^0$ so that we can construct $F$ and solve $\eqref{HF}$ to obtain a new $C^1$. Iterate the process until the new generated $C^i$ is nearly the same as the previous $C^{i-1}$. In implementation we actually use $P$ to replace $C$ in the aforementioned iteration process. That is:
 
 - Choose an initial $P$
 - iterate until $\|P - P'\| < \text{threshold}$:
-  - Compute Fock matrix $F = H + G(P)$
+  - Compute Fock matrix $F = H + G(P)$ following $\eqref{G_def}$
   - Solve $FC_i = \epsilon_i SC_i \eqref{HF}$ via the procedure introduced in [previous section](#the-simplest-case-both-v_ee-and-antisymmetry-principle-ignored), obtain $K$ elgenvectors $C_1, \cdots, C_K$ whose eigenvalue is in ascending order.
   - Store previous density matrix $P' = P$ and compute new $P = 2CC^T$, in which $C = [C_1, \cdots, C_{N/2}]$ is a $K \times N/2$ matrix consisting of the first $N/2$ eigenvectors.
 
@@ -432,6 +432,74 @@ $$
 $$
 
 So besides $C$, a $K \times K$ matrix $P$ is also sufficient to describe the total density function $\rho(r)$. For this reason we call $P$ the *(charge) density matrix*.
+
+## Thomas-Fermi theory
+
+From the last section, we notice that the electron density $\rho(r)$ (or density matrix $P$) plays an important role. Expecially the $G$ matrix $\eqref{G_def}$ is a function of $P$. Then can we skip the wave function ($\psi(r), C$) and directly calculate through the electron density ($\rho(r), P$)? Thomas-Fermi theory shows such a possibility.
+
+### Preliminaries: electron density for N-electron wavefunction
+
+For a single-electron wave function $\psi_i(r)$, we know that $\rho_i(r) = \psi_i^2(r)$ is the probability density that this electron shows at coodinate $r$, $\int_{r} \psi^2\_i(r) dr = 1$. Then, what will be the electron density for N-electron wavefunction $\Psi(r_1, \cdots, r_N)$? Actually, it is similar to [joint probability distribution](https://en.wikipedia.org/wiki/Joint_probability_distribution) $f_{X, Y}(x, y)$ and [marginal distribution](https://en.wikipedia.org/wiki/Marginal_distribution#Multivariate_distributions) $f_{X}(x) = \int_y f_{X, Y}(x, y)dy$ for random variable $X$. That is, $\rho(r_1, \cdots, r_N) = \Psi^2(r_1, \cdots, r_N)$ is the probability density that electron 1 shows at coordinate $r_1$, electron 2 shows at coordinate $r_2$, ..., electron N shows at coordinate $r_N$. $\int_{r_1, \cdots, r_N} \Psi^2(r_1, \cdots, r_N)dr_1, \cdots, dr_N = 1$. The (marginal) probability density that electron i appears at coordinate $r$ is that
+
+$$
+\rho_i({\color{red}r}) = \int_{r_1, \cdots, r_{i-1}, r_{i+1}, \cdots, r_N} \Psi^2(r_1, \cdots, r_{i-1}, {\color{red}r}, r_{i+1}, \cdots, r_N) dr_1, \cdots, dr_{i-1}, dr_{i+1}, \cdots, dr_N
+$$
+
+and we define (total) electron density $\rho(r)$ simply as
+
+$$
+\rho(r) = \sum_{i=1}^N \rho_i(r)
+$$
+
+which is NOT a probability density function but a sum of N probability density functions. $\int \rho(r) dr = \sum_{i=1}^N \int \rho_i(r)dr = N$.
+
+### Expressing total energy with electron density
+
+The key of Thomas-Fermi theory is to express the total energy $\int \Psi (T_e + V_{eN} + V_{ee})\Psi$ as a function of electron density $\rho(r)$.
+
+- $T_e$ (kinetic energy): $\int \Psi T_e \Psi = \int \Psi (-\frac{1}{2}\sum_i\nabla_i^2) \Psi$ hard to be expressed with $\rho(r)$, but can be estimated by $T_{TF}(\rho) = C_F\int\rho^{5/3}(r)dr$ in which $C_F = \frac{3}{10}(3\pi^2)^{2/3} \simeq 2.871$
+- $V_{eN}$ (electrostatic potential between electrons and nuciels, or external potential. Can also be denoted as $V_{ext}$): 
+  
+  $$
+  \begin{align*}
+  \int \Psi V_{eN} \Psi &= \int \Psi(\sum_A\sum_i-\frac{Z_A}{r_{Ai}}) \Psi \\
+  &= \sum_{i=1}^N\int_{r_1, \cdots, r_N} \Psi(r_1, \cdots, r_N) (\sum_A-\frac{Z_A}{r_{Ai}}) \Psi(r_1, \cdots, r_N) dr_1\cdots dr_N \\
+  &= \sum_{i=1}^N\int_{r_i} \underbrace{(\sum_A-\frac{Z_A}{r_{Ai}})}_{v(i)} \underbrace{(\int_{r_1, \cdots, r_{i-1}, r_{i+1}, \cdots, r_N} \Psi^2(r_1, \cdots, r_N) dr_1\cdots dr_{i-1}, dr_{i+1}, \cdots, dr_N)}_{\rho_i(r_i)} dr_i \\
+  &= \sum_{i=1}^N\int_r v(i)\rho_i(r)dr = \int_r v(i)\underbrace{(\sum_{i=1}^N\rho_i(r))}_{\rho(r)}dr \\
+  &= \int v(i)\rho(r)dr
+  \end{align*}
+  $$
+
+  in which $v(i) = \sum_A-\frac{Z_A}{r_{Ai}}$. remind that $h(i) = -\frac{1}{2}\nabla_i^2 - \sum_{A}\frac{Z_A}{r_{Ai}} = -\frac{1}{2}\nabla_i^2 + v(i)$. In this way, $V_{eN}$ can be *precisely* expressed via electron density $\rho(r)$, no matter how the N-electron wave function $\Psi$ is approximated.
+- $V_{ee}$ (electrostatic repulsion between electrons): while $\int \Psi (\frac{1}{2}\sum_{i \neq j}\frac{1}{r_{ij}}) \Psi$ is hard to tackle as before, we use [Hartree approximation](#hartree-approximation-v_ee-considered-antisymmetry-principle-ignored) in which $\Psi$ is approximated as the product of $N$ single-electron wavefunction (orbitals) $\Psi(r_1, \cdots, r_N) = \psi(r_1)\cdots\psi(r_N)$. We also relax $\sum_{i \neq j}$ as $\sum_{i, j} (\text{i.e., }\sum_i\sum_j)$
+  
+  $$
+  \begin{align*}
+  & \int \Psi(r_1, \cdots, r_N) (\frac{1}{2}\sum_{i, j} \frac{1}{r_{ij}}) \Psi(r_1, \cdots, r_N) dr_1\cdots dr_N \nonumber \\
+  =& \frac{1}{2}\sum_{i, j} \int_{r_N}\cdots\int_{r_1} \psi(r_1)\cdots\psi(r_N) \frac{1}{r_{ij}} \psi(r_1)\cdots\psi(r_N) dr_1\cdots dr_N \nonumber \\
+  =& \frac{1}{2}\sum_{i, j} \int_{r_i, r_j} \psi_i(r_i)\psi_j(r_j)\frac{1}{r_{ij}}\psi_j(r_j)\psi_i(r_i) dr_i dr_j \\
+  =& \frac{1}{2} \int_{r_i, r_j} \underbrace{(\sum_{i=1}^N\psi^2_i(r_i))}_{\rho(r_i)} \underbrace{(\sum_{j=1}^N\psi^2_j(r_j))}_{\rho(r_j)}\frac{1}{r_{ij}} dr_i dr_j \\
+  =& \frac{1}{2} \int_{r_i, r_j} \frac{\rho(r_i)\rho(r_j)}{r_{ij}} dr_i dr_j
+  \end{align*}
+  $$
+
+Adding all three energies above, we get the total energy with Thomas-Fermi approximation (denoted as $\langle H \rangle_{TF}$)
+
+$$
+\langle H \rangle_{TF} = C_F\int\rho^{5/3}(r)dr + \int v(i)\rho(r)dr + \frac{1}{2} \int_{r_i, r_j} \frac{\rho(r_i)\rho(r_j)}{r_{ij}} dr_i dr_j
+$$
+
+Dirac added a term for the exchange energy $E_x(\rho) = -C_x \int \rho^{4/3}(r)dr$ in which $C_x = \frac{3}{4}(\frac{3}{\pi})^{1/3}$, and
+
+$$
+\langle H \rangle_{TFD} = \langle H \rangle_{TF} + E_x
+$$
+
+Thomas-Fermi(-Dirac) theory shows that the total energy can be approximated as a function of electron density $\rho(r)$.
+
+## Density Functional Theory (DFT)
+
+### Preliminaries: 
 
 ## Appendix
 

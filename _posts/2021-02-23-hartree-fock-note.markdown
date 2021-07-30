@@ -127,7 +127,7 @@ where $C_i = (C_{1i}, \cdots, C_{Ki})^T$. If our basis functions are orthonormal
 
 However, the basis functions are usually not orthonormal ($S \neq I$), so what we actually need to solved is a [generalized eigenvalue problem](https://arxiv.org/pdf/1903.11240.pdf) formed as $Ax = \lambda Bx$ instead of $Ax = \lambda x$. As stated in [this tutorial](https://arxiv.org/pdf/1903.11240.pdf), there is a quick & dirty way to solve the generalized problem: let $C = B^{-1}A$ and solve $Cx = \lambda x$. However, there are two concerns about this method. The first is that $C = B^{-1}A$ may not be symmetric (so the final eigenvectors may not be orthogonal), so you need to use [`np.linalg.eig`](https://numpy.org/doc/stable/reference/generated/numpy.linalg.eig.html) in NumPy instead of [`np.linalg.eigh`](https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigh.html). Usually symmetric matrix is more favorable in eigen decomposition. The second is that each eigenvector needs to be additionally scaled so as to satisfy $x^TBx = 1$ (recall that the orbital coefficient is constrainted by $C_i^TSC_i = 1$) 
 
-Here we use a more rigorous way to solve it. In this case we want to find a linear transformation $X$ so that $X^TSX = I$. If we can find such a transformation $X$, let $C_i' = X^{-1}C_i'$ ($C_i = XC_i'$) so we have $HXC_i' = \epsilon_i SXC_i'$. Multiply $X^T$ on the left and we have $\underbrace{X^THX}\_{=H'}C_i' = \epsilon_i \underbrace{X^TSX}_{=I}C_i'$. Let $H' = X^THX$ and we have $H'C_i' = \epsilon_i C_i'$. Then we solve $C_i'$ as usual and do linear transformation $C_i = XC_i'$ (not orthogonal after the transformation) to get solution $C_i$ of the original equation $HC_i = \epsilon_i SC_i$.
+Here we use a more rigorous way to solve it. In this case we want to find a linear transformation $X$ so that $X^TSX = I$. If we can find such a transformation $X$, let $C_i' = X^{-1}C_i$ ($C_i = XC_i'$) so we have $HXC_i' = \epsilon_i SXC_i'$. Multiply $X^T$ on the left and we have $\underbrace{X^THX}\_{=H'}C_i' = \epsilon_i \underbrace{X^TSX}_{=I}C_i'$. Let $H' = X^THX$ and we have $H'C_i' = \epsilon_i C_i'$. Then we solve $C_i'$ as usual and do linear transformation $C_i = XC_i'$ (not orthogonal after the transformation) to get solution $C_i$ of the original equation $HC_i = \epsilon_i SC_i$.
 
 The following are the steps to find the transformation $X$. We first do matrix diagonalization (矩阵对角化) to $S$, that is, find $K$ eigenvectors $U = [U_1, \cdots, U_K]$ and eigenvalues $s = [s_1, \cdots, s_K]$ so that $SU = U\text{diag}(s) \Rightarrow U^TSU = \text{diag}(s)$ ($U$ is orthonormal and normalized so $U^T = U^{-1}$). Then let $X = U\text{diag}(s^{-1/2})$ in which $s^{-1/2} = [s_1^{-1/2}, \cdots, s_K^{-1/2}]$, we have $X^TSX = \text{diag}(s^{-1/2})U^TSU\text{diag}(s^{-1/2}) = \text{diag}(s^{-1/2})\text{diag}(s)\text{diag}(s^{-1/2}) = I$ (remind that $(AB)^T = B^TA^T$). (see 3.4.5 of [1] for details)
 
@@ -167,7 +167,7 @@ $$
 =& \sum_{i=1}^N \int_{r_i} \psi_i(r_i)h(i)\psi_i(r_i) dr_i \label{E_h} \\
 & \text{with the basis expansion $\psi_i(r_i) = \sum_{u=1}^K C_{ui} \phi_u(r_i)$} \nonumber \\
 =& \sum_{i=1}^N \int \sum_{u, v}C_{ui}C_{vi}\phi_u(r_i)h(i)\phi_v(r_i) dr_i \nonumber \\
-=& \sum_{i=1}^N \sum_{u, v}C_{ui}C_{vi} \underbrace{\int \phi_u(r_i)h(i)\phi_v(r_i) dr_i}_{H_{uv}} = \sum_{i=1}^N \sum_{u, v}C_{ui}C_{vi}H_{uv} \nonumber \\
+=& \sum_{i=1}^N \sum_{u, v}C_{ui}C_{vi} \underbrace{\int \phi_u(r_i)h(i)\phi_v(r_i) dr_i}_{H_{uv}} = \sum_{i=1}^N \sum_{u, v}C_{ui}C_{vi}H_{uv} \label{raw_hcore_energy} \\
 \end{align}
 $$
 
@@ -252,11 +252,11 @@ Now let's replace the simple hartree product wave function $\Psi(r_1, \cdots, r_
 Again, we consider the constrainted optimization problem: $\min \int \Psi (\sum_i h(i) + \frac{1}{2}\sum_{i \neq j}\frac{1}{r_{ij}}) \Psi \text{ s.t. } \int \|\Psi\|^2 = 1$. The only difference is that the wave function is replaced with a (single) slater determinant. Assuming that we already calculated the objective (expectation value of energy) 
 
 $$
-\begin{align*}
-E_0 &= \int \Psi (\sum_i h(i) + \frac{1}{2}\sum_{i \neq j}\frac{1}{x_{ij}}) \Psi \\
-&= \underbrace{\sum_{i=1}^N \int \chi_i(x) h(i) \chi_i(x) dx}_{\eqref{E_h}\text{, the simplest case, or $\sum_i[i|h|i]$}} + \underbrace{\frac{1}{2}\sum_{i, j} \int \chi_i(x_1)\chi_i(x_1)\frac{1}{r_{12}}\chi_j(x_2)\chi_j(x_2) dx_1 dx_2}_{\eqref{E_coulomb}\text{, added in Hartree approx., or $\frac{1}{2}\sum_{i, j} [ii|jj]$}} \\
-&- \underbrace{\frac{1}{2}\sum_{i, j} \int \chi_i(x_1)\chi_j(x_1)\frac{1}{r_{12}}\chi_j(x_2)\chi_i(x_2) dx_1 dx_2}_{\text{New "exchange" term, or $\frac{1}{2}\sum_{i, j} [ij|ji]$}}
-\end{align*}
+\begin{align}
+E_0 &= \int \Psi (\sum_i h(i) + \frac{1}{2}\sum_{i \neq j}\frac{1}{x_{ij}}) \Psi \nonumber\\
+&= \underbrace{\sum_{i=1}^N \int \chi_i(x) h(i) \chi_i(x) dx}_{\eqref{E_h}\text{, the simplest case, or $\sum_i[i|h|i]$}} + \underbrace{\frac{1}{2}\sum_{i, j} \int \chi_i(x_1)\chi_i(x_1)\frac{1}{r_{12}}\chi_j(x_2)\chi_j(x_2) dx_1 dx_2}_{\eqref{E_coulomb}\text{, added in Hartree approx., or $\frac{1}{2}\sum_{i, j} [ii|jj]$}} \nonumber\\
+&- \underbrace{\frac{1}{2}\sum_{i, j} \int \chi_i(x_1)\chi_j(x_1)\frac{1}{r_{12}}\chi_j(x_2)\chi_i(x_2) dx_1 dx_2}_{\text{New "exchange" term, or $\frac{1}{2}\sum_{i, j} [ij|ji]$}} \label{raw_total_energy}
+\end{align}
 $$
 
 This result can be found in (2.111) and (3.39) of [1]. Note that we replace spatial orbitals $\psi_i(r)$ with spin orbitals $\chi_i(x)$, and have several minor changes of notation for simplicity:
@@ -298,11 +298,11 @@ The second and third term will vanish since $\int {\color{red}{\alpha(\omega)}}{
 Now we expand the exchange term with basis functions and take derivative
 
 $$
-\begin{align*}
-&\sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \int \psi_i(r_1)\psi_j(r_1)\frac{1}{r_{12}}\psi_j(r_2)\psi_i(r_2) dr_1 dr_2 \\
-=& \sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \sum_{u, v, \lambda, \sigma}C_{ui}C_{vi}C_{\lambda j}C_{\sigma j}\underbrace{\int \phi_u(r_1)\phi_\lambda(r_1)\frac{1}{r_{12}}\phi_\sigma(r_2)\phi_v(r_2) dr_1 dr_2}_{(u\lambda|\sigma v)} \\
-\frac{\partial}{\partial C_{ui}} =& 4\sum_{j=1}^{N/2} \sum_{v, \lambda, \sigma} C_{vi}C_{\lambda j}C_{\sigma j} (u\lambda|\sigma v)
-\end{align*}
+\begin{align}
+&\sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \int \psi_i(r_1)\psi_j(r_1)\frac{1}{r_{12}}\psi_j(r_2)\psi_i(r_2) dr_1 dr_2 \nonumber\\
+=& \sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \sum_{u, v, \lambda, \sigma}C_{ui}C_{vi}C_{\lambda j}C_{\sigma j}\underbrace{\int \phi_u(r_1)\phi_\lambda(r_1)\frac{1}{r_{12}}\phi_\sigma(r_2)\phi_v(r_2) dr_1 dr_2}_{(u\lambda|\sigma v)} \label{raw_exchange_energy}\\
+\frac{\partial}{\partial C_{ui}} =& 4\sum_{j=1}^{N/2} \sum_{v, \lambda, \sigma} C_{vi}C_{\lambda j}C_{\sigma j} (u\lambda|\sigma v)\nonumber
+\end{align}
 $$
 
 Therefore
@@ -380,6 +380,12 @@ G_{uv} = \sum_{\lambda, \sigma}P_{\lambda\sigma}(uv|\lambda\sigma) - \frac{1}{2}
 \end{equation}
 $$
 
+or, [in a NumPy way](https://py-xdh.readthedocs.io/zh_CN/latest/qcbasic/basic_rhf.html#%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81),
+
+```python
+np.einsum("uvkl, kl -> uv", eri, D) - 0.5 * np.einsum("ukvl, kl -> uv", eri, D)
+```
+
 Now we can write Hartree-Fock equation in matrix form, similar to $\eqref{eq3}$, that is,
 
 $$
@@ -394,7 +400,7 @@ FC_i = \epsilon_i SC_i \label{HF}
 \end{equation}
 $$
 
-which is also a (generalized) eigen decomposition in which we solve $K$ eigenvalue $\epsilon_1, \cdots, \epsilon_K$ and $K$ elgenvectors $C_1, \cdots, C_K$ for the Fock matrix $F$.
+which is also a (generalized) eigen decomposition in which we solve $K$ eigenvalue $\epsilon_1, \cdots, \epsilon_K$ and $K$ elgenvectors $C_1, \cdots, C_K$ for the Fock matrix $F$. This equation is usually called [Roothaan equation](https://en.wikipedia.org/wiki/Roothaan_equations).
 
 ### Self-Consistent Field (SCF)
 
@@ -434,6 +440,52 @@ $$
 $$
 
 So besides $C$, a $K \times K$ matrix $P$ is also sufficient to describe the total density function $\rho(r)$. For this reason we call $P$ the *(charge) density matrix*.
+
+### Total Energy
+
+Now we review the total energy $\eqref{raw_total_energy}$ and try to write it in a more elegant way using density matrix $P$ ($P_{\lambda\sigma} = 2\sum_{j=1}^{N/2} C_{\lambda j}C_{\sigma j} \eqref{P_def}$)and two-centered integral of basis functions $(uv\|\lambda\sigma) = \int \phi_u(r_i)\phi_\lambda(r_j)\frac{1}{r_{ij}}\phi_\sigma(r_j)\phi_v(r_i) dr_i dr_j$. 
+
+$E = E_{Hcore} + E_{coulomb} + E_{exchange}$ in which
+
+$$
+\begin{align*}
+E_{Hcore} &= \sum_{i=1}^N \sum_{u, v}C_{ui}C_{vi}H_{uv} \quad \eqref{raw_hcore_energy}\\
+&= 2\sum_{i=1}^{N/2} \sum_{u, v}C_{ui}C_{vi}H_{uv} \quad \text{(for closed-shell restricted scenario)} \\
+&= \sum_{u, v}(2\sum_{i=1}^{N/2}C_{ui}C_{vi})H_{uv} = \sum_{u, v}P_{uv}H_{uv}\\
+E_{coulomb} &= \frac{1}{2}\sum_{i=1}^{N} \sum_{j=1}^{N} \sum_{u, v, \lambda, \sigma}C_{ui}C_{\lambda j}C_{\sigma j}C_{vi}(uv|\lambda\sigma) \quad \eqref{E_coulomb_C} \\
+&= 2\sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \sum_{u, v, \lambda, \sigma}C_{ui}C_{\lambda j}C_{\sigma j}C_{vi}(uv|\lambda\sigma) \quad \text{(for closed-shell restricted scenario)} \\
+&= \frac{1}{2}\sum_{u, v, \lambda, \sigma}(2\sum_{i=1}^{N/2}C_{ui}C_{vi})(2\sum_{j=1}^{N/2}C_{\lambda j}C_{\sigma j})(uv|\lambda\sigma) = \frac{1}{2}\sum_{u, v, \lambda, \sigma}P_{uv}P_{\lambda\sigma}(uv|\lambda\sigma)\\
+E_{exchange} &= -\sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \sum_{u, v, \lambda, \sigma}C_{ui}C_{vi}C_{\lambda j}C_{\sigma j}(u\lambda|\sigma v) \quad \eqref{raw_exchange_energy}
+ \\
+&= -\frac{1}{4} \sum_{u, v, \lambda, \sigma} (2\sum_{i=1}^{N/2}C_{ui}C_{vi})(2\sum_{j=1}^{N/2}C_{\lambda j}C_{\sigma j})(u\lambda|\sigma v) = -\frac{1}{4}\sum_{u, v, \lambda, \sigma}P_{uv}P_{\lambda\sigma}(u\lambda|\sigma v)
+\end{align*}
+$$
+
+Therefore
+
+$$
+E = \sum_{u, v}P_{uv}H_{uv} + \frac{1}{2}\sum_{u, v, \lambda, \sigma}P_{uv}P_{\lambda\sigma}(uv|\lambda\sigma) - \frac{1}{4}\sum_{u, v, \lambda, \sigma}P_{uv}P_{\lambda\sigma}(u\lambda|\sigma v)
+$$
+
+Or, in a NumPy way, 
+
+```python
+E_elec = (HC * D).sum() + 0.5 * np.einsum("uvkl, uv, kl ->", eri, D, D) \\
+         - 0.25 * np.einsum("ukvl, uv, kl ->", eri, D, D)
+```
+in [Py-xdh documentation](https://py-xdh.readthedocs.io/zh_CN/latest/qcbasic/basic_rhf.html#%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81). The usage of `np.einsum` can be found [here](https://numpy.org/doc/stable/reference/generated/numpy.einsum.html) (In explicit mode with `->`).
+
+Note that with Born-Oppenheimer approximation, we assume that the nuciels are fixed, static points with given coordinate $R$, thus we ignored the constant energy of nucleis (kinetic energy of nucleis $T_N(R)$ and Coulombic repulsion between nucleis $V_{NN}(R)$)in all the above discussions (see [problem statement](#problem-statement)). However, when talking about the term "total energy", these constant energies should be included, that is, 
+
+$$
+E_{nuc} = T_N(R) + V_{NN}(R) = 0 + \sum_{A < B}\frac{Z_A Z_B}{R_{AB}} = \frac{1}{2}\sum_{A, B}\frac{Z_A Z_B}{R_{AB}}
+$$
+
+which is quite easy to calculate using atomic number $Z_A$ and nuclei coordinate $R_A$, without any basis or integral. Finally,
+
+$$
+E_{total} = E + E_{nuc}
+$$
 
 ## Thomas-Fermi theory
 
@@ -555,3 +607,4 @@ $$
 1. Szabo, A., & Ostlund, N. S. (1982). Modern quantum chemistry: introduction to advanced electronic structure theory. Dover Publication.
 2. Sherrill, C. D. (2000). [An introduction to Hartree-Fock molecular orbital theory](http://vergil.chemistry.gatech.edu/courses/chem6485/pdf/hf-intro.pdf). School of Chemistry and Biochemistry, Georgia Institute of Technology.
 3. <https://gitlab.com/LLindenbauer/Hartree-Fock-Tutorial>
+4. <https://py-xdh.readthedocs.io/zh_CN/latest/>

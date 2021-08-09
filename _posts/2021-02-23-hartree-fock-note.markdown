@@ -18,7 +18,7 @@ $$
 \end{equation}
 $$
 
-in which $\nabla_t^2 = \frac{\partial^2}{\partial r_{i, x}^2} + \frac{\partial^2}{\partial r_{i, y}^2} + \frac{\partial^2}{\partial r_{i, z}^2}$ is the laplace operator for $r_i = (r_{i, x}, r_{i, y}, r_{i, z})$, $N$ is the number of electrons. $r_i, r_j$ and $R_A, R_B$ are the 3d coodinate of electrons $\_i, \_j$ (电子) and nuciels $\_A, \_B$ (原子核) respectively. $r_{iA} = \|r_i - R_A\|$ is the distance between electron $i$ and nuciel $A$, $r_{ij} = \|r_i - r_j\|$ is the distance between electron $i$ and $j$. $Z_A$ is the atomic number (原子序数) of nucleus $A$. 
+in which $\nabla_i^2 = \frac{\partial^2}{\partial r_{i, x}^2} + \frac{\partial^2}{\partial r_{i, y}^2} + \frac{\partial^2}{\partial r_{i, z}^2}$ is the laplace operator for $r_i = (r_{i, x}, r_{i, y}, r_{i, z})$, $N$ is the number of electrons. $r_i, r_j$ and $R_A, R_B$ are the 3d coodinate of electrons $\_i, \_j$ (电子) and nuciels $\_A, \_B$ (原子核) respectively. $r_{iA} = \|r_i - R_A\|$ is the distance between electron $i$ and nuciel $A$, $r_{ij} = \|r_i - r_j\|$ is the distance between electron $i$ and $j$. $Z_A$ is the atomic number (原子序数) of nucleus $A$. 
 
 - $T_e(r)$: kinetic energy of electrons
 - $V_{eN}(r, R)$: electrostatic potential (静电势) between electrons ($_e$) and nuciels ($_N$) (or "external potentials")
@@ -484,7 +484,10 @@ $$
 which is quite easy to calculate using atomic number $Z_A$ and nuclei coordinate $R_A$, without any basis or integral. Finally,
 
 $$
-E_{total} = E + E_{nuc}
+\begin{align}
+E_{total} &= E + E_{nuc} \nonumber \\
+&= \sum_{u, v}P_{uv}H_{uv} + \frac{1}{2}\sum_{u, v, \lambda, \sigma}P_{uv}P_{\lambda\sigma}(uv|\lambda\sigma) - \frac{1}{4}\sum_{u, v, \lambda, \sigma}P_{uv}P_{\lambda\sigma}(u\lambda|\sigma v) + \frac{1}{2}\sum_{A, B}\frac{Z_A Z_B}{R_{AB}} \label{E_total}
+\end{align}
 $$
 
 ## Thomas-Fermi theory
@@ -600,6 +603,48 @@ To calculate $\int_{r=0}^{+\infty} e^{-pr^2} r^2 dr$, reminds that the Gaussian 
 
 $$
 S_{uv} = 4\pi \tilde{K} \frac{\sqrt{\pi}}{4p^{3/2}} = (\frac{\pi}{p})^{3/2} e^{-\frac{\alpha\beta}{\alpha + \beta}|R_u - R_v|^2}
+$$
+
+### Derivative of energy w.r.t nuclei coordinates (Geometry Optimization)
+
+More details can be found in appendix C of [1] and [4].
+
+Generally speaking, the total energy $E_{total}$ (notation simplified as $E$ in the following text) can be seen as a function of nuclei coordinates $R = (R_1, R_2, \cdots)$ (denoted as $E(R)$). The coordinate-energy curve (surface) is called [potential energy surface (PES)](https://en.wikipedia.org/wiki/Potential_energy_surface). In geometry optimization, we are interested in finding the global minima of $E(R)$, that is, $R^* = \arg\min_R E(R)$. In order to find the minima efficiently, we are going to achieve a mission impossible -- differentiate $E$ w.r.t $R$, i.e., $\frac{\partial E}{\partial R}$.
+
+Recall $\eqref{E_total}$
+
+$$
+E = \sum_{u, v}P_{uv}H_{uv} + \frac{1}{2}\sum_{u, v, \lambda, \sigma}P_{uv}P_{\lambda\sigma}(uv|\lambda\sigma) - \frac{1}{4}\sum_{u, v, \lambda, \sigma}P_{uv}P_{\lambda\sigma}(u\lambda|\sigma v) + \frac{1}{2}\sum_{A, B}\frac{Z_A Z_B}{R_{AB}}
+$$
+
+Considering $P_{uv} = 2\sum_{i=1}^{N/2} C_{ui}C_{vi}$ is just a function of occupied molecular orbital coefficient $C$, and $R_{AB} = \|R_A - R_B\|$, we get that $E$ is a function of
+
+- $C_{ui}$, which may have implicit dependence with $R$. 
+- $H_{uv} = \int \phi_u(r)h(1)\phi_v(r)dr$. From [integral evaluation](#integral-evaluation) we know that the gaussian atomic orbital $\phi_u(r, R_{A(u)}) = \phi_u(r-R_{A(u)}) = (2\alpha/\pi)^{3/4}e^{-\alpha\|r-R_{A(u)}\|^2}$ is a function of both $r$ and nuclei coordinate $R_{A(u)}$, in which $A(u)$ is the corresponding nuclei of the $u$th atomic orbital. In this case, we write $H_{uv}$ as $H_{uv} = \int \phi_u(r, R_{A(u)})h(1)\phi_v(r, R_{A(v)})dr$, which has a clear dependence of nuclei coordinate $R$.
+- $(uv\|\lambda\sigma) = \int \phi_u(r_1)\phi_v(r_1)\frac{1}{r_{12}}\phi_\lambda(r_2)\phi_\sigma(r_2) dr_1 dr_2$. Similarly, we can write it as $\int \phi_u(r_1, R_{A(u)})\phi_v(r_1, R_{A(v)})\frac{1}{r_{12}}\phi_\lambda(r_2, R_{A(\lambda)})\phi_\sigma(r_2, R_{A(\sigma)}) dr_1 dr_2$, which has a clear dependence of nuclei coordinate $R$.
+- $R_A$, the nuclei coordinate itself.
+- $Z_A$, which is not correlated with nuclei coordinate $R$ at all.
+
+To compute $\frac{\partial E}{\partial R}$, we first compute the derivative of the first term, i.e., $\frac{\partial E_{Hcore}}{\partial R}$ as an example. Remind that $\frac{\partial}{\partial x} [a(x)b(x)c(x)d(x)\cdots] = \frac{\partial a(x)}{\partial x}b(x)c(x)d(x)\cdots + a(x)\frac{\partial b(x)}{\partial x}c(x)d(x)\cdots + \cdots$
+
+$$
+\begin{align*}
+E_{Hcore} &= \sum_{u, v}P_{uv}H_{uv} = 2\sum_{i=1}^{N/2} \sum_{u, v}C_{ui}C_{vi}H_{uv} \\
+\frac{\partial E_{Hcore}}{\partial R_A} &= 2\sum_{i=1}^{N/2} \sum_{u, v}(\underbrace{\frac{\partial C_{ui}}{\partial R_A}C_{vi}H_{uv} + C_{ui}\frac{\partial C_{vi}}{\partial R_A}H_{uv}}_{\text{symmetry}} + C_{ui}C_{vi}\frac{\partial H_{uv}}{\partial R_A}) \\
+&= 4\sum_{i=1}^{N/2} \sum_{u, v}\frac{\partial C_{ui}}{\partial R_A}C_{vi}H_{uv} + \sum_{u, v}P_{uv}\frac{\partial H_{uv}}{\partial R_A} \\
+E_{coulomb} &= 2\sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \sum_{u, v, \lambda, \sigma}C_{ui}C_{vi}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma) \\
+\frac{\partial E_{coulomb}}{\partial R_A} &= 8\sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \sum_{u, v, \lambda, \sigma}\frac{\partial C_{ui}}{\partial R_A}C_{vi}C_{\lambda j}C_{\sigma j}(uv|\lambda\sigma) + 2\sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \sum_{u, v, \lambda, \sigma}C_{ui}C_{\lambda j}C_{\sigma j}C_{vi}\frac{\partial (uv|\lambda\sigma)}{\partial R_A} \\
+&= 4\sum_{i=1}^{N/2} \sum_{u, v, \lambda, \sigma}\frac{\partial C_{ui}}{\partial R_A}C_{vi}P_{\lambda\sigma}(uv|\lambda\sigma) + \frac{1}{2}\sum_{u, v, \lambda, \sigma}P_{uv}P_{\lambda\sigma}\frac{\partial (uv|\lambda\sigma)}{\partial R_A} \\
+E_{exchange} &= -\sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \sum_{u, v, \lambda, \sigma}C_{ui}C_{vi}C_{\lambda j}C_{\sigma j}(u\lambda|\sigma v) \\
+\frac{\partial E_{exchange}}{\partial R_A} &= -4\sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \sum_{u, v, \lambda, \sigma}\frac{\partial C_{ui}}{\partial R_A}C_{vi}C_{\lambda j}C_{\sigma j}(u\lambda|\sigma v) - \sum_{i=1}^{N/2} \sum_{j=1}^{N/2} \sum_{u, v, \lambda, \sigma}C_{ui}C_{\lambda j}C_{\sigma j}C_{vi}\frac{\partial (uv|\lambda\sigma)}{\partial R_A} \\
+&= -2\sum_{i=1}^{N/2} \sum_{u, v, \lambda, \sigma}\frac{\partial C_{ui}}{\partial R_A}C_{vi}P_{\lambda\sigma}(u\lambda|\sigma v) - \frac{1}{4}\sum_{u, v, \lambda, \sigma}P_{uv}P_{\lambda\sigma}\frac{\partial (u\lambda|\sigma v)}{\partial R_A} \\
+E_{nuc} &= V_{NN}(R) = \frac{1}{2}\sum_{A \neq B}\frac{Z_A Z_B}{R_{AB}} = \frac{1}{2}\sum_{A \neq B}\frac{Z_A Z_B}{\sqrt{(R_{A, x} - R_{B, x})^2 + (R_{A, y} - R_{B, y})^2 + (R_{A, z} - R_{B, z})^2}}\\
+\frac{\partial E_{nuc}}{\partial R_{A, x}} &= \frac{1}{2} \cdot 2 Z_A \sum_{B(\neq A)} Z_B \cdot -(R_{AB})^{-2} \cdot \frac{1}{2} (R_{AB}^2)^{1/2} \cdot 2(R_{A, x} - R_{B, x}) \quad \text{(similar for } R_{A, y} \text{ and } R_{A, z} \text{)}\\
+\frac{\partial E_{nuc}}{\partial R_A} &= Z_A \sum_{B(\neq A)}\frac{Z_B (R_B - R_A)}{R_{AB}^3} \\
+\frac{\partial E}{\partial R_A} &= \frac{\partial E_{Hcore}}{\partial R_A} + \frac{\partial E_{coulomb}}{\partial R_A} + \frac{\partial E_{exchange}}{\partial R_A} + \frac{\partial E_{nuc}}{\partial R_A} \\
+&= 4\sum_{i=1}^{N/2} \sum_{u, v}\frac{\partial C_{ui}}{\partial R_A}C_{vi}\underbrace{(H_{uv} + P_{\lambda\sigma}(uv|\lambda\sigma) - \frac{1}{2}P_{\lambda\sigma}(u\lambda|\sigma v))}_{F_{uv}, \text{see} \eqref{G_def}} \\
+&+ \sum_{u, v}P_{uv}\frac{\partial H_{uv}}{\partial R_A} + \frac{1}{2}\sum_{u, v, \lambda, \sigma}P_{uv}P_{\lambda\sigma}(\frac{\partial (uv|\lambda\sigma)}{\partial R_A} - \frac{1}{2}\frac{\partial (u\lambda|\sigma v)}{\partial R_A}) + Z_A \sum_{B(\neq A)}\frac{Z_B (R_B - R_A)}{R_{AB}^3}
+\end{align*}
 $$
 
 ## References

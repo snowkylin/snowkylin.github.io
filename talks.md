@@ -11,6 +11,8 @@ Here are some of my talks with slide & code resources, mostly as a [Google Devel
 
 # Talks and Codelabs
 
+- **Dec. 2020** - Google Developers Group DevFest Shenzhen & Fuzhou, Hybrid Quantum-Classical Machine Learning with TensorFlow [[Slide]](https://docs.google.com/presentation/d/1xY0l26htLjJr8yh75Z8cf4_l_tkMDOomH5Qm7J1Ji1c/edit?usp=sharing) [[Tutorial]](https://tf.wiki/zh_hans/appendix/quantum.html)
+- **Dec. 2020** - Google Developers Group DevFest Dongguan & Fuzhou, Reinforcement Learning with TensorFlow [[Slide]](https://docs.google.com/presentation/d/103eX_bggaHd7UOLH4TtJYWU7REwDWwMhGX412o2NFP8/edit?usp=sharing) [[Tutorial]](https://tf.wiki/zh_hans/basic/models.html#drl)
 - **Dec. 2019** - Google Developers Group DevFest Shenzhen & Zhuhai, *Getting Started with TensorFlow 2.0* [[slide]](https://docs.google.com/presentation/d/1GykpPLF5NnaoIg9O7Ah0rm5U9rX2vRYBmFXm7zoZ7uU/edit?usp=sharing)
 - **Apr. 2019** - BigAI Deep Learning Practice: *A Cooperative Multi-Agent Reinforcement Learning Framework for Resource Balancing in Complex Logistics Network* [[slide]](https://docs.google.com/presentation/d/1Rg0YaKllBaH3WqkYwHb6ySdYgxnkMpL7GbIMIpnJgn4/edit?usp=sharing) 
 - **Apr. 2019** - Google Women Techmakers 2019 Beijing, *A Concise Codelab of TensorFlow* [[slide]](https://drive.google.com/file/d/1nzDUJUYr4HDoOBqA_NfbCfTa3MQrrS8H/view?usp=sharing)
@@ -36,7 +38,7 @@ Here are some of my talks with slide & code resources, mostly as a [Google Devel
 - **Data Warehousing and Data Mining Technology**, Peking University, Spring and Summer Semester, 2017 (Teaching Assistant)
     - Assignment instruction: <https://github.com/snowkylin/data-mining-pku/blob/master/README.md>
     - Report template: <https://github.com/snowkylin/data-mining-pku/tree/master/report>
-- **Introduction to Animal Protection: Theory and Practice**, Zhejiang University, Fall and Winter Semester, 2015 (Instructor)
+- **Introduction to Animal Protection: Theory and Practice**, Animal Protector Association of Zhejiang University, Fall and Winter Semester, 2015 (Instructor)
     - Slides: <http://data.zjuapa.com/activity.php?id=7>
     - Videos: <http://v.youku.com/v_show/id_XODEwOTYxNzc2.html?spm=a2hzp.8244740.0.0&f=22998018>
 

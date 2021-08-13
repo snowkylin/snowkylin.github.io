@@ -5,7 +5,7 @@ permalink: /publications/
 display_title: Publications
 ---
 
-[[Google Scholar profile]](https://scholar.google.com/citations?user=2Y-QNGEAAAAJ)
+[[Google Scholar profile]](https://scholar.google.com/citations?user=2Y-QNGEAAAAJ) [[DBLP]](https://dblp.org/pid/81/4133-1.html)
 
 # Papers
 

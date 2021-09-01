@@ -17,11 +17,12 @@ Email: xihan.li at cs dot ucl dot ac dot uk
 
 # Short Bio
 
-I am a first-year Ph.D. student in [Department of Computer Science](http://www.cs.ucl.ac.uk/), [University College London](http://www.ucl.ac.uk/), advised by [Prof. Jun Wang](http://www0.cs.ucl.ac.uk/staff/Jun.Wang/). Meanwhile, I am a [Google Developers Expert](https://developers.google.com/experts/about) in Machine Learning. I used to be a research intern in Machine Learning Group, [Microsoft Research Asia](https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/). Prior to UCL, I received my M.S. degree of Computer Science from [Peking University](https://www.pku.edu.cn), advised by [Prof. Yunhai Tong](http://www.cis.pku.edu.cn/faculty/system/tongyunhai/tongyunhai.htm). I received my B.Eng. degree of Computer Science with minor certificate of Biological Science from [Zhejiang University](http://www.zju.edu.cn/english), working with [Prof. Xiaogang Jin](https://person.zju.edu.cn/0096364). I was a member of [Chu Kochen Honors College (Mixed Class)](http://ckc.zju.edu.cn/english/).
+I am a first-year Ph.D. student in [Department of Computer Science](http://www.cs.ucl.ac.uk/), [University College London](http://www.ucl.ac.uk/), advised by [Prof. Jun Wang](http://www0.cs.ucl.ac.uk/staff/Jun.Wang/). Meanwhile, I am a [Google Developers Expert](https://developers.google.com/community/experts/directory/profile/profile-xihan-li) in Machine Learning. I used to be a research intern in Machine Learning Group, [Microsoft Research Asia](https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/). Prior to UCL, I received my M.S. degree of Computer Science from [Peking University](https://www.pku.edu.cn), advised by [Prof. Yunhai Tong](http://www.cis.pku.edu.cn/faculty/system/tongyunhai/tongyunhai.htm). I received my B.Eng. degree of Computer Science with minor certificate of Biological Science from [Zhejiang University](http://www.zju.edu.cn/english), working with [Prof. Xiaogang Jin](https://person.zju.edu.cn/0096364). I was a member of [Chu Kochen Honors College (Mixed Class)](http://ckc.zju.edu.cn/english/).
 
- My research interests lie on reinforcement learning, multi-agent system, graph and natural language processing, with their application on real-world challanges. Currently, my research focuses on the application of multi-agent reinforcement learning in graph-based realistic scenarios.
+ My research interests lie on reinforcement learning and multi-agent system, with their application on real-world challanges. Currently, my research focuses on the application of multi-agent reinforcement learning in optimization scenarios.
 
-# What's New
+
+<!-- # What's New
 
 - **May. 2019** - I successfully passed the graduation defense with my master degree thesis "[Resource Balancing in Complex Logistics Networks with Multi-Agent Reinforcement Learning and Graph Attention]({{site.url}}/assets/publications/Master_Degree_Thesis.pdf)".
 - **May. 2019** - I was accepted in [Google Summer of Code 2019](https://summerofcode.withgoogle.com/), TensorFlow Team (20 out of 1500+ applications) with the project "An Extended Version of 'A Concise Handbook of TensorFlow' and a Library of Extended Keras Layers for TensorFlow 2.0"
@@ -34,4 +35,4 @@ Next ’19](https://cloud.withgoogle.com/next/sf) in San Francisco, CA, with ful
 - **Mar. 2018** - I was invited to attend [TensorFlow Dev Summit 2018](https://www.tensorflow.org/dev-summit/) in Mountain View, CA, with full travel support from Google.
 - **Jan. 2018** - I started to be a research intern in Machine Learning Group of [Microsoft Research Asia](https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/).
 - **Dec. 2017** - I am honored to be selected as a [Google Developers Expert](https://developers.google.com/experts/about) in Machine Learning.  [(profile page)](https://developers.google.com/experts/people/xihan-li)
-- **Aug. 2017** - I started to be a research intern in [Yizhou Sun's Lab](http://web.cs.ucla.edu/~yzsun/index.html) in [University of California, Los Angeles](http://www.ucla.edu/).
+- **Aug. 2017** - I started to be a research intern in [Yizhou Sun's Lab](http://web.cs.ucla.edu/~yzsun/index.html) in [University of California, Los Angeles](http://www.ucla.edu/). -->

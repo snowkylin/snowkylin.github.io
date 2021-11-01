@@ -5,6 +5,8 @@ author: Snowkylin
 categories: game-theory reinforcement-learning
 ---
 
+[[PDF]]({{site.url}}/assets/pdf/matrix-game-markov-game-pomdp-psr.pdf)
+
 <embed src="{{site.url}}/assets/pdf/matrix-game-markov-game-pomdp-psr.pdf" width="100%" height="700" type="application/pdf">
 
 ## Reference

@@ -7,7 +7,7 @@ display_title: "Talks"
 
 <a href="https://developers.google.com/experts/about" target="_blank"><img src="/assets/talks/2018-GDE-Machine-Learning-Badge.png" style="width: 20%; float: right;"/></a>
 
-Here are some of my talks with slide & code resources, mostly as a [Google Developers Expert](https://developers.google.com/community/experts/directory/profile/profile-xihan_li) in Machine Learning. Please feel free to download, use and adapt these resources with appropriate credit and a link to this site. For commercial usage, please contact me first before using them.
+Here are some of my talks with slide & code resources, mostly as a [Google Developers Expert](https://developers.google.com/community/experts/directory/profile/profile-xihan-li) in Machine Learning. Please feel free to download, use and adapt these resources with appropriate credit and a link to this site. For commercial usage, please contact me first before using them.
 
 # Talks and Codelabs
 
@@ -31,6 +31,8 @@ Here are some of my talks with slide & code resources, mostly as a [Google Devel
 <center>
     <p><img src="/assets/talks/devfest_2019_shenzhen.jpeg" style="width: 50%"/></p>
     <p>Google Developers Group DevFest Shenzhen 2019</p>
+    <p><a href="/assets/about/GDE.jpg"><img src="/assets/about/GDE.jpg" style="width: 80%"/></a></p>
+    <p>Group photo of <a href="https://developers.google.com/community/experts">Google Developers Expert Summit 2019</a></p>
 </center>
 
 # Teaching

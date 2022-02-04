@@ -9,6 +9,11 @@ display_title: Publications
 
 [[Google Scholar profile]](https://scholar.google.com/citations?user=2Y-QNGEAAAAJ) [[Semantic Scholar]](https://www.semanticscholar.org/author/Xihan-Li/2108414275) [[DBLP]](https://dblp.org/pid/81/4133-1.html)
 
+# Preprint
+
+- **Xihan Li**, Xiang Chen, Rasul Tutunov, Haitham Bou-Ammar, Lei Wang, Jun Wang. "[Self-Consistent Gradient-like Eigen Decomposition in Solving Schrödinger Equations](https://arxiv.org/abs/2202.01388)." arXiv preprint arXiv:2202.01388 (2022).
+
+
 # Papers
 
 - **Xihan Li**, Xiongwei Han, Zhishuo Zhou, Mingxuan Yuan, Jia Zeng, Jun Wang. "[Grassland: A Rapid Algebraic Modeling System for Million-variable Optimization](https://arxiv.org/abs/2108.04586)". In *Proceedings of the 30th ACM International Conference on Information & Knowledge Management* (CIKM '21). Association for Computing Machinery, New York, NY, USA, 3925–3934. [[arXiv (with appendix)]](https://arxiv.org/abs/2108.04586) [[ACM DL]](https://dl.acm.org/doi/10.1145/3459637.3481925) [[Slide]]({{site.url}}/assets/grassland/grassland_slide.pdf) [[Poster]]({{site.url}}/assets/grassland/grassland_poster.pdf) [[Video]](https://app6ca5octe2206.pc.xiaoe-tech.com/detail/v_617b6fe4e4b0fa7d55ffa2ef/3) [[WeChat Post]](https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2650826610&idx=4&sn=65269a0312e2ba95c46dabef4b452df9) [[OptVerse]](https://www.huaweicloud.com/product/modelarts/optverse.html) 

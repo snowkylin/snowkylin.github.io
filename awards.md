@@ -9,11 +9,43 @@ display_title: Awards
 
 - [Google Open Source Peer Bonus award](https://opensource.googleblog.com/2020/10/announcing-latest-google-open-source.html) • Sept. 2020
 - [Google Summer of Code 2019, TensorFlow Team](https://summerofcode.withgoogle.com/archive/2019/projects/5460192307707904) • May 2019 - Sept 2019
-- [Google Developers Expert (GDE) in Machine Learning](https://developers.google.com/community/experts/directory/profile/profile-xihan-li) • Dec 2017
+- [Google Developers Expert (GDE) in Machine Learning](https://developers.google.com/community/experts/directory/profile/profile-xihan-li) • Dec 2017 - present
 - Outstanding Undergraduate Thesis, Zhejiang University • Jun 2016
 - Excellent Student Award, Zhejiang University • Dec 2014
 - Outstanding Student Leader Award, Zhejiang University • Dec 2014
 
+<center>
+<table style="border: 0px; width: 75%">
+    <tr>
+        <td width="50%">
+            <center>
+                <a href="/assets/awards/GDE.jpg">
+                    <img src="/assets/awards/GDE.jpg" width="100%"/>
+                </a>
+            </center>
+        </td>
+        <td width="50%">
+            <center>
+                <a href="/assets/awards/OSPB2020.jpg">
+                    <img src="/assets/awards/OSPB2020.jpg" width="100%"/>                    
+                </a>
+            </center>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <center>
+            <p>Google Developers Expert (GDE) in Machine Learning</p>
+            </center>
+        </td>
+        <td>
+            <center>
+            <p>Google Open Source Peer Bonus award</p>
+            </center>
+        </td>
+    </tr>    
+</table>
+</center>
 
 # Contest Prizes
 

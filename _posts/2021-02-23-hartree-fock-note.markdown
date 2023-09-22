@@ -37,7 +37,7 @@ $$
 There are two challenges to solve this equation:
 
 1. $V_{ee}(r) = \sum_{i < j}\frac{1}{r_{ij}}$ is hard to tackle, since it makes all electrons correlated. Without it, we can simply write the equation as $\sum_i h(i) \Psi(r_1, \cdots, r_N) = E\Psi(r_1, \cdots, r_N)$. In this case, we only need to solve $N$ single-electron equations $h(i)\psi_i(r_i) = \epsilon_i\psi_i(r_i)$ for $i = 1, \cdots, N$, get $N$ wave functions $\psi_1(r_1), \cdots, \psi_N(r_N)$ (molecular spatial orbitals (空间轨道). *Orbital* is a wave function for a single electron, see section 2.2 of [1]), then let $\Psi(r_1, \cdots, r_N) = \prod_i \psi_i(r_i)$ (hartree product), $E = \sum_i \epsilon_i$, and the equation is solved.
-2. The wave function $\Psi(r_1, \cdots, r_N)$ needs to satisfy a specific physical property named *antisymmetry principle*, whose famous representation is *Pauli exclusion principle* (泡利不相容原理) that tell us two electrons in the same spatial orbital must have opposite spins. To illustrate this, we need to take spin $\omega = \\\{\alpha, \beta\\\}$ (自旋) into account. Let space-spin coordinates $x = (r, \omega)$ and change the molecular spatial orbital $\psi(r)$ to molecular spin orbital (自旋轨道) $\chi(x) = \psi(r)\omega$. Then the antisymmetry principle requires that $\Psi(\cdots, x_i, \cdots, x_j, \cdots) = -\Psi(\cdots, x_j, \cdots, x_i, \cdots)$. e.g., for a two-electron system, $\Psi(x_1, x_2) = -\Psi(x_2, x_1)$, and when $x_1 = x_2$ we have $\Psi(x_1, x_2) = -\Psi(x_1, x_2) \Rightarrow \Psi(x_1, x_2)  = 0 \Rightarrow \|\Psi(x_1, x_2)\|^2 = 0$, which means the probability of two electrons in the same space with parallel spin is zero.
+2. The wave function $\Psi(r_1, \cdots, r_N)$ needs to satisfy a specific physical property named *antisymmetry principle*, whose famous representation is *Pauli exclusion principle* (泡利不相容原理) that tell us two electrons in the same spatial orbital must have opposite spins. To illustrate this, we need to take spin $\omega = \\\{\alpha, \beta\\\}$ (自旋) into account. Let space-spin coordinates $x = (r, \omega)$ and change the molecular spatial orbital $\psi(r)$ to molecular spin orbital (自旋轨道) $\chi(x) = \psi(r)\omega$. Then the antisymmetry principle requires that $\Psi(\cdots, x_i, \cdots, x_j, \cdots) = -\Psi(\cdots, x_j, \cdots, x_i, \cdots)$. e.g., for a two-electron system, $\Psi(x_1, x_2) = -\Psi(x_2, x_1)$, and when $x_1 = x_2$ we have $\Psi(x_1, x_2) = -\Psi(x_1, x_2) \Rightarrow \Psi(x_1, x_2)  = 0 \Rightarrow \|\Psi(x_1, x_2)\|^2 = 0$, which means the probability of two electrons in the same space with parallel spin is zero. (By the way, this is why the electrons are called as [fermions](https://en.wikipedia.org/wiki/Fermion) (费米子). The wave function will change its sign when two fermions swap their coordinates)
 
 The Hartree-Fock theory tackles these challenges by the following ways:
 
@@ -568,7 +568,7 @@ For overlap integral $S_{uv} = \int \phi_u(r_i)\phi_v(r_i)dr_i$ with Gaussian at
 
 $$
 \begin{aligned}
-& \phi_u(r-R_u) \phi_v{r - R_v} \\
+& \phi_u(r-R_u) \phi_v(r - R_v) \\
 = & e^{-\alpha|r - R_u|^2} e^{-\beta|r - R_v|^2} \\
 = & e^{-(\alpha|r - R_u|^2 + \beta|r - R_v|^2)} \\
 = & e^{-[\alpha(r_x - R_{u,x})^2 + \beta(r_x - R_{v,x})^2 + \alpha(r_y - R_{u,y})^2 + \beta(r_y - R_{v,y})^2 + \alpha(r_z - R_{u,z})^2 + \beta(r_z - R_{v,z})^2]} \\
@@ -646,6 +646,14 @@ E_{nuc} &= V_{NN}(R) = \frac{1}{2}\sum_{A \neq B}\frac{Z_A Z_B}{R_{AB}} = \frac{
 &+ \sum_{u, v}P_{uv}\frac{\partial H_{uv}}{\partial R_A} + \frac{1}{2}\sum_{u, v, \lambda, \sigma}P_{uv}P_{\lambda\sigma}(\frac{\partial (uv|\lambda\sigma)}{\partial R_A} - \frac{1}{2}\frac{\partial (u\lambda|\sigma v)}{\partial R_A}) + Z_A \sum_{B(\neq A)}\frac{Z_B (R_B - R_A)}{R_{AB}^3}
 \end{align*}
 $$
+
+### Hartree-Fock and Mean-Field
+
+https://nukephysik101.wordpress.com/2017/07/12/hartree-fock-and-mean-field/
+
+### Density Fitting
+
+https://github.com/psi4/psi4numpy/blob/master/Tutorials/03_Hartree-Fock/density-fitting.ipynb
 
 ## References
 

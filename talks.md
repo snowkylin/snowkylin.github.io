@@ -7,10 +7,11 @@ display_title: "Talks"
 
 <a href="https://developers.google.com/experts/about" target="_blank"><img src="/assets/talks/2018-GDE-Machine-Learning-Badge.png" style="width: 20%; float: right;"/></a>
 
-Here are some of my talks with slide & code resources, mostly as a [Google Developers Expert](https://developers.google.com/community/experts/directory/profile/profile-xihan-li) in Machine Learning. Please feel free to download, use and adapt these resources with appropriate credit and a link to this site. For commercial usage, please contact me first before using them.
+Here are some of my talks with slide & code resources, mostly as a [Google Developers Expert](https://developers.google.com/community/experts/directory?text=Xihan%20Li) in Machine Learning. Please feel free to download, use and adapt these resources with appropriate credit and a link to this site. For commercial usage, please contact me first before using them.
 
 # Talks and Codelabs
 
+- **Aug. 2023** - Google Developers Group Community Talk & ByteDance Talk, Introduction to Large Language Models [[Slide]](/assets/talks/Introduction_to_LLM.pdf)
 - **Dec. 2020** - Google Developers Group DevFest Shenzhen & Fuzhou, Hybrid Quantum-Classical Machine Learning with TensorFlow [[Slide]](https://docs.google.com/presentation/d/1xY0l26htLjJr8yh75Z8cf4_l_tkMDOomH5Qm7J1Ji1c/edit?usp=sharing) [[Tutorial]](https://tf.wiki/zh_hans/appendix/quantum.html)
 - **Dec. 2020** - Google Developers Group DevFest Dongguan & Fuzhou, Reinforcement Learning with TensorFlow [[Slide]](https://docs.google.com/presentation/d/103eX_bggaHd7UOLH4TtJYWU7REwDWwMhGX412o2NFP8/edit?usp=sharing) [[Tutorial]](https://tf.wiki/zh_hans/basic/models.html#drl)
 - **Dec. 2019** - Google Developers Group DevFest Shenzhen & Zhuhai, *Getting Started with TensorFlow 2.0* [[slide]](https://docs.google.com/presentation/d/1GykpPLF5NnaoIg9O7Ah0rm5U9rX2vRYBmFXm7zoZ7uU/edit?usp=sharing)

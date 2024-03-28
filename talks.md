@@ -11,6 +11,7 @@ Here are some of my talks with slide & code resources, mostly as a [Google Devel
 
 # Talks and Codelabs
 
+- **Mar. 2024** - Google Developers Group Community Talk, Introduction to Deep Learning [[Slide]](/assets/talks/Introduction_to_Deep_Learning.pdf)
 - **Aug. 2023** - Google Developers Group Community Talk & ByteDance Talk, Introduction to Large Language Models [[Slide]](/assets/talks/Introduction_to_LLM.pdf)
 - **Dec. 2020** - Google Developers Group DevFest Shenzhen & Fuzhou, Hybrid Quantum-Classical Machine Learning with TensorFlow [[Slide]](https://docs.google.com/presentation/d/1xY0l26htLjJr8yh75Z8cf4_l_tkMDOomH5Qm7J1Ji1c/edit?usp=sharing) [[Tutorial]](https://tf.wiki/zh_hans/appendix/quantum.html)
 - **Dec. 2020** - Google Developers Group DevFest Dongguan & Fuzhou, Reinforcement Learning with TensorFlow [[Slide]](https://docs.google.com/presentation/d/103eX_bggaHd7UOLH4TtJYWU7REwDWwMhGX412o2NFP8/edit?usp=sharing) [[Tutorial]](https://tf.wiki/zh_hans/basic/models.html#drl)

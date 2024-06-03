@@ -11,10 +11,10 @@ display_title: Publications
 
 # Manuscripts
 
-- **Xihan Li**, Xing Li, Lei Chen, Xing Zhang, Mingxuan Yuan and Jun Wang. “[Logic Synthesis with Generative Deep Neural Networks.](/assets/publications/ctrw.pdf)” (2024). [[PDF]](/assets/publications/ctrw.pdf) [[Poster]](/assets/publications/ctrw_IWLS2024poster.pdf)
+- **Xihan Li**, Xing Li, Lei Chen, Xing Zhang, Mingxuan Yuan and Jun Wang. “[Logic Synthesis with Generative Deep Neural Networks.](/assets/publications/ctrw.pdf)” In the 33rd International Workshop on Logic & Synthesis (IWLS 2024). [[PDF]](/assets/publications/ctrw.pdf) [[Poster]](/assets/publications/ctrw_IWLS2024poster.pdf)
 - **Xihan Li**, Xing Li, Lei Chen, Xing Zhang, Mingxuan Yuan and Jun Wang. “[Circuit Transformer: End-to-end Circuit Design by Predicting the Next Gate.](https://arxiv.org/abs/2403.13838)” (2024). [[PDF]](https://arxiv.org/pdf/2403.13838.pdf)
 
-# Papers
+# Published Papers
 
 - **Xihan Li**, Xiang Chen, Rasul Tutunov, Haitham Bou Ammar, Lei Wang, Jun Wang. "[Online PCA in Converging Self-consistent Field Equations](https://proceedings.neurips.cc/paper_files/paper/2023/hash/969c14957c0df5ce2db642b3a5fa985c-Abstract-Conference.html)". In the 37th Conference on Neural Information Processing System (NeurIPS 2023). [[PDF]](https://proceedings.neurips.cc/paper_files/paper/2023/file/969c14957c0df5ce2db642b3a5fa985c-Paper-Conference.pdf) [[Appendix]](https://proceedings.neurips.cc/paper_files/paper/2023/file/969c14957c0df5ce2db642b3a5fa985c-Supplemental-Conference.pdf)
 - **Xihan Li**, Xiongwei Han, Zhishuo Zhou, Mingxuan Yuan, Jia Zeng, Jun Wang. "[Grassland: A Rapid Algebraic Modeling System for Million-variable Optimization](https://dl.acm.org/doi/10.1145/3459637.3481925)". In *Proceedings of the 30th ACM International Conference on Information & Knowledge Management* (CIKM '21). Association for Computing Machinery, New York, NY, USA, 3925–3934. [[PDF (with appendix)]](https://arxiv.org/pdf/2108.04586.pdf) [[ACM DL]](https://dl.acm.org/doi/10.1145/3459637.3481925) [[Slide]]({{site.url}}/assets/grassland/grassland_slide.pdf) [[Poster]]({{site.url}}/assets/grassland/grassland_poster.pdf) [[Video]](https://app6ca5octe2206.pc.xiaoe-tech.com/detail/v_617b6fe4e4b0fa7d55ffa2ef/3)

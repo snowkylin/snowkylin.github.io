@@ -11,6 +11,7 @@ display_title: Publications
 
 # Manuscripts
 
+- **Xihan Li**, Xing Li, Lei Chen, Xing Zhang, Mingxuan Yuan and Jun Wang. “[Logic Synthesis with Generative Deep Neural Networks.](/assets/publications/ctrw.pdf)” (2024). [[PDF]](/assets/publications/ctrw.pdf) [[Poster]](/assets/publications/ctrw_IWLS2024poster.pdf)
 - **Xihan Li**, Xing Li, Lei Chen, Xing Zhang, Mingxuan Yuan and Jun Wang. “[Circuit Transformer: End-to-end Circuit Design by Predicting the Next Gate.](https://arxiv.org/abs/2403.13838)” (2024). [[PDF]](https://arxiv.org/pdf/2403.13838.pdf)
 
 # Papers

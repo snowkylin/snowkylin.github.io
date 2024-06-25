@@ -9,10 +9,10 @@ display_title: Publications
 
 [[Google Scholar profile]](https://scholar.google.com/citations?user=2Y-QNGEAAAAJ) [[Semantic Scholar]](https://www.semanticscholar.org/author/Xihan-Li/2108414275) [[DBLP]](https://dblp.org/pid/81/4133-1.html)
 
-# Manuscripts
+# Preprints
 
 - **Xihan Li**, Xing Li, Lei Chen, Xing Zhang, Mingxuan Yuan and Jun Wang. “[Logic Synthesis with Generative Deep Neural Networks.](https://arxiv.org/abs/2406.04699)” In the 33rd International Workshop on Logic & Synthesis (IWLS 2024). [[PDF]](https://arxiv.org/pdf/2406.04699) [[Poster]](/assets/publications/ctrw_IWLS2024poster.pdf) [[Slide]](/assets/publications/ctrw_IWLS2024slide.pdf)
-- **Xihan Li**, Xing Li, Lei Chen, Xing Zhang, Mingxuan Yuan and Jun Wang. “[Circuit Transformer: End-to-end Circuit Design by Predicting the Next Gate.](https://arxiv.org/abs/2403.13838)” (2024). [[PDF]](https://arxiv.org/pdf/2403.13838.pdf)
+- **Xihan Li**, Xing Li, Lei Chen, Xing Zhang, Mingxuan Yuan and Jun Wang. “[Circuit Transformer: End-to-end Circuit Design by Predicting the Next Gate.](https://arxiv.org/abs/2403.13838)” (2024). [[PDF]](https://arxiv.org/pdf/2403.13838.pdf) [[DAC WIP Poster]](/assets/publications/ct_ctrw_posters.pdf)
   - An updated version under review, which discussed the equivalence-preserving mechanism in detail: [[PDF]](/assets/publications/circuit_transformer_v2.pdf)
 
 # Published Papers

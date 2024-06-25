@@ -22,6 +22,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://snowkylin.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: snowkylin
 github_username:  snowkylin
+linkedin_username: xihanli
 excerpt_separator: <!--more-->
 # duoshuo: true
 google_analytics: UA-40509304-10

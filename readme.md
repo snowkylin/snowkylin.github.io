@@ -23,4 +23,6 @@ bundle install
 bundle exec jekyll serve
 # for auto-regeneration, https://github.com/microsoft/WSL/issues/216#issuecomment-756424551
 bundle exec jekyll serve --force_polling
+# for error regarding webrick
+bundle add webrick
 ```

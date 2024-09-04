@@ -15,19 +15,26 @@ display_title: Awards
 - Outstanding Student Leader Award, Zhejiang University • Dec 2014
 
 <center>
-<table style="border: 0px; width: 75%">
+<table style="border: 0px; width: 100%">
     <tr>
-        <td width="50%">
+        <td width="33%">
             <center>
                 <a href="/assets/awards/GDE.jpg">
                     <img src="/assets/awards/GDE.jpg" width="100%"/>
                 </a>
             </center>
         </td>
-        <td width="50%">
+        <td width="33%">
             <center>
                 <a href="/assets/awards/OSPB2020.jpg">
                     <img src="/assets/awards/OSPB2020.jpg" width="100%"/>                    
+                </a>
+            </center>
+        </td>
+        <td width="33%">
+            <center>
+                <a href="/assets/awards/GSoC2019.jpg">
+                    <img src="/assets/awards/GSoC2019.jpg" width="100%"/>                    
                 </a>
             </center>
         </td>
@@ -41,6 +48,11 @@ display_title: Awards
         <td>
             <center>
             <p>Google Open Source Peer Bonus award</p>
+            </center>
+        </td>
+        <td>
+            <center>
+            <p>Google Summer of Code 2019 Certificate (TensorFlow)</p>
             </center>
         </td>
     </tr>    

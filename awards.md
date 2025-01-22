@@ -49,7 +49,7 @@ display_title: Awards
 
 # Contest Prizes
 
-- *Outstanding Winner*, [2015 Interdisciplinary Contest In Modeling (ICM 2015)](https://www.comap.com/undergraduate/contests/mcm/contests/2015/results/) • Apr 2015
+- *Outstanding Winner*, [2015 Interdisciplinary Contest In Modeling (ICM 2015)](https://www.contest.comap.com/undergraduate/contests/mcm/contests/2015/results/) • Apr 2015
 - *First Prize of Undergraduate Group*, [2014 Contemporary Undergraduate Mathematical Contest in Modeling](http://www.mcm.edu.cn/html_cn/node/252a2e1c3edcd257c78f37a156a81209.html) • Dec 2014
 - *First Prize*, 2014 Mathematical Contest in Modeling, Zhejiang University • Jun 2014
 - *Gold Medal & Best Experimental Measurement Approach, Asia*, [2013 International Genetically Engineered Machine competition](http://igem.org/Results?year=2013) • Oct 2013

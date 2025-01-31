@@ -19,12 +19,14 @@ This is a (minimal) note on deploying [DeepSeek R1](https://github.com/deepseek-
 
 ## Models
 
-I use [Unsloth AI](https://x.com/UnslothAI)'s quantized version:
+The original DeepSeek R1 671B model is 720GB in size, which is huge. Here I use [Unsloth AI](https://x.com/UnslothAI)'s dynamically quantized version, which selectively quantize a few important layers to higher bits, while leaving most of the MoE layers for lower bits. As a result, the model can be quantized to as small as 131GB (1.58-bit), making it much more accessable for local users. It can even run on a single Mac Studio!
 
-- `DeepSeek-R1-UD-IQ1_M` (671B, 1.73 bit, 158 GB, [HuggingFace](https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-UD-IQ1_M))
-- `DeepSeek-R1-Q4_K_M` (671B, 4 bit, 404 GB, [HuggingFace](https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-Q4_K_M))
+I choose the following two models based on the spec of my workstation:
 
-A detailed introduction of their dynamic quantization can be found [here](https://unsloth.ai/blog/deepseekr1-dynamic), which is worth reading.
+- `DeepSeek-R1-UD-IQ1_M` (671B, dynamically quantized 1.73-bit, 158 GB, [HuggingFace](https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-UD-IQ1_M))
+- `DeepSeek-R1-Q4_K_M` (671B, standard 4-bit, 404 GB, [HuggingFace](https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-Q4_K_M))
+
+There are four dynamically quantized models from 131GB (1.58-bit) to 212GB (2.51-bit), and you can choose according to your own spec. A detailed introduction of the four models can be found [here](https://unsloth.ai/blog/deepseekr1-dynamic), which I strongly suggest you to read before the selection.
 
 ## Hardware Requirement
 
@@ -44,9 +46,15 @@ I tested the two models on my workstation with four-way RTX 4090 (4 x 24 GB), qu
 and the speed will slow down to 1-2 tokens/s for long text.
 
 My workstation specification is _not_ the most cost-effective choice for large LLM inference (it mainly supports my research on [Circuit Transformer](https://x.com/snowkylin/status/1882464077529890944) - welcome to have a look!). For now, some cost-effective options include
-- Apple Mac equipped with large, high-bandwidth unified memory (like [this](https://x.com/ggerganov/status/1884358147403571466), with 192 GB unified memory). 
-- A dual-CPU server with high memory bandwidth (like [this](https://huggingface.co/deepseek-ai/DeepSeek-R1/discussions/19#679be4e7c50d8da8657c1b13), with 24 x 16 GB DDR5 4800).
-- Cloud GPU servers with two or more GPUs (H100 80 GB is around $2 per hour per card)
+- Apple Mac equipped with large, high-bandwidth unified memory (like [this](https://x.com/awnihannun/status/1881412271236346233), with 2 x 192 GB unified memory). 
+- A server with high memory bandwidth (like [this](https://huggingface.co/deepseek-ai/DeepSeek-R1/discussions/19#679be4e7c50d8da8657c1b13), with 24 x 16 GB DDR5 4800).
+- A Cloud GPU server with two or more 80GB GPUs (Nvidia H100 80GB is around $2 per hour per card)
+
+If your hardware specification is a bit constrained, you may consider [the 1.58-bit quantized version](https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-UD-IQ1_S) that has the smallest size (131GB). It can be successfully run on
+- A single Mac Studio with 192GB unified memory ([ref](https://x.com/ggerganov/status/1884358147403571466))
+- 2 x Nvidia H100 80GB ([ref](https://huggingface.co/unsloth/DeepSeek-R1-GGUF/discussions/9))
+
+with decent speed (> 10 tokens/s).
 
 ## Steps
 

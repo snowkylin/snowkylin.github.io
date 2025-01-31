@@ -30,8 +30,8 @@ A detailed introduction of their dynamic quantization can be found [here](https:
 
 I will suggest the following memory requirement for the models, which is the main bottleneck
 
-- `DeepSeek-R1-UD-IQ1_M`: RAM + VRAM >= 200 GB
-- `DeepSeek-R1-Q4_K_M`: RAM + VRAM >= 500 GB
+- `DeepSeek-R1-UD-IQ1_M`: RAM + VRAM ≥ 200 GB
+- `DeepSeek-R1-Q4_K_M`: RAM + VRAM ≥ 500 GB
 
 Apart from the model weight (158 GB and 404 GB), there should also be some space leaved for context cache. The more you leaved, the larger context window you can set.
 
@@ -42,11 +42,11 @@ I tested the two models on my workstation with four-way RTX 4090 (4 x 24 GB), qu
 
 and the speed will slow down to 1-2 tokens/s for long text.
 
-My workstation specification is not the most cost-effective choice for large LLM inference (it mainly serves my research on [Circuit Transformer](https://x.com/snowkylin/status/1882464077529890944) - welcome to have a look!). For now, the most cost-effective option might be with Apple Mac with large, high-bandwidth unified memory (like [this](https://x.com/ggerganov/status/1884358147403571466)).
+My workstation specification is _not_ the most cost-effective choice for large LLM inference (it mainly supports my research on [Circuit Transformer](https://x.com/snowkylin/status/1882464077529890944) - welcome to have a look!). For now, the most cost-effective option might be with Apple Mac with large, high-bandwidth unified memory (like [this](https://x.com/ggerganov/status/1884358147403571466)).
 
 ## Steps
 
-1. Download the model files (.gguf) from HuggingFace (better with a downloader, I use [XDM](https://xtremedownloadmanager.com/)), then merge the seperated files into one [^1].
+1. Download the model files (.gguf) from [HuggingFace](https://huggingface.co/unsloth/DeepSeek-R1-GGUF) (better with a downloader, I use [XDM](https://xtremedownloadmanager.com/)), then merge the seperated files into one [^1].
 2. Install [ollama](https://ollama.com/)
 
     ```
@@ -96,9 +96,9 @@ My workstation specification is not the most cost-effective choice for large LLM
     If OOM occurs during model loading, return to step 4, adjust `num_gpu` and `num_ctx`, re-create the model and re-run.
 
     - `num_gpu`: number of layers to be offloaded to GPUs. DeepSeek R1 has 61 layers. In my experience, 
-        - For `DeepSeek-R1-UD-IQ1_M`, I can offload 7 layers on each of my RTX 4090 GPU (24 GB VRAM). I have four of them so I can offload 28 layers.
-        - For `DeepSeek-R1-Q4_K_M`, I can only offload 2 layers on the same 4090 GPU (which is a bit furstrating), with a total of 8 layers offloaded.
-    - `num_ctx`: the size of the context window (default: 2048). You can keep it small at the beginning to allow the model to fit the memory, then you can increase
+        - For `DeepSeek-R1-UD-IQ1_M`, 7 layers can be offloaded to each of my RTX 4090 GPU (24 GB VRAM). I have four of them so I can offload 28 layers.
+        - For `DeepSeek-R1-Q4_K_M`, only 2 layers can be offloaded to the same GPU (which is a bit furstrating), with a total of 8 layers offloaded.
+    - `num_ctx`: the size of the context window (default: 2048). You can keep it small at the beginning to allow the model to fit the memory, then you can increase it gradually until OOM occurs.
 
     You may also increase the swap space of your system to enlarge the available RAM. Details [here](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-20-04).
 
@@ -116,19 +116,19 @@ My workstation specification is not the most cost-effective choice for large LLM
     open-webui serve
     ```
 
-    If you wanna share your model service to others so that they can also have a try, you may find [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) helpful (it is free). Some guide [here](https://medium.com/design-bootcamp/how-to-setup-a-cloudflare-tunnel-and-expose-your-local-service-or-application-497f9cead2d3).
+    If you wanna share your model service to others so that they can also have a try, you may find [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) very helpful (it's free!). Some guide [here](https://medium.com/design-bootcamp/how-to-setup-a-cloudflare-tunnel-and-expose-your-local-service-or-application-497f9cead2d3).
 
 ## Some Observations
 
 I haven't tested the models in a comprehensive way. Here are some of my observations:
 
-- Both models works well on prompts like
-    - How many ‘r’s is in the word ‘strawberry’?
+- Both models works well on classical prompts like
+    - How many ‘r’s is in the word ‘strawberry’? (see the video at the beginning of this post)
     - Which is bigger, 9.8 or 9.11?
 
     (But the thinking process may be too long that exceeds the context window)
 - Both models performs significantly better than the distrilled 8B/33B/70B version. (writing poems, provide math model examples, etc.)
-- The 4-bit version seems to be 'safer' than the 1.73-bit version. It is more likely to reject "offensive" or "silly" prompts. For example:
+- The 4-bit version seems to be "safer" than the 1.73-bit version. It is more likely to reject "offensive" or "silly" prompts. For example:
     
     Prompt: 
 
@@ -147,16 +147,18 @@ I haven't tested the models in a comprehensive way. Here are some of my observat
     
     > DeepSeek-R1-Lite-Public is developed to enhance efficiency in various industries through open-source AI technology, focusing on providing accessible and advanced solutions. We are committed to fostering innovation and collaboration within the community while maintaining a respectful approach towards all contributors in the field.
 
-    Both models are tried for multiple times, and 4-bit version will always reject (in different ways). Similar things happen on some other "silly" questions that I prefer not to share (¬‿¬)
+    Both models are tried for multiple times, and 4-bit version will always reject my prompt (in different polite ways). Similar things happen on some other "silly" questions that I prefer not to share (¬‿¬)
 
-    (BTW, I wonder what "DeepSeek-R1-Lite-Public" is -- is there a more comphensive model beyond the current "public lite version"?)
+    (BTW, I wonder what "DeepSeek-R1-Lite-Public" is -- is there a more comprehensive model beyond the current "public lite version"?)
 
 - The 1.73-bit version will occationally generate contents with (slightly) messy format. E.g., the `<think>` and `</think>` tokens may not paired.
 - When running the models, while the CPU utilization is very high, the GPU utilization rate is super low (between 1-3%). The bottleneck is really on CPU and RAM. 
 
 ## Conclusion & Suggestion
 
-You may find Unsloth AI's 1.73-bit version much more usable if you cannot load the model fully into the VRAM (great work!). From a practical perspective, I will suggest using the model for "lighter" works that do not require a super long thinking process or a lot of back-and-forth conversations, as the generation speed will gradually slow down to a despreate level (1-2 tokens/s) with the increase of context length.
+You may find Unsloth AI's 1.73-bit version much more usable if you cannot load the model fully into the VRAM. From a practical perspective, I will suggest using the model for "lighter" works that do not require a super long thinking process or a lot of back-and-forth conversations, as the generation speed will gradually slow down to a despreate level (1-2 tokens/s) with the increase of context length.
+
+What did you find during the deployment process? Please feel free to share in the comment below!
 
 ## Note
 

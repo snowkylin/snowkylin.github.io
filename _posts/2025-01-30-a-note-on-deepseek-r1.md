@@ -33,11 +33,12 @@ I will suggest the following memory requirement for the models, which is the mai
 - `DeepSeek-R1-UD-IQ1_M`: RAM + VRAM ≥ 200 GB
 - `DeepSeek-R1-Q4_K_M`: RAM + VRAM ≥ 500 GB
 
-Apart from the model weight (158 GB and 404 GB), there should also be some space leaved for context cache. The more you leaved, the larger context window you can set.
+Ollama allow mixed inference of CPU and GPU (you can offload some layers into VRAM for fast inference) so you can roughly add up your RAM and VRAM as your total memory space. Apart from the model weight (158 GB and 404 GB), there should also be some memory space leaved for context cache. The more you leaved, the larger context window you can set.
 
 I tested the two models on my workstation with four-way RTX 4090 (4 x 24 GB), quad-channel DDR5 5600 memory (4 x 96 GB) and a ThreadRipper 7980X CPU (64 cores). Roughly, the generation speed is
 
 - `DeepSeek-R1-UD-IQ1_M`: 7-8 tokens/s for short text generation (~500 tokens)
+    - 4-5 tokens/s if no GPUs are used (fully inferenced on CPU).
 - `DeepSeek-R1-Q4_K_M`: 2-4 tokens/s for short text generation (~500 tokens)
 
 and the speed will slow down to 1-2 tokens/s for long text.

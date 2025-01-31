@@ -75,5 +75,6 @@ display_title: Publications
 
 # Service
 
-- Journal reviewer, IEEE Transactions on Automation Science and Engineering
+- Reviewer, IEEE Transactions on Automation Science and Engineering
+- Reviewer, International Conference on Learning Representations
 - Reviewer, IEEE Conference on Decision and Control

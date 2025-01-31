@@ -19,12 +19,12 @@ This is a (minimal) note on deploying [DeepSeek R1](https://github.com/deepseek-
 
 ## Models
 
-Models (Thanks to [Unsloth AI](https://x.com/UnslothAI)'s quantized version!):
+I use [Unsloth AI](https://x.com/UnslothAI)'s quantized version:
 
 - `DeepSeek-R1-UD-IQ1_M` (671B, 1.73 bit, 158 GB, [HuggingFace](https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-UD-IQ1_M))
 - `DeepSeek-R1-Q4_K_M` (671B, 4 bit, 404 GB, [HuggingFace](https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-Q4_K_M))
 
-A detailed introduction of their dynamic quantization can be found [here](https://unsloth.ai/blog/deepseekr1-dynamic).
+A detailed introduction of their dynamic quantization can be found [here](https://unsloth.ai/blog/deepseekr1-dynamic), which is worth reading.
 
 ## Hardware Requirement
 
@@ -33,7 +33,7 @@ I will suggest the following memory requirement for the models, which is the mai
 - `DeepSeek-R1-UD-IQ1_M`: RAM + VRAM ≥ 200 GB
 - `DeepSeek-R1-Q4_K_M`: RAM + VRAM ≥ 500 GB
 
-Ollama allow mixed inference of CPU and GPU (you can offload some layers into VRAM for fast inference) so you can roughly add up your RAM and VRAM as your total memory space. Apart from the model weight (158 GB and 404 GB), there should also be some memory space leaved for context cache. The more you leaved, the larger context window you can set.
+Ollama allow mixed inference of CPU and GPU (you can offload some model layers into VRAM for faster inference), so you can roughly add up your RAM and VRAM as your total memory space. Apart from the model weight (158 GB and 404 GB), there should also be some memory space leaved for context cache. The more you leaved, the larger context window you can set.
 
 I tested the two models on my workstation with four-way RTX 4090 (4 x 24 GB), quad-channel DDR5 5600 memory (4 x 96 GB) and a ThreadRipper 7980X CPU (64 cores). Roughly, the generation speed is
 
@@ -43,7 +43,10 @@ I tested the two models on my workstation with four-way RTX 4090 (4 x 24 GB), qu
 
 and the speed will slow down to 1-2 tokens/s for long text.
 
-My workstation specification is _not_ the most cost-effective choice for large LLM inference (it mainly supports my research on [Circuit Transformer](https://x.com/snowkylin/status/1882464077529890944) - welcome to have a look!). For now, the most cost-effective option might be with Apple Mac with large, high-bandwidth unified memory (like [this](https://x.com/ggerganov/status/1884358147403571466)).
+My workstation specification is _not_ the most cost-effective choice for large LLM inference (it mainly supports my research on [Circuit Transformer](https://x.com/snowkylin/status/1882464077529890944) - welcome to have a look!). For now, some cost-effective options include
+- Apple Mac equipped with large, high-bandwidth unified memory (like [this](https://x.com/ggerganov/status/1884358147403571466), with 192 GB unified memory). 
+- A dual-CPU server with high memory bandwidth (like [this](https://huggingface.co/deepseek-ai/DeepSeek-R1/discussions/19#679be4e7c50d8da8657c1b13), with 24 x 16 GB DDR5 4800).
+- Cloud GPU servers with two or more GPUs (H100 80 GB is around $2 per hour per card)
 
 ## Steps
 

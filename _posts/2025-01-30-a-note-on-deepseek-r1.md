@@ -51,8 +51,8 @@ My workstation specification is _not_ the most cost-effective choice for large L
 - A Cloud GPU server with two or more 80GB GPUs (Nvidia H100 80GB is around $2 per hour per card)
 
 If your hardware specification is a bit constrained, you may consider [the 1.58-bit quantized version](https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-UD-IQ1_S) that has the smallest size (131GB). It can be successfully run on
-- A single Mac Studio with 192GB unified memory ([ref](https://x.com/ggerganov/status/1884358147403571466))
-- 2 x Nvidia H100 80GB ([ref](https://huggingface.co/unsloth/DeepSeek-R1-GGUF/discussions/9))
+- A single Mac Studio with 192GB unified memory ([ref](https://x.com/ggerganov/status/1884358147403571466), ~$5600)
+- 2 x Nvidia H100 80GB ([ref](https://huggingface.co/unsloth/DeepSeek-R1-GGUF/discussions/9), ~$4 per hour)
 
 with decent speed (> 10 tokens/s).
 

@@ -189,7 +189,7 @@ Acknowledgement: thanks to many WeChat official accounts including [Synced](http
     Then use `llama-gguf-split` suggested [here](https://unsloth.ai/blog/deepseekr1-dynamic)
 
     ```
-    llama-gguf-split --merge DeepSeek-R1-UD-IQ1_M-00001-of-00004.gguf DeepSeek-R1-UD-IQ1_S.gguf
+    llama-gguf-split --merge DeepSeek-R1-UD-IQ1_M-00001-of-00004.gguf DeepSeek-R1-UD-IQ1_M.gguf
     llama-gguf-split --merge DeepSeek-R1-Q4_K_M-00001-of-00009.gguf DeepSeek-R1-Q4_K_M.gguf
     ```
 

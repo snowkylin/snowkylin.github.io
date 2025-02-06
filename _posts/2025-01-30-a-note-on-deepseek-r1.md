@@ -19,7 +19,7 @@ This is a (minimal) note on deploying [DeepSeek R1](https://github.com/deepseek-
 
 ## Models
 
-The original DeepSeek R1 671B model is 720GB in size, which is huge. Here I use [Unsloth AI](https://x.com/UnslothAI)'s dynamically quantized version, which selectively quantize a few important layers to higher bits, while leaving most of the MoE layers for lower bits. As a result, the model can be quantized to as small as 131GB (1.58-bit), making it much more accessable for local users. It can even run on a single Mac Studio!
+The original DeepSeek R1 671B model is 720GB in size, which is huge. Even a $200k monster like [NVIDIA DGX H100](https://www.nvidia.com/en-gb/data-center/dgx-h100/) (with 8xH100) can barely hold it. Here I use [Unsloth AI](https://x.com/UnslothAI)'s dynamically quantized version, which selectively quantize a few important layers to higher bits, while leaving most of the MoE layers for lower bits. As a result, the model can be quantized to as small as 131GB (1.58-bit), making it much more accessable for local users. It can even run on a single Mac Studio ($5.6k)!
 
 I choose the following two models based on the spec of my workstation:
 
@@ -74,7 +74,7 @@ with decent speed (> 10 tokens/s).
     PARAMETER num_gpu 28
     PARAMETER num_ctx 2048
     PARAMETER temperature 0.6
-    {% raw %}TEMPLATE "<｜User｜>{{ .Prompt }}<｜Assistant｜>"{% endraw %}
+    {% raw %}TEMPLATE "<｜User｜>{{ .System }} {{ .Prompt }}<｜Assistant｜>"{% endraw %}
     ```
 
     The content of `DeepSeekQ4_Modelfile` (for `DeepSeek-R1-Q4_K_M`):
@@ -84,7 +84,7 @@ with decent speed (> 10 tokens/s).
     PARAMETER num_gpu 8
     PARAMETER num_ctx 2048
     PARAMETER temperature 0.6
-    {% raw %}TEMPLATE "<｜User｜>{{ .Prompt }}<｜Assistant｜>"{% endraw %}
+    {% raw %}TEMPLATE "<｜User｜>{{ .System }} {{ .Prompt }}<｜Assistant｜>"{% endraw %}
     ```
 
     You may change the parameter values for `num_gpu` and `num_ctx` depending on your machine specification (see step 6)
@@ -105,19 +105,22 @@ with decent speed (> 10 tokens/s).
 
     `--verbose` for showing timings for response (tokens/s)
 
-    If OOM occurs during model loading, return to step 4, adjust `num_gpu` and `num_ctx`, re-create the model and re-run.
+    If OOM/CUDA error occurs during model loading, return to step 4, adjust `num_gpu` and `num_ctx`, re-create the model and re-run.
 
     - `num_gpu`: number of layers to be offloaded to GPUs. DeepSeek R1 has 61 layers. In my experience, 
         - For `DeepSeek-R1-UD-IQ1_M`, 7 layers can be offloaded to each of my RTX 4090 GPU (24 GB VRAM). I have four of them so I can offload 28 layers.
         - For `DeepSeek-R1-Q4_K_M`, only 2 layers can be offloaded to the same GPU (which is a bit furstrating), with a total of 8 layers offloaded.
     - `num_ctx`: the size of the context window (default: 2048). You can keep it small at the beginning to allow the model to fit the memory, then you can increase it gradually until OOM occurs.
 
-    You may also increase the swap space of your system to enlarge the available RAM. Details [here](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-20-04).
+    If OOM/CUDA error still occurs when initializing the model or during generation, you may also try the following
+    
+    - Increase the swap space of your system to enlarge the available RAM. Details [here](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-20-04). (better not to rely on this, which will significantly slow down the genration. Use it when ollama wrongly overestimates the memory requirement and do not allow you to run your model)
+    - Set the `num_predict` parameter in the modelfile, which tells the LLM the maximum number of tokens it is allowed to generate, then re-create & re-run the model.
 
     You may also find it helpful to check the ollama log:
 
     ```
-    journalctl -u ollama --no-pager
+    journalctl -u ollama
     ```
 
 6. (Optional) Install an LLM interface ([Open WebUI](https://github.com/open-webui/open-webui))

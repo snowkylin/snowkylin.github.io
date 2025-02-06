@@ -37,7 +37,7 @@ I will suggest the following memory requirement for the models, which is the mai
 
 Ollama allow mixed inference of CPU and GPU (you can offload some model layers into VRAM for faster inference), so you can roughly add up your RAM and VRAM as your total memory space. Apart from the model weight (158 GB and 404 GB), there should also be some memory space leaved for context cache. The more you leaved, the larger context window you can set.
 
-I tested the two models on my workstation with four-way RTX 4090 (4 x 24 GB), quad-channel DDR5 5600 memory (4 x 96 GB) and a ThreadRipper 7980X CPU (64 cores). Roughly, the generation speed is
+I tested both the two models on my workstation with four-way RTX 4090 (4 x 24 GB), quad-channel DDR5 5600 memory (4 x 96 GB) and a ThreadRipper 7980X CPU (64 cores). Note that you _don't_ need such a "luxury" spec if you only wanna run the dynamically quantized version. Roughly, the generation speed is
 
 - `DeepSeek-R1-UD-IQ1_M`: 7-8 tokens/s for short text generation (~500 tokens)
     - 4-5 tokens/s if no GPUs are used (fully inferenced on CPU).
@@ -174,6 +174,8 @@ I haven't tested the models in a comprehensive way. Here are some of my observat
 You may find Unsloth AI's 1.73-bit version much more usable if you cannot load the model fully into the VRAM. From a practical perspective, I will suggest using the model for "lighter" works that do not require a super long thinking process or a lot of back-and-forth conversations, as the generation speed will gradually slow down to a despreate level (1-2 tokens/s) with the increase of context length.
 
 What did you find during the deployment process? Please feel free to share in the comment below!
+
+Acknowledgement: thanks WeChat accounts including [Synced](https://mp.weixin.qq.com/s/GnHzsgvW90DGChENqTBsRw), [DataWhale](https://mp.weixin.qq.com/s/dKfQfv78ch4IlzBML9Tmkw), [PaperWeekly](https://mp.weixin.qq.com/s/jFLxjfpq16C-P9aa-9r_GA), [CAAI](https://mp.weixin.qq.com/s/l3P9HmFVZuGDO3zJNCmGKw), [MLNLP](https://mp.weixin.qq.com/s/HijtRDH8wF03e8gn4yKgyQ), [AINLP](https://mp.weixin.qq.com/s/jJgStm-BrbROrK0wb2m3hg) for spreading this post!
 
 ## Note
 

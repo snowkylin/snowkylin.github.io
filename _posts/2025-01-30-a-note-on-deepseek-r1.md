@@ -175,7 +175,7 @@ You may find Unsloth AI's 1.73-bit version much more usable if you cannot load t
 
 What did you find during the deployment process? Please feel free to share in the comment below!
 
-Acknowledgement: thanks WeChat accounts including [Synced](https://mp.weixin.qq.com/s/GnHzsgvW90DGChENqTBsRw), [DataWhale](https://mp.weixin.qq.com/s/dKfQfv78ch4IlzBML9Tmkw), [PaperWeekly](https://mp.weixin.qq.com/s/jFLxjfpq16C-P9aa-9r_GA), [CAAI](https://mp.weixin.qq.com/s/l3P9HmFVZuGDO3zJNCmGKw), [MLNLP](https://mp.weixin.qq.com/s/HijtRDH8wF03e8gn4yKgyQ), [AINLP](https://mp.weixin.qq.com/s/jJgStm-BrbROrK0wb2m3hg) for spreading this post!
+Acknowledgement: thanks to many WeChat official accounts including [Synced](https://mp.weixin.qq.com/s/GnHzsgvW90DGChENqTBsRw), [DataWhale](https://mp.weixin.qq.com/s/dKfQfv78ch4IlzBML9Tmkw), [PaperWeekly](https://mp.weixin.qq.com/s/jFLxjfpq16C-P9aa-9r_GA), [CAAI](https://mp.weixin.qq.com/s/l3P9HmFVZuGDO3zJNCmGKw), [MLNLP](https://mp.weixin.qq.com/s/HijtRDH8wF03e8gn4yKgyQ), [AINLP](https://mp.weixin.qq.com/s/jJgStm-BrbROrK0wb2m3hg) for spreading this post!
 
 ## Note
 

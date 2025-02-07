@@ -138,7 +138,7 @@ with decent speed (> 10 tokens/s).
 I haven't tested the models in a comprehensive way. Here are some of my observations:
 
 - Both models works well on classical prompts like
-    - How many ‘r’s is in the word ‘strawberry’? (see the video at the beginning of this post)
+    - How many ‘r’s are in the word ‘strawberry’? (see the video at the beginning of this post)
     - Which is bigger, 9.8 or 9.11?
 
     (But the thinking process may be too long that exceeds the context window)
@@ -176,6 +176,12 @@ You may find Unsloth AI's 1.73-bit version much more usable if you cannot load t
 What did you find during the deployment process? Please feel free to share in the comment below!
 
 Acknowledgement: thanks to many WeChat official accounts including [Synced](https://mp.weixin.qq.com/s/GnHzsgvW90DGChENqTBsRw), [DataWhale](https://mp.weixin.qq.com/s/dKfQfv78ch4IlzBML9Tmkw), [PaperWeekly](https://mp.weixin.qq.com/s/jFLxjfpq16C-P9aa-9r_GA), [CAAI](https://mp.weixin.qq.com/s/l3P9HmFVZuGDO3zJNCmGKw), [MLNLP](https://mp.weixin.qq.com/s/HijtRDH8wF03e8gn4yKgyQ), [AINLP](https://mp.weixin.qq.com/s/jJgStm-BrbROrK0wb2m3hg) for spreading this post!
+
+## Slide
+
+[[PDF]](/assets/deepseek-r1/deepseek-r1-deployment.pdf)
+
+<embed src="/assets/deepseek-r1/deepseek-r1-deployment.pdf" width="100%" height="500" type="application/pdf">
 
 ## Note
 

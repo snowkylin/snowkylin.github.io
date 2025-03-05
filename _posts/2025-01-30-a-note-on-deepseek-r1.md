@@ -56,6 +56,8 @@ If your hardware specification is a bit constrained, you may consider [the 1.58-
 
 with decent speed (> 10 tokens/s).
 
+> Update on Mar 5, 2025: Apple released the new Mac Studio with M3 Ultra chip, which allows a maximum of 512GB unified memory. 512GB version starts from $9,499. 256GB version starts from $5,599.
+
 ## Steps
 
 1. Download the model files (.gguf) from [HuggingFace](https://huggingface.co/unsloth/DeepSeek-R1-GGUF) (better with a downloader, I use [XDM](https://xtremedownloadmanager.com/)), then merge the seperated files into one [^1].

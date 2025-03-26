@@ -11,6 +11,7 @@ Here are some of my talks with slide & code resources, mostly as a [Google Devel
 
 # Talks and Codelabs
 
+- **Mar. 2025** - Gemma 3 Multimodal Development Practices: A Case Study of RefSheet Chat [[Slide]](/assets/talks/gemma_3_refsheet_chat.pdf) [[GitHub]](https://github.com/snowkylin/refsheet_chat) [[Demo]](https://refsheet.chat/) [[Demo (HuggingFace)]](https://huggingface.co/spaces/snowkylin/refsheet_chat)
 - **Jan. 2025** - LaFAI Talk, Local Deployment of DeepSeek-R1 671B [[Slide]](/assets/deepseek-r1/deepseek-r1-deployment.pdf) [[Tutorial (EN)]](https://snowkylin.github.io/blogs/a-note-on-deepseek-r1.html) [[Tutorial (ZH)]](https://mp.weixin.qq.com/s/GnHzsgvW90DGChENqTBsRw)
 - **Mar. 2024** - Google Developers Group Community Talk, Introduction to Deep Learning [[Slide]](/assets/talks/Introduction_to_Deep_Learning.pdf)
 - **Aug. 2023** - Google Developers Group Community Talk & ByteDance Talk, Introduction to Large Language Models [[Slide]](/assets/talks/Introduction_to_LLM.pdf)

@@ -11,7 +11,7 @@ display_title: Publications
 
 # Papers
 
-- **Xihan Li**, Xing Li, Lei Chen, Xing Zhang, Mingxuan Yuan and Jun Wang. "[Circuit Transformer: A Transformer That Preserves Logical Equivalence](https://openreview.net/forum?id=kpnW12Lm9p)" In the 13th International Conference on Learning Representations (ICLR 2025). [[PDF]](https://openreview.net/pdf?id=kpnW12Lm9p) [[GitHub]](https://github.com/snowkylin/circuit-transformer) [[Demo]](https://huggingface.co/spaces/snowkylin/circuit-transformer-demo) [[Slide]](/assets/publications/circuit_transformer_slide.pdf) [[Video]](https://recorder-v3.slideslive.com/?share=100328&s=a4a304de-755a-4486-adb8-5e7393adeef6)
+- **Xihan Li**, Xing Li, Lei Chen, Xing Zhang, Mingxuan Yuan and Jun Wang. "[Circuit Transformer: A Transformer That Preserves Logical Equivalence](https://openreview.net/forum?id=kpnW12Lm9p)" In the 13th International Conference on Learning Representations (ICLR 2025). [[PDF]](https://openreview.net/pdf?id=kpnW12Lm9p) [[GitHub]](https://github.com/snowkylin/circuit-transformer) [[Demo]](https://huggingface.co/spaces/snowkylin/circuit-transformer-demo) [[Slide]](/assets/publications/circuit_transformer_slide.pdf) [[Video]](https://recorder-v3.slideslive.com/?share=100328&s=a4a304de-755a-4486-adb8-5e7393adeef6) [[Poster]](/assets/publications/circuit_transformer_poster.pdf)
 - **Xihan Li**, Xing Li, Lei Chen, Xing Zhang, Mingxuan Yuan and Jun Wang. “[Logic Synthesis with Generative Deep Neural Networks.](https://arxiv.org/abs/2406.04699)” In _Proceedings of the 33rd International Workshop on Logic & Synthesis_. (IWLS 2024) [[PDF]](https://arxiv.org/pdf/2406.04699) [[Poster]](/assets/publications/ctrw_IWLS2024poster.pdf) [[Slide]](/assets/publications/ctrw_IWLS2024slide.pdf)
 - **Xihan Li**, Xiang Chen, Rasul Tutunov, Haitham Bou Ammar, Lei Wang, Jun Wang. "[Online PCA in Converging Self-consistent Field Equations](https://proceedings.neurips.cc/paper_files/paper/2023/hash/969c14957c0df5ce2db642b3a5fa985c-Abstract-Conference.html)". _Advances in Neural Information Processing Systems 36_: 48138-49. (NeurIPS 2023) [[PDF]](https://proceedings.neurips.cc/paper_files/paper/2023/file/969c14957c0df5ce2db642b3a5fa985c-Paper-Conference.pdf) [[Appendix]](https://proceedings.neurips.cc/paper_files/paper/2023/file/969c14957c0df5ce2db642b3a5fa985c-Supplemental-Conference.pdf) [[Poster]](/assets/Online-PCA/poster.pdf) [[Slide]](/assets/Online-PCA/slide.pdf)
 - **Xihan Li**, Xiongwei Han, Zhishuo Zhou, Mingxuan Yuan, Jia Zeng, Jun Wang. "[Grassland: A Rapid Algebraic Modeling System for Million-variable Optimization](https://dl.acm.org/doi/10.1145/3459637.3481925)". In _Proceedings of the 30th ACM International Conference on Information & Knowledge Management_, 3925–34. (CIKM 2021) [[PDF (with appendix)]](https://arxiv.org/pdf/2108.04586.pdf) [[ACM DL]](https://dl.acm.org/doi/10.1145/3459637.3481925) [[Slide]]({{site.url}}/assets/grassland/grassland_slide.pdf) [[Poster]]({{site.url}}/assets/grassland/grassland_poster.pdf) [[Video]](https://app6ca5octe2206.pc.xiaoe-tech.com/detail/v_617b6fe4e4b0fa7d55ffa2ef/3)
@@ -72,6 +72,7 @@ display_title: Publications
 
 # Service
 
-- Reviewer, IEEE Transactions on Automation Science and Engineering
-- Reviewer, International Conference on Learning Representations
-- Reviewer, IEEE Conference on Decision and Control
+- Reviewer, IEEE Transactions on Automation Science and Engineering (IEEE T-ASE)
+- Reviewer, Conference on Neural Information Processing Systems (NeurIPS)
+- Reviewer, International Conference on Learning Representations (ICLR)
+- Reviewer, IEEE Conference on Decision and Control (IEEE CDC)

@@ -12,7 +12,7 @@ categories: DBN
 
 <!--more-->
 
-本文中关于受限玻尔兹曼机（RBM）的部分可参考[前一篇文章](https://snowkylin.github.io/rbm/hopfield/2017/01/02/HopField-RBM.html)。
+本文中关于受限玻尔兹曼机（RBM）的部分可参考[前一篇文章](https://snowkylin.github.io/blogs/HopField-RBM.html)。
 
 虽然深度信念网络在训练时采取了将一系列受限玻尔兹曼机堆叠的贪心策略，但其本身的结构并非如此。事实上，深度信念网络是由最顶层的一个单层受限玻尔兹曼机加上其下的多层有向的“信念网络”组合而成[^1]，如下图所示。
 
@@ -102,7 +102,7 @@ $$
     * $ y_i \sim P(y_i\vert v) \forall y_i \in h $
     * $ y_i \sim P(y_i\vert h) \forall y_i \in v $
 
-关于Gibbs Sampling可参考[这篇文章](http://www.flickering.cn/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E/2014/06/lda%E6%95%B0%E5%AD%A6%E5%85%AB%E5%8D%A6mcmc-%E5%92%8C-gibbs-sampling/)
+关于Gibbs Sampling可参考[这篇文章](https://bloglxm.oss-cn-beijing.aliyuncs.com/lda-LDA%E6%95%B0%E5%AD%A6%E5%85%AB%E5%8D%A6.pdf)
 
 # 参考
 

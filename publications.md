@@ -70,6 +70,18 @@ display_title: Publications
 
 <div class="clearfix"></div>
 
+# Translation
+
+- Donald E. Knuth, The Art of Computer Programming, Volumn 4B (Simplified Chinese version, 《计算机程序设计艺术 卷4B：组合算法（二）》, Xiongxin Yang,
+Guang Hu, **Xihan Li**, Fei Liu Trans.), Posts & Telecom Press, 2025. ISBN: 978-7-115-66633-8.
+  - Available on [[JD]](https://item.jd.com/15061798.html) [[Dangdang]](https://product.dangdang.com/29902562.html) [[TMall]](https://detail.tmall.com/item.htm?id=938434060199) [[iTuring]](https://www.ituring.com.cn/book/3206). 
+  
+<center>
+<a href="https://tf.wiki/zh_hans/">
+    <img src="/assets/publications/taocp_4b.jpg" width="200px"/>
+</a>
+</center>
+
 # Service
 
 - Reviewer, IEEE Transactions on Automation Science and Engineering (IEEE T-ASE)

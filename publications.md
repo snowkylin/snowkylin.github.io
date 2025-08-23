@@ -89,3 +89,4 @@ Guang Hu, **Xihan Li**, Fei Liu Trans.), Posts & Telecom Press, 2025. ISBN: 978-
 - Reviewer, Conference on Neural Information Processing Systems (NeurIPS)
 - Reviewer, International Conference on Learning Representations (ICLR)
 - Reviewer, IEEE Conference on Decision and Control (IEEE CDC)
+- Program Committee Member, International Conference on Distributed Artificial Intelligence

@@ -84,11 +84,11 @@ Guang Hu, **Xihan Li**, Fei Liu Trans.), Posts & Telecom Press, 2025. ISBN: 978-
 </center>
 
 - Claude E. Shannon, Warren Weaver, The Mathematical Theory of Communication (Simplified Chinese version, 《通信的数学理论》, **Xihan Li** Trans.), Posts & Telecom Press, 2025. ISBN: 978-7-115-66228-6.
-  - Available on [[JD]](https://item.jd.com/10200259657475.html) [[Dangdang]](https://product.dangdang.com/12347094154.html) [[TMall]](https://detail.tmall.com/item.htm?id=994953070410).
+  - Available on [[JD]](https://item.jd.com/10200259657475.html) [[Dangdang]](https://product.dangdang.com/12347094154.html) [[TMall]](https://detail.tmall.com/item.htm?id=994953070410) [[iTuring]](https://www.ituring.com.cn/book/3291).
 
 <center>
 <a href="https://item.jd.com/10200259657475.html">
-    <img src="/assets/publications/mathematical_theory_of_communication.jpg" width="200px"/>
+    <img src="/assets/publications/mathematical_theory_of_communication.jpg" width="300px"/>
 </a>
 </center>
 

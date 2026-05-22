@@ -41,9 +41,11 @@ Here are some of my talks with slide & code resources, mostly as a [Google Devel
 
 # Teaching
 
+- **SEMT30008 Advanced Methods in Artificial Intelligence**, University of Bristol, 2026 (Guest Lecturer)
+    - LLM Constrained Decoding [[slide]](/assets/talks/LLM_Constrained_Decoding_2026_Xihan_Li.pdf)
 - **COMP0124 Multi-Agent Artificial Intelligence**, University College London, 2021 - 2024 (Teaching Assistant)
     - Learning and deep neural networks [[slide]](/assets/talks/Deep_Learning_slide_2024_Xihan_Li.pdf)
-    - Single-Agent reinforcement learning [[slide]](/assets/talks/Single_agent_RL_slide_2025_Xihan_Li.pdf)
+    - Single-agent reinforcement learning [[slide]](/assets/talks/Single_agent_RL_slide_2025_Xihan_Li.pdf)
 - **Data Warehousing and Data Mining Technology**, Peking University, Spring and Summer Semester, 2017 (Teaching Assistant)
     - Assignment instruction: <https://github.com/snowkylin/data-mining-pku/blob/master/README.md>
     - Report template: <https://github.com/snowkylin/data-mining-pku/tree/master/report>

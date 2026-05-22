@@ -98,4 +98,5 @@ Guang Hu, **Xihan Li**, Fei Liu Trans.), Posts & Telecom Press, 2025. ISBN: 978-
 - Reviewer, Conference on Neural Information Processing Systems (NeurIPS)
 - Reviewer, International Conference on Learning Representations (ICLR)
 - Reviewer, IEEE Conference on Decision and Control (IEEE CDC)
-- Program Committee Member, International Conference on Distributed Artificial Intelligence (DAI)
+- Program Committee Member, [International Conference on Distributed Artificial Intelligence (DAI)](https://adai.ai/dai/2025/program-committees.html)
+- Guest Lecturer, [Advanced Methods in Artificial Intelligence](https://www.bris.ac.uk/unit-programme-catalogue/UnitDetails.jsa?unitCode=SEMT30008), University of Bristol

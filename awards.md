@@ -7,9 +7,10 @@ display_title: Awards
 
 # Honors
 
-- [Google Open Source Peer Bonus award](https://opensource.googleblog.com/2020/10/announcing-latest-google-open-source.html) • Sept. 2020
+- Outstanding Translator, Post & Telecom Press ([iTuring](https://www.ituring.com.cn)) • Dec 2025
+- [Google Open Source Peer Bonus award](https://opensource.googleblog.com/2020/10/announcing-latest-google-open-source.html) • Sept 2020
 - [Google Summer of Code 2019, TensorFlow Team](https://summerofcode.withgoogle.com/archive/2019/projects/5460192307707904) • May 2019 - Sept 2019
-- [Google Developers Expert (GDE) in Machine Learning](https://developers.google.com/community/experts/directory/profile/profile-xihan-li) • Dec 2017 - present
+- [Google Developers Expert (GDE) in Machine Learning](https://developers.google.com/community/experts/directory?hl=zh-cn&text=Xihan%20Li) • Dec 2017 - present
 - Outstanding Undergraduate Thesis, Zhejiang University • Jun 2016
 - Excellent Student Award, Zhejiang University • Dec 2014
 - Outstanding Student Leader Award, Zhejiang University • Dec 2014
@@ -60,8 +61,8 @@ display_title: Awards
     <tr>        
         <td colspan="2">
             <center>
-                <a href="{{site.url}}/assets/awards/ICM.jpg">
-                    <img src="{{site.url}}/assets/awards/ICM.jpg" width="100%"/>
+                <a href="/assets/awards/ICM.jpg">
+                    <img src="/assets/awards/ICM.jpg" width="100%"/>
                 </a>
                 <i>Outstanding Winner</i><br />2015 Interdisciplinary Contest In Modeling (ICM 2015)
             </center>
@@ -70,15 +71,15 @@ display_title: Awards
     <tr>
         <td width="50%">
             <center>
-                <a href="{{site.url}}/assets/awards/iGEM_Measurement.jpg">
-                    <img src="{{site.url}}/assets/awards/iGEM_Measurement.jpg" width="100%"/>
+                <a href="/assets/awards/iGEM_Measurement.jpg">
+                    <img src="/assets/awards/iGEM_Measurement.jpg" width="100%"/>
                 </a>
             </center>
         </td>
         <td width="50%">
             <center>
-                <a href="{{site.url}}/assets/awards/iGEM_World.jpg">
-                    <img src="{{site.url}}/assets/awards/iGEM_World.jpg" width="100%"/>                    
+                <a href="/assets/awards/iGEM_World.jpg">
+                    <img src="/assets/awards/iGEM_World.jpg" width="100%"/>                    
                 </a>
             </center>
         </td>

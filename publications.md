@@ -27,12 +27,12 @@ display_title: Publications
 
 <!-- *: Equal contribution -->
 
-# Dessertation
+# Dessertations
 
 - Xihan Li. "[AI for Optimization: Feasibility, Stability, and Unified Infrastructure](https://discovery.ucl.ac.uk/id/eprint/10223766/)". Doctoral Degree Thesis, University College London. [[pdf]](https://discovery.ucl.ac.uk/id/eprint/10223766/1/Li_10223766_Thesis.pdf)
 - Xihan Li. "[Resource Balancing in Complex Logistics Networks with Multi-Agent Reinforcement Learning and Graph Attention](https://thesis.lib.pku.edu.cn/docinfo.action?id1=2af54d60979bfe1690800f0090ec79f3&id2=b6IKQrUK%252F4c%253D)". Master Degree Thesis, Peking University. [[pdf]](/assets/publications/Master_Degree_Thesis.pdf)
 
-# Book
+# Books
 
 - **Xihan Li**, Huan Li and Jinpeng Zhu. *A Concise Handbook of TensorFlow 2 (简明的TensorFlow 2)*. Posts & Telecom Press, 2020. [[introduction]](/tensorflow/2018/08/29/a-concise-handbook-of-tensorflow.html) [[Online Version]](https://tf.wiki) [[WeChat Posts]](https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzU1OTMyNDcxMQ==&scene=23&album_id=1338132220393111552#wechat_redirect) 
   - Printed Simplified Chinese version (ISBN: 9787115546685) available on [[JD]](https://item.jd.com/12980534.html) [[Dangdang]](http://product.dangdang.com/29132630.html) [[TMall]](https://detail.tmall.com/item.htm?id=628240887768) [[iTuring]](https://www.ituring.com.cn/book/2705). Library: [[National Library of China]](http://opac.nlc.cn/F?func=item-global&doc_library=NLC01&doc_number=010962023) [[CALIS]](http://opac.calis.edu.cn/showHolding.do?subact=enterpage&fromType4Holding=fromSimpleList&oid4Holding=7c9c8a2acc95ff8deaae1f95708f4b0d&langBase4Holding=1) [[Shanghai Library]](https://vufind.library.sh.cn/Record/55271fb2-0b87-4769-aaba-630507ee8762) [[PKU]](https://pku.summon.serialssolutions.com/search?s.q=%E7%AE%80%E6%98%8E%E7%9A%84%20TensorFlow%202#!/search?ho=t&l=zh-CN&q=%E7%AE%80%E6%98%8E%E7%9A%84%20TensorFlow%202) [[ZJU]](http://opac.zju.edu.cn/F/5PC6PRFMMSX6AGSMY7EG943J43PQS9KKYKQHTPHPC3MK18UI3R-01935?func=full-set-set&set_number=230459&set_entry=000023&format=999)
@@ -71,7 +71,7 @@ display_title: Publications
 
 <div class="clearfix"></div>
 
-# Translation
+# Translations
 
 - Donald E. Knuth, The Art of Computer Programming, Volumn 4B (Simplified Chinese version, 《计算机程序设计艺术 卷4B：组合算法（二）》, Xiongxin Yang,
 Guang Hu, **Xihan Li**, Fei Liu Trans.), Posts & Telecom Press, 2025. ISBN: 978-7-115-66633-8.
@@ -93,11 +93,11 @@ Guang Hu, **Xihan Li**, Fei Liu Trans.), Posts & Telecom Press, 2025. ISBN: 978-
 </a>
 </center>
 
-# Service
+# Services
 
 - Reviewer, IEEE Transactions on Automation Science and Engineering (IEEE T-ASE)
 - Reviewer, Conference on Neural Information Processing Systems (NeurIPS)
 - Reviewer, International Conference on Learning Representations (ICLR)
 - Reviewer, IEEE Conference on Decision and Control (IEEE CDC)
-- Program Committee Member, [International Conference on Distributed Artificial Intelligence (DAI)](https://adai.ai/dai/2025/program-committees.html)
+- Program Committee Member & Reviewer, [International Conference on Distributed Artificial Intelligence (DAI)](https://adai.ai/dai/2025/program-committees.html)
 - Guest Lecturer, [Advanced Methods in Artificial Intelligence](https://www.bris.ac.uk/unit-programme-catalogue/UnitDetails.jsa?unitCode=SEMT30008), University of Bristol

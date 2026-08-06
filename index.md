@@ -15,7 +15,7 @@ layout: home
 
 Email: xihan.li at cs dot ucl dot ac dot uk-->
 
-Assistant Professor
+[Assistant Professor](https://ai3.fudan.edu.cn/info/1075/3564.htm)
 
 [AI³ Institute](https://ai3.fudan.edu.cn/), [Fudan University](https://www.fudan.edu.cn)
 

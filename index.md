@@ -27,5 +27,5 @@ I am an assistant professor at the [AI³ Institute](https://ai3.fudan.edu.cn/), 
 
 Prior to Fudan, I received my Ph.D. degree from [University College London](http://www.ucl.ac.uk/) in 2026, advised by [Prof. Jun Wang](http://www0.cs.ucl.ac.uk/staff/Jun.Wang/). I received my M.S. degree of Computer Science from [Peking University](https://www.pku.edu.cn) in 2019, advised by [Prof. Yunhai Tong](http://www.cis.pku.edu.cn/faculty/system/tongyunhai/tongyunhai.htm). I received my B.Eng. degree of Computer Science with minor certificate of Biological Science from [Zhejiang University](http://www.zju.edu.cn/english). I was a member of [Chu Kochen Honors College (Mixed Class)](http://ckc.zju.edu.cn/ckcen/main.htm).
 
-I am looking for outstanding and highly motivated master students, Ph.D. students, and postdoctoral researchers, to work together on AI for optimization. Please [email me](mailto:lixihan@fudan.edu.cn) with your CV.
+I am looking for outstanding and highly motivated master students, Ph.D. students, and postdoctoral researchers, to work together on AI for Optimization. Please [email me](mailto:lixihan@fudan.edu.cn) with your CV.
 
